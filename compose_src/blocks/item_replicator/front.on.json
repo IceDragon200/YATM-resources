@@ -1,0 +1,33 @@
+{
+  "variables": {
+    "detail_color": [94, 231, 0, 255]
+  },
+  "output": "blocks/item_replicator/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/item_replicator_base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/common/anim-item_replicator.on.anim.mask/frame_0000.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    },
+    "anim.1": {
+      "texture": "blocks/common/anim-item_replicator.on.anim.mask/frame_0001.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    }
+  ]
+}

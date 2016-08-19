@@ -1,0 +1,43 @@
+{
+  "variables": {
+    "signal_color": [255, 0, 0, 255]
+  },
+  "output": "blocks/wireless_emitter/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/wireless_emitter_base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/common/anim-wireless_emitter.on.anim.mask/frame_0000.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    },
+    "anim.1": {
+      "texture": "blocks/common/anim-wireless_emitter.on.anim.mask/frame_0001.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    },
+    "anim.2": {
+      "texture": "blocks/common/anim-wireless_emitter.on.anim.mask/frame_0002.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    }
+  ]
+}

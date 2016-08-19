@@ -1,0 +1,63 @@
+{
+  "variables": {
+    "detail_color": [94, 231, 0, 255]
+  },
+  "output": "blocks/common/back_panel_base.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/back_panel_base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0000.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    },
+    "anim.1": {
+      "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0001.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    },
+    "anim.2": {
+      "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0002.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    },
+    "anim.3": {
+      "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0003.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    },
+    "anim.4": {
+      "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0004.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "detail_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.3"]
+    },
+    {
+      "layers": ["base", "anim.4"]
+    }
+  ]
+}
