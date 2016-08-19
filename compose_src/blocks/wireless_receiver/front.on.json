@@ -1,5 +1,5 @@
 {
-  "$include": "_variables",
+  "$includes": ["blocks/_variables"],
   "output": "blocks/wireless_receiver/front.on",
   "layers": {
     "base": {
@@ -36,6 +36,9 @@
     },
     {
       "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base"]
     }
   ]
 }

@@ -60,11 +60,23 @@ def proprocess_includes(data)
   when Hash
     result = {}
     data.each_pair do |key, value|
-      if key == '$include'
-        data = load_composer_file(@src_dir.join(value + '.json').to_s, options: { load_variables: false })
-        result = result.deep_merge(data)
+      if key == '$includes'
+        value.each do |file|
+          partial = load_composer_file(@src_dir.join(file + '.json').to_s, options: { load_variables: false })
+          result = result.deep_merge(partial)
+        end
       else
-        result[key] = proprocess_includes(value)
+        proprocessed_result = proprocess_includes(value)
+        target = result[key]
+        result[key] = case target
+        when Array
+          target.concat(proprocessed_result)
+          target
+        when Hash
+          target.deep_merge(proprocessed_result)
+        else
+          proprocessed_result
+        end
       end
     end
     result
@@ -72,12 +84,13 @@ def proprocess_includes(data)
     data.map do |value|
       proprocess_includes(value)
     end
+  else
+    data
   end
-  data
 end
 
 def preprocess_data(data, **options)
-  result = preprocess_includes(data)
+  result = proprocess_includes(data)
   if options.fetch(:load_variables, true)
     if result.has_key?('variables')
       return replace_with_variables(result['variables'], result)
@@ -90,10 +103,11 @@ def load_composer_file(filename, **options)
   preprocess_data(load_json(filename), options)
 end
 
-Dir.chdir src_dir.to_s do
+Dir.chdir @src_dir.to_s do
   Dir.glob("**/*.json") do |filename|
-    puts filename
     data = load_composer_file(filename)
+    next unless data.has_key?('output')
+    puts filename
     output_basename = data.fetch('output')
     target_filename = @output_dir.join(output_basename)
     FileUtils.mkdir_p File.dirname(target_filename)

@@ -1,7 +1,5 @@
 {
-  "variables": {
-    "detail_color": [94, 231, 0, 255]
-  },
+  "$includes": ["blocks/_variables"],
   "output": "blocks/item_replicator/front.on",
   "layers": {
     "base": {

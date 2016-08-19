@@ -1,0 +1,26 @@
+{
+  "$includes": ["blocks/_variables", "blocks/common/_back_panel.on.strip.anim"],
+  "output": "blocks/common/back_panel_base.on.strip",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/back_panel_base.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "strip_anim.0"]
+    },
+    {
+      "layers": ["base", "strip_anim.1"]
+    },
+    {
+      "layers": ["base", "strip_anim.2"]
+    },
+    {
+      "layers": ["base", "strip_anim.3"]
+    },
+    {
+      "layers": ["base", "strip_anim.4"]
+    }
+  ]
+}

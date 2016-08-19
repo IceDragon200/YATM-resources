@@ -1,7 +1,5 @@
 {
-  "variables": {
-    "signal_color": [255, 0, 0, 255]
-  },
+  "$includes": ["blocks/_variables"],
   "output": "blocks/wireless_emitter/front.on",
   "layers": {
     "base": {
@@ -38,6 +36,9 @@
     },
     {
       "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base"]
     }
   ]
 }
