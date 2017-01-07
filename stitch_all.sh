@@ -5,7 +5,7 @@ stitchFiles()
     if [[ -d "${f}" ]]; then
       files=$(echo "${f}"/*.png)
       outfile=$(basename "${f}" | sed "s/anim-//")
-      tstitch -c 1 -o "${outfile}.png" $(echo ${files} | sort)
+      tstitch -c 1 -o "build/${outfile}.png" $(echo ${files} | sort)
     fi
   done
 }

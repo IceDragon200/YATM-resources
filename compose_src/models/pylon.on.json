@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "models/pylon.on",
+  "layers": {
+    "base": {
+      "texture": "models/pylon.base.png"
+    },
+    "lights": {
+      "texture": "models/pylon.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

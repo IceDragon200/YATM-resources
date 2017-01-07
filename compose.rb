@@ -1,11 +1,15 @@
 #!/usr/bin/env ruby
 require 'active_support/core_ext/hash'
+require 'dragontk/thread_pool'
+require 'dragontk/thread_safe'
+require 'moon-logfmt/logger'
 require 'minil'
 require 'minil/image'
 require 'minil/color'
 require 'oj'
 require 'pathname'
 require 'fileutils'
+require 'optparse'
 
 class Minil::Image
   def blend_multiply_fill_rect(x, y, w, h, color)
@@ -63,7 +67,8 @@ class Compose::FrameCompositor
   attr_reader :project
   attr_reader :result
 
-  def initialize(project, data)
+  def initialize(project, data, logger:)
+    @logger = logger
     @project = project
     @data = data
     @frame_layers = @data.fetch('layers')
@@ -91,6 +96,7 @@ class Compose::FrameCompositor
   end
 
   protected def calculate_frame_src_rect(layer, frame_layer)
+    texture = layer.fetch('texture')
     layer_src_rect = if layer.has_key?('src_rect')
       Minil::Rect.new(*layer['src_rect'])
     else
@@ -106,20 +112,22 @@ class Compose::FrameCompositor
 
   protected def calculate_frame_transform(layer, frame_layer)
     layer_transform = Compose::Transform.new(layer['transform'])
-    frame_transform = Compose::Transform.new(layer_item['transform'])
+    frame_transform = Compose::Transform.new(frame_layer['transform'])
     layer_transform + frame_transform
   end
 
   protected def calculate_frame_opacity(layer, frame_layer)
-    layer_opacity = layer['opacity']
-    frame_opacity = layer_item['opacity']
+    layer_opacity = layer.fetch('opacity', 255)
+    frame_opacity = frame_layer.fetch('opacity', 255)
     layer_opacity * frame_opacity / 255
   end
 
   def perform
+    @logger.debug msg: "Creating Buffer Frame"
     # buffer frame
     @buffer_frame = Minil::Image.create(@project.w, @project.h)
-    @frame_layers.each do |frame_layer|
+    @frame_layers.each_with_index do |frame_layer, index|
+      @logger.debug frame_layer: index, msg: "Rendering Frame Layer"
       if frame_layer.is_a?(String)
         frame_layer = { 'source' => frame_layer }
       end
@@ -135,7 +143,8 @@ class Compose::FrameCompositor
         src_rect,
         opacity)
     end
-    @result = buffer_frame
+    @logger.info msg: "Frame Rendered"
+    @result = @buffer_frame
   end
 end
 
@@ -148,21 +157,24 @@ class Compose::Project
   attr_reader :w
   attr_reader :h
 
-  def initialize(data)
+  def initialize(env, data, logger:)
+    @logger = logger
+    @env = env
     @data = data
     @source_layers = data.fetch('layers')
     @source_frames = data.fetch('frames')
   end
 
-  protected def preload
+  protected def preload_layers
     @layers = {}
     @source_layers.each_pair do |layer_name, layer|
-      texture_filename = @texture_dir.join(layer.fetch('texture')).to_s
-      @texture_cache[texture_filename] ||= Minil::Image.load_file texture_filename
+      texture_filename = @env.texture_dir.join(layer.fetch('texture')).to_s
+      @env.texture_cache[texture_filename] ||= Minil::Image.load_file texture_filename
       @layers[layer_name] = layer.merge({
-        'texture' => @texture_cache[texture_filename]
+        'texture' => @env.texture_cache[texture_filename]
       })
     end
+    @logger.debug msg: "Preloaded Layers"
   end
 
   protected def calculate_resolution
@@ -172,12 +184,17 @@ class Compose::Project
       @w = texture.width if texture.width > @w
       @h = texture.height if texture.height > @h
     end
+    @logger.debug w: @w, h: @h, msg: "Resolution Calculated"
   end
 
   def perform
+    preload_layers
     calculate_resolution
+    @logger.info msg: "Composing Frames"
+    index = 0
     @frames = @source_frames.map do |frame|
-      compositor = Compose::FrameCompositor.new(self, frame)
+      compositor = Compose::FrameCompositor.new(self, frame, logger: @logger.new(frame: index))
+      index += 1
       compositor.perform
       compositor.result
     end
@@ -186,16 +203,28 @@ class Compose::Project
     @frames.each_with_index do |frame, index|
       @result.blit_r(frame, 0, index * h, frame.rect)
     end
+    @logger.info msg: "Project Rendered"
   end
 end
 
 class Compose::Application
+  attr_reader :texture_cache
+  attr_reader :root_dir
+  attr_reader :texture_dir
+  attr_reader :src_dir
+  attr_reader :output_dir
+  attr_reader :logger
+
   def initialize
+    @logger = Moon::Logfmt.new
+    @logger.io = STDOUT.thread_safe
+    @logger.level = :info
     @texture_cache = {}
     @root_dir = Pathname.new(__dir__)
     @texture_dir = @root_dir.join('textures')
     @src_dir  = @root_dir.join('compose_src')
-    @output_dir = @root_dir.join('composed')
+    @output_dir = @root_dir.join('build')
+    @project_counter = 0
   end
 
   def load_json(filename)
@@ -272,25 +301,50 @@ class Compose::Application
   end
 
   def compose_file(filename)
+    log = @logger.new thread: Thread.current.to_s, filename: filename
+    log.info filename: filename, msg: "Loading Compose file"
     data = load_composer_file(filename)
-    return unless data.has_key?('output')
-    puts filename
+    unless data.has_key?('output')
+      log.info filename: filename, msg: "Compose file has not output, skipping"
+      return
+    end
+    log.info filename: filename, msg: "Loaded Compose file"
     output_basename = data.fetch('output')
     target_filename = @output_dir.join(output_basename)
     FileUtils.mkdir_p File.dirname(target_filename)
-    project = Compose::Project.new(data)
+    project = Compose::Project.new(self, data, logger: log.new(project: @project_counter += 1))
     project.perform
+    log.info target_filename: target_filename.to_s + '.png', msg: "Saving File"
     project.result.save_file target_filename.to_s + '.png'
     GC.start
   end
 
-  def run
-    Dir.chdir @src_dir.to_s do
-      Dir.glob("**/*.json") do |filename|
-        compose_file filename
+  def run(argv)
+    thread_limit = 1
+    optparse = OptionParser.new do |opts|
+      opts.on '-j', '--jobs NUM', Integer, 'Number of worker threads to use' do |v|
+        thread_limit = v
       end
+    end
+    files = optparse.parse(argv)
+    thread_limit = [thread_limit, 1].max
+
+    tp = ThreadPool.new thread_limit: thread_limit
+
+    begin
+      if files.empty?
+        files = Dir.glob(@src_dir.join("**/*.json").to_s)
+      end
+
+      files.each do |filename|
+        tp.spawn do
+          compose_file filename
+        end
+      end
+    ensure
+      tp.await
     end
   end
 end
 
-Compose::Application.new.run
+Compose::Application.new.run(ARGV)

@@ -1,0 +1,12 @@
+{
+  "layers": {
+    "base": {
+      "texture": "gui/common/base_90.png"
+    }
+  },
+  "frames": [
+    {
+      "source": "base"
+    }
+  ]
+}

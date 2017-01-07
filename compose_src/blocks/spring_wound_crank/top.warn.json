@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/spring_wound_crank/top.warn",
+  "layers": {
+    "base": {
+      "texture": "blocks/spring_wound_crank/top.png"
+    },
+    "lights": {
+      "texture": "blocks/spring_wound_crank/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "warn_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

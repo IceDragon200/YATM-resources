@@ -1,58 +1,12 @@
 {
-  "$includes": ["blocks/_variables"],
+  "$includes": ["_variables", "blocks/common/_base_panel_bus.on.anims"],
+  "variables": {
+    "anim_color": { "$variable": "detail_color" }
+  },
   "output": "blocks/common/base_panel_bus.on",
   "layers": {
     "base": {
       "texture": "blocks/common/textures/base_panel_bus.png"
-    },
-    "anim.0": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0000.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
-    },
-    "anim.1": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0001.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
-    },
-    "anim.2": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0002.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
-    },
-    "anim.3": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0003.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
-    },
-    "anim.4": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0004.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
-    },
-    "anim.5": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0005.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
-    },
-    "anim.6": {
-      "texture": "blocks/common/anim-base_panel_bus.on.anim.mask/frame_0006.png",
-      "blend": {
-        "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
-      }
     }
   },
   "frames": [

@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/common/back_panel_base.redstone.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/back_panel_base.png"
+    },
+    "lights": {
+      "texture": "blocks/common/masks/back_panel_base.strip.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

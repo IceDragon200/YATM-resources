@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/spring_wound_crank/bottom.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/spring_wound_crank/bottom.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

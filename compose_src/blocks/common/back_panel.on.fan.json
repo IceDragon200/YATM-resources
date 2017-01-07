@@ -1,5 +1,5 @@
 {
-  "$includes": ["blocks/_variables", "blocks/common/_back_panel.on.fan.anim"],
+  "$includes": ["_variables", "blocks/common/_back_panel.on.fan.anim"],
   "output": "blocks/common/back_panel_base.on.fan",
   "layers": {
     "base": {

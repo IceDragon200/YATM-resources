@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/common/back_panel_base.idle",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/back_panel_base.png"
+    },
+    "lights": {
+      "texture": "blocks/common/masks/back_panel_base.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "variables": {
+    "detail_color": [94, 231, 0, 255],
+    "on_color": { "$variable": "detail_color" },
+    "signal_color": [255, 0, 0, 255],
+    "off_color": { "$variable": "signal_color" },
+    "error_color": { "$variable": "signal_color" },
+    "idle_color":   [0, 157, 255, 255],
+    "warn_color":   [255, 223, 0, 255]
+  }
+}

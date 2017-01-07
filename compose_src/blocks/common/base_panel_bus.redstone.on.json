@@ -1,0 +1,35 @@
+{
+  "$includes": ["_variables", "blocks/common/_base_panel_bus.on.anims"],
+  "variables": {
+    "anim_color": { "$variable": "signal_color" }
+  },
+  "output": "blocks/common/base_panel_bus.redstone.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/base_panel_bus.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.3"]
+    },
+    {
+      "layers": ["base", "anim.4"]
+    },
+    {
+      "layers": ["base", "anim.5"]
+    },
+    {
+      "layers": ["base", "anim.6"]
+    }
+  ]
+}

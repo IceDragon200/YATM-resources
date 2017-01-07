@@ -1,5 +1,5 @@
 {
-  "$includes": ["blocks/_variables"],
+  "$includes": ["_variables"],
   "output": "blocks/common/base_panel.on",
   "layers": {
     "base": {

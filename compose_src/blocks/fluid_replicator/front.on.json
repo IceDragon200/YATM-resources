@@ -1,5 +1,5 @@
 {
-  "$includes": ["blocks/_variables"],
+  "$includes": ["_variables"],
   "output": "blocks/fluid_replicator/front.on",
   "layers": {
     "base": {
@@ -26,6 +26,9 @@
     },
     {
       "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base"]
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "layers": {
+    "rf_base": {
+      "texture": "gui/common/rf_gauge_base.png",
+      "transform": {
+        "translate": [163, 15]
+      }
+    }
+  },
+  "frames": [
+    {
+      "source": "rf_base"
+    }
+  ]
+}

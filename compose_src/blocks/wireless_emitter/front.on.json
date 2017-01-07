@@ -1,5 +1,5 @@
 {
-  "$includes": ["blocks/_variables"],
+  "$includes": ["_variables"],
   "output": "blocks/wireless_emitter/front.on",
   "layers": {
     "base": {

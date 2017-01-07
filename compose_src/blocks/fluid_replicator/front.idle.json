@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/fluid_replicator/front.idle",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/fluid_replicator_base.png"
+    },
+    "lights": {
+      "texture": "blocks/common/masks/fluid_replicator.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}
