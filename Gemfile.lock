@@ -10,7 +10,7 @@ GEM
     concurrent-ruby (1.1.4)
     diff-lcs (1.3)
     docile (1.3.1)
-    dragontk (1.13.2)
+    dragontk (1.14.0)
       moon-logfmt (>= 1.1)
       rspec (~> 3.2)
       rubocop (~> 0.49)
@@ -28,7 +28,6 @@ GEM
     moon-logfmt (1.2.0)
       moon-null_io (~> 1.0, >= 1.0.1)
     moon-null_io (1.0.1)
-    oj (3.7.8)
     parallel (1.13.0)
     parser (2.6.0.0)
       ast (~> 2.4.0)
@@ -75,9 +74,9 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  dragontk
+  dragontk (~> 1.14)
+  json
   minil (~> 0.19)
-  oj
   scrapyard
 
 BUNDLED WITH

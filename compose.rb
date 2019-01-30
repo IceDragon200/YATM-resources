@@ -7,7 +7,7 @@ require 'active_support/core_ext/hash'
 require 'minil/image'
 require 'minil/color'
 require 'moon-logfmt/logger'
-require 'oj'
+require 'json'
 require 'pathname'
 require 'fileutils'
 require 'optparse'
@@ -260,8 +260,8 @@ class Compose::Application
 
   def load_json(filename)
     begin
-      Oj.load(File.read(filename))
-    rescue Oj::ParseError => ex
+      JSON.parse(File.read(filename))
+    rescue => ex
       @logger.error filename: filename
       raise ex
     end
@@ -356,7 +356,7 @@ class Compose::Application
     log.info target_filename: target_filename.to_s + '.png', msg: "Saving File"
     project.result.save_file target_filename.to_s + '.png'
     if data.key?('meta')
-      File.write(target_filename.to_s + '.png.mcmeta', Oj.dump(data.fetch('meta')))
+      File.write(target_filename.to_s + '.png.mcmeta', JSON.dump(data.fetch('meta')))
     end
     GC.start
   end
