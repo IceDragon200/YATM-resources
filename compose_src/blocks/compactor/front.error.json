@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/compactor/front.error",
+  "layers": {
+    "base": {
+      "texture": "blocks/compactor/front.base.png"
+    },
+    "blade": {
+      "texture": "blocks/compactor/anim-front.on/frame0000.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "blade"]
+    }
+  ]
+}

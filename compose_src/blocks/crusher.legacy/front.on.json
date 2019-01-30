@@ -1,0 +1,35 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/crusher.legacy/front.on",
+  "layers": {
+    "anim.0": { "texture": "blocks/crusher.legacy/anim-front.on/frame_0000.png" },
+    "anim.1": { "texture": "blocks/crusher.legacy/anim-front.on/frame_0001.png" },
+    "anim.2": { "texture": "blocks/crusher.legacy/anim-front.on/frame_0002.png" },
+    "anim.3": { "texture": "blocks/crusher.legacy/anim-front.on/frame_0003.png" }
+  },
+  "frames": [
+    {
+      "layers": ["anim.0"]
+    },
+    {
+      "layers": ["anim.1"]
+    },
+    {
+      "layers": ["anim.2"]
+    },
+    {
+      "layers": ["anim.3"]
+    }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

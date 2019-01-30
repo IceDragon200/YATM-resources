@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/lamp/small_grey_bottom.on",
+  "layers": {
+    "base": { "texture": "blocks/lamp/small.bottom.on.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

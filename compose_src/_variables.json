@@ -1,11 +1,47 @@
 {
   "variables": {
     "detail_color": [94, 231, 0, 255],
-    "on_color": { "$variable": "detail_color" },
-    "signal_color": [255, 0, 0, 255],
+
+    "dye.white": "#eeeeee",
+    "dye.grey": "#9c9c9c",
+    "dye.dark_grey": "#494949",
+    "dye.black": "#292929",
+    "dye.violet": "#480680",
+    "dye.blue": "#00519d",
+    "dye.cyan": "#00959d",
+    "dye.dark_green": "#2b7b00",
+    "dye.green": "#67eb1c",
+    "dye.yellow": "#fcf611",
+    "dye.brown": "#6c3800",
+    "dye.orange": "#e0601a",
+    "dye.red": "#c91818",
+    "dye.magenta": "#d80481",
+    "dye.pink": "#ffa5a5",
+
+    "c.deko.purple": [196, 110, 255, 255],
+    "c.harmless.blue": [69, 130, 255, 255],
+    "c.pop.magenta": [255, 0, 170, 255],
+    "c.pop.green": [170, 255, 0, 255],
+    "c.honey_maple": [206, 164, 92, 255],
+
+    "c.neon.cyan": [69, 213, 216, 255],
+    "c.neon.magenta": [67, 69, 216, 255],
+    "c.neon.yellow": [230, 200, 0, 255],
+    "c.neon.red": [216, 69, 69, 255],
+    "c.neon.green": [69, 216, 123, 255],
+    "c.neon.blue": [69, 160, 216, 255],
+
+    "c.cyan": [64, 218, 224, 255],
+    "c.red": [255, 0, 0, 255],
+    "c.yellow": [255, 255, 0, 255],
+    "on_color": { "$variable": "c.neon.green" },
+    "on_color_alt": { "$variable": "detail_color" },
+    "ok_color": { "$variable": "detail_color" },
+    "signal_color.0": [255, 0, 0, 255],
+    "signal_color": { "$variable": "c.neon.yellow" },
     "off_color": { "$variable": "signal_color" },
-    "error_color": { "$variable": "signal_color" },
-    "idle_color":   [0, 157, 255, 255],
-    "warn_color":   [255, 223, 0, 255]
+    "error_color": { "$variable": "c.red" },
+    "idle_color": [0, 157, 255, 255],
+    "warn_color": [255, 223, 0, 255]
   }
 }

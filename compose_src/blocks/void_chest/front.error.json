@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/void_chest/front.error",
+  "layers": {
+    "base": { "texture": "blocks/void_chest/front.png" },
+    "lights": {
+      "texture": "blocks/void_chest/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

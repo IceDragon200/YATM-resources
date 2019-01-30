@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/hub/top.wireless.off",
+  "layers": {
+    "base": { "texture": "blocks/hub/top.wireless.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

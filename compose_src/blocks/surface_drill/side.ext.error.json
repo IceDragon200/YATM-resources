@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/surface_drill/side.ext.error",
+  "layers": {
+    "base": { "texture": "blocks/surface_drill/side.ext.png" },
+    "on.light": {
+      "texture": "blocks/surface_drill/side.ext.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

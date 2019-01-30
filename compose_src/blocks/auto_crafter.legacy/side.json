@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_crafter.legacy/side",
+  "layers": {
+    "base": {
+      "texture": "blocks/auto_crafter.legacy/side.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

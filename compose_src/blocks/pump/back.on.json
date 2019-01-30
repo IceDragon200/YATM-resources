@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/pump/back.on",
+  "layers": {
+    "base": { "texture": "blocks/pump/back.png" },
+    "on.light": {
+      "texture": "blocks/pump/back.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$includes": ["_variables", "blocks/common/_back_panel.on.strip.anim", "blocks/common/_back_panel.on.fan.anim"],
+  "variables": {
+    "anim_color": { "$variable": "signal_color" }
+  },
+  "output": "blocks/wireless_emitter/back.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/back_panel_base.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "strip_anim.0", "fan_anim.0"]
+    },
+    {
+      "layers": ["base", "strip_anim.1", "fan_anim.1"]
+    },
+    {
+      "layers": ["base", "strip_anim.2", "fan_anim.2"]
+    },
+    {
+      "layers": ["base", "strip_anim.3", "fan_anim.3"]
+    },
+    {
+      "layers": ["base", "strip_anim.4", "fan_anim.4"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 4,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        0
+      ]
+    }
+  }
+}

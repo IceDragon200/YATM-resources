@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables", "blocks/common/_back_panel.on.strip.anim", "blocks/common/_back_panel.on.fan.anim"],
+  "variables": {
+    "anim_color": { "$variable": "error_color" }
+  },
+  "output": "blocks/fluid_replicator/back.error",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/back_panel_base.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "strip_anim.0", "fan_anim.0"]
+    }
+  ]
+}

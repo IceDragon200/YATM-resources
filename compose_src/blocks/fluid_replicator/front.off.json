@@ -3,7 +3,7 @@
   "output": "blocks/fluid_replicator/front.off",
   "layers": {
     "base": {
-      "texture": "blocks/common/textures/fluid_replicator_base.png"
+      "texture": "blocks/fluid_replicator/front.base.png"
     }
   },
   "frames": [

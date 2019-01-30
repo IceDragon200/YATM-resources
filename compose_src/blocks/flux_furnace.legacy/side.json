@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/flux_furnace.legacy/side",
+  "layers": {
+    "base": {
+      "texture": "blocks/flux_furnace.legacy/side.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

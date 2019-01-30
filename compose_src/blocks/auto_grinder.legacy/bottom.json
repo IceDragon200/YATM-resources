@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_grinder.legacy/bottom",
+  "layers": {
+    "base": {
+      "texture": "blocks/auto_grinder.legacy/bottom.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "frames": [
+    {"layers": ["anim.0"]},
+    {"layers": ["anim.1"]},
+    {"layers": ["anim.2"]},
+    {"layers": ["anim.3"]}
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [0,1,2,3,2,1]
+    }
+  }
+}

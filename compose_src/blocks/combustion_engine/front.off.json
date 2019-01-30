@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/combustion_engine/front.off",
+  "layers": {
+    "base": { "texture": "blocks/combustion_engine/front.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

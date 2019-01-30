@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mixer.legacy/back",
+  "layers": {
+    "base": { "texture": "blocks/mixer.legacy/back.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

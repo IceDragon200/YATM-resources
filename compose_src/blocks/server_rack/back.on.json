@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/server_rack/back.on",
+  "layers": {
+    "base": { "texture": "blocks/server_rack/back.base.png" },
+    "on.light": {
+      "texture": "blocks/server_rack/back.mask.on.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

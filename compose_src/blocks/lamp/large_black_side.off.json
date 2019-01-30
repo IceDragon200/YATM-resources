@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/lamp/large_black_side.off",
+  "layers": {
+    "base": { "texture": "blocks/lamp/large.side.png" },
+    "glass": {
+      "texture": "blocks/lamp/large.side.glass.off.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.black" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "glass"]
+    }
+  ]
+}

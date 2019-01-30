@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/hub/top.ele.off",
+  "layers": {
+    "base": { "texture": "blocks/hub/top.ele.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

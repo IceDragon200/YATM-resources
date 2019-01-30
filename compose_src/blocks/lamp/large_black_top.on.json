@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/lamp/large_black_top.on",
+  "layers": {
+    "base": { "texture": "blocks/lamp/large.top.png" },
+    "glass": {
+      "texture": "blocks/lamp/large.top.glass.on.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.black" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "glass"]
+    }
+  ]
+}

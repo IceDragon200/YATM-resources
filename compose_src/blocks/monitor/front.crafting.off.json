@@ -1,0 +1,11 @@
+{
+  "$includes": ["_variables"],
+  "variables": {"highlight_color": { "$variable": "on_color" }},
+  "output": "blocks/monitor/front.crafting.off",
+  "layers": {
+    "$includes": ["blocks/monitor/_front.layers"]
+  },
+  "frames": [
+    {"layers": ["base"]}
+  ]
+}

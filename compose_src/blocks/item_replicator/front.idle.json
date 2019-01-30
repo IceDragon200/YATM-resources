@@ -3,10 +3,10 @@
   "output": "blocks/item_replicator/front.idle",
   "layers": {
     "base": {
-      "texture": "blocks/common/textures/item_replicator_base.png"
+      "texture": "blocks/item_replicator/front.base.png"
     },
     "lights": {
-      "texture": "blocks/common/masks/item_replicator.on.mask.png",
+      "texture": "blocks/item_replicator/front.on.mask.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "idle_color" }

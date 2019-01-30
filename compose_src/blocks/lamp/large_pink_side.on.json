@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/lamp/large_pink_side.on",
+  "layers": {
+    "base": { "texture": "blocks/lamp/large.side.png" },
+    "glass": {
+      "texture": "blocks/lamp/large.side.glass.on.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.pink" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "glass"]
+    }
+  ]
+}

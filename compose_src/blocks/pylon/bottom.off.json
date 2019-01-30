@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/pylon/bottom.off",
+  "layers": {
+    "base": { "texture": "blocks/pylon/top.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

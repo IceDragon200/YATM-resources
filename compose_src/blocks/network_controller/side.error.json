@@ -1,0 +1,40 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/network_controller/side.error",
+  "layers": {
+    "base": { "texture": "blocks/network_controller/side.png" },
+    "on.light.0": {
+      "texture": "blocks/network_controller/side.mask/0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    },
+    "on.light.1": {
+      "texture": "blocks/network_controller/side.mask/1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    },
+    "on.light.2": {
+      "texture": "blocks/network_controller/side.mask/2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    },
+    "on.light.3": {
+      "texture": "blocks/network_controller/side.mask/3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light.0", "on.light.1", "on.light.2", "on.light.3"]
+    }
+  ]
+}

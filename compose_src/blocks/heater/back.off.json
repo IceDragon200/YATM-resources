@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/heater/back.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/heater/back.off.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

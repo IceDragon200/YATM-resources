@@ -3,32 +3,43 @@
   "output": "blocks/fluid_replicator/front.on",
   "layers": {
     "base": {
-      "texture": "blocks/common/textures/fluid_replicator_base.png"
+      "texture": "blocks/fluid_replicator/front.base.png"
     },
     "anim.0": {
-      "texture": "blocks/common/anim-fluid_replicator.on.anim.mask/frame_0000.png",
+      "texture": "blocks/fluid_replicator/anim-front.on.anim.mask/frame_0000.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "on_color" }
       }
     },
     "anim.1": {
-      "texture": "blocks/common/anim-fluid_replicator.on.anim.mask/frame_0001.png",
+      "texture": "blocks/fluid_replicator/anim-front.on.anim.mask/frame_0001.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "on_color" }
       }
     }
   },
   "frames": [
     {
+      "layers": ["base"]
+    },
+    {
       "layers": ["base", "anim.0"]
     },
     {
       "layers": ["base", "anim.1"]
-    },
-    {
-      "layers": ["base"]
     }
-  ]
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 3,
+      "frames": [
+        0,
+        1,
+        0,
+        2
+      ]
+    }
+  }
 }

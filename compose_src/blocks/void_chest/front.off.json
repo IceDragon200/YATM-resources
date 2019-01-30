@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/void_chest/front.off",
+  "layers": {
+    "base": { "texture": "blocks/void_chest/front.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "variables": {"highlight_color": { "$variable": "on_color" }},
+  "output": "blocks/monitor/front.console.on",
+  "layers": {
+    "$includes": ["blocks/monitor/_front.layers"]
+  },
+  "frames": [
+    {"layers": ["base", "highlight.console.0"]},
+    {"layers": ["base", "highlight.console.1"]}
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 8,
+      "frames": [
+        0,
+        1
+      ]
+    }
+  }
+}

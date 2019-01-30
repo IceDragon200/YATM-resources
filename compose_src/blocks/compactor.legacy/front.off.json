@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/compactor.legacy/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/compactor.legacy/front.off.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/crystal_cauldron/bottom",
+  "layers": {
+    "base": { "texture": "blocks/crystal_cauldron/bottom.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

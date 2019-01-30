@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/surface_drill/bottom",
+  "layers": {
+    "base": { "texture": "blocks/surface_drill/bottom.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

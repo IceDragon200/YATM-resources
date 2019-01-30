@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/network_controller/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/network_controller/front.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

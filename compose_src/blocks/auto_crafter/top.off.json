@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_crafter/top.off",
+  "layers": {
+    "base": { "texture": "blocks/auto_crafter/top.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

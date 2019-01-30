@@ -1,0 +1,87 @@
+{
+  "base": {"texture": "blocks/server/front.base.png"},
+  "c0r0": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c0r0.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c0r1": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c0r1.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c0r2": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c0r2.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c0r3": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c0r3.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c1r0": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c1r0.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c1r1": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c1r1.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c1r2": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c1r2.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c1r3": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c1r3.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c2r0": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c2r0.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c2r1": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c2r1.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c2r2": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c2r2.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  },
+  "c2r3": {
+    "texture": "blocks/server/masks/server.front.detail.mask.left.c2r3.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "cell_color" }
+    }
+  }
+}

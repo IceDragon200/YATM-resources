@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/surface_drill/top.on",
+  "layers": {
+    "base": { "texture": "blocks/surface_drill/top.png" },
+    "on.light": {
+      "texture": "blocks/surface_drill/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

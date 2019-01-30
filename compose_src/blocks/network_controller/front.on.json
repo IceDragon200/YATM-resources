@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/network_controller/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/network_controller/front.png"
+    },
+    "on.light": {
+      "texture": "blocks/network_controller/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

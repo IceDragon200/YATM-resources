@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/server_controller/back.off",
+  "layers": {
+    "base": { "texture": "blocks/server_controller/back.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mixer.legacy/front.on",
+  "layers": {
+    "anim.0": {
+      "texture": "blocks/mixer.legacy/anim-front.on/frame0000.png"
+    },
+    "anim.1": {
+      "texture": "blocks/mixer.legacy/anim-front.on/frame0001.png"
+    },
+    "anim.2": {
+      "texture": "blocks/mixer.legacy/anim-front.on/frame0002.png"
+    },
+    "anim.3": {
+      "texture": "blocks/mixer.legacy/anim-front.on/frame0003.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["anim.0"]
+    },
+    {
+      "layers": ["anim.1"]
+    },
+    {
+      "layers": ["anim.2"]
+    },
+    {
+      "layers": ["anim.3"]
+    }
+  ],
+  "meta":{
+    "animation": {
+     "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

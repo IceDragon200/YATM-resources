@@ -1,0 +1,11 @@
+{
+  "$includes": ["_variables"],
+  "variables": {"highlight_color": { "$variable": "error_color" }},
+  "output": "blocks/monitor/front.ele.error",
+  "layers": {
+    "$includes": ["blocks/monitor/_front.layers"]
+  },
+  "frames": [
+    {"layers": ["base", "highlight.ele"]}
+  ]
+}

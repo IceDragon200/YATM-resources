@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/void_crate/front.on",
+  "layers": {
+    "base": { "texture": "blocks/void_crate/front.png" },
+    "lights": {
+      "texture": "blocks/void_crate/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

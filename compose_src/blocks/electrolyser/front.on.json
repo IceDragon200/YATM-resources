@@ -1,0 +1,98 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/electrolyser/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/electrolyser/front.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0000.png"
+    },
+    "anim.1": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0001.png"
+    },
+    "anim.2": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0002.png"
+    },
+    "anim.3": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0003.png"
+    },
+    "anim.4": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0004.png"
+    },
+    "anim.5": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0005.png"
+    },
+    "anim.6": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0006.png"
+    },
+    "anim.7": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0007.png"
+    },
+    "anim.8": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0008.png"
+    },
+    "anim.9": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0009.png"
+    },
+    "anim.10": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0010.png"
+    },
+    "anim.11": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0011.png"
+    },
+    "anim.12": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0012.png"
+    },
+    "anim.13": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0013.png"
+    },
+    "anim.14": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0014.png"
+    },
+    "anim.15": {
+      "texture": "blocks/electrolyser/anim-front.on/frame0015.png"
+    }
+  },
+  "frames": [
+    {"layers": ["base", "anim.0"]},
+    {"layers": ["base", "anim.1"]},
+    {"layers": ["base", "anim.2"]},
+    {"layers": ["base", "anim.3"]},
+    {"layers": ["base", "anim.4"]},
+    {"layers": ["base", "anim.5"]},
+    {"layers": ["base", "anim.6"]},
+    {"layers": ["base", "anim.7"]},
+    {"layers": ["base", "anim.8"]},
+    {"layers": ["base", "anim.9"]},
+    {"layers": ["base", "anim.10"]},
+    {"layers": ["base", "anim.11"]},
+    {"layers": ["base", "anim.12"]},
+    {"layers": ["base", "anim.13"]},
+    {"layers": ["base", "anim.14"]},
+    {"layers": ["base", "anim.15"]}
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  }
+}

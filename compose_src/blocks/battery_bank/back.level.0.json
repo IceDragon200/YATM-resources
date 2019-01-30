@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables", "blocks/battery_bank/_back_layers"],
+  "output": "blocks/battery_bank/back.level.0",
+  "variables": {
+    "gauge_color": {"$variable": "on_color"}
+  },
+  "frames": [
+    {"layers": ["base"]}
+  ]
+}

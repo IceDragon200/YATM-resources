@@ -1,0 +1,31 @@
+{
+  "base": {"texture": "blocks/server/back.base.png"},
+  "halo.0": {
+    "texture": "blocks/server/masks/server.back.detail.mask.right.halo1.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "halo_color" }
+    }
+  },
+  "halo.1": {
+    "texture": "blocks/server/masks/server.back.detail.mask.right.halo2.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "halo_color" }
+    }
+  },
+  "halo.2": {
+    "texture": "blocks/server/masks/server.back.detail.mask.right.halo3.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "halo_color" }
+    }
+  },
+  "halo.3": {
+    "texture": "blocks/server/masks/server.back.detail.mask.right.halo4.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "halo_color" }
+    }
+  }
+}

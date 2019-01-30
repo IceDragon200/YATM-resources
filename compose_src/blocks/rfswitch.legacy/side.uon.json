@@ -1,0 +1,28 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/rfswitch.legacy/side.uon",
+  "layers": {
+    "base": {
+      "texture": "blocks/common/textures/side_panel_bus3.png"
+    },
+    "switch": {
+      "texture": "blocks/common/masks/panel_lights.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "status": {
+      "texture": "blocks/common/masks/side_panel_bus3.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "off_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "switch", "status"]
+    }
+  ]
+}

@@ -3,52 +3,52 @@
   "output": "blocks/wireless_emitter/front.on.banding",
   "layers": {
     "base": {
-      "texture": "blocks/common/textures/wireless_emitter_base.png"
+      "texture": "blocks/wireless_emitter/front.base.png"
     },
     "anim.0": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0000.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0000.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.1": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0001.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0001.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.2": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0002.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0002.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.3": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0003.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0003.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.4": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0004.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0004.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.5": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0005.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0005.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.6": {
-      "texture": "blocks/common/anim-wireless_emitter.on.banding_anim.mask/frame_0006.png",
+      "texture": "blocks/wireless_emitter/anim-front.on.banding_anim.mask/frame_0006.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
@@ -56,6 +56,9 @@
     }
   },
   "frames": [
+    {
+      "layers": ["base"]
+    },
     {
       "layers": ["base", "anim.0"]
     },
@@ -76,9 +79,21 @@
     },
     {
       "layers": ["base", "anim.6"]
-    },
-    {
-      "layers": ["base"]
     }
-  ]
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6
+      ]
+    }
+  }
 }

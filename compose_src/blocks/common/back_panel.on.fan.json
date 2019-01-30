@@ -1,5 +1,8 @@
 {
   "$includes": ["_variables", "blocks/common/_back_panel.on.fan.anim"],
+  "variables": {
+    "anim_color": { "$variable": "detail_color" }
+  },
   "output": "blocks/common/back_panel_base.on.fan",
   "layers": {
     "base": {
@@ -22,5 +25,17 @@
     {
       "layers": ["base", "fan_anim.4"]
     }
-  ]
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 5,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  }
 }

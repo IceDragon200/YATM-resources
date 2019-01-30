@@ -1,0 +1,28 @@
+{
+  "$includes": ["_variables"],
+  "variables": {
+    "cell_color": { "$variable": "on_color" }
+  },
+  "output": "blocks/server/front.on",
+  "layers": {
+    "$includes": ["blocks/server/_front.layers"]
+  },
+  "frames": [
+    {"layers": ["base", "c0r0", "c2r1", "c1r2", "c0r3"]},
+    {"layers": ["base", "c1r0", "c0r1", "c2r2", "c1r3"]},
+    {"layers": ["base", "c2r0", "c1r1", "c0r2", "c2r3"]},
+    {"layers": ["base", "c0r0", "c2r1", "c1r2", "c0r3"]},
+    {"layers": ["base", "c1r0", "c0r1", "c2r2", "c1r3"]},
+    {"layers": ["base", "c1r0", "c0r1", "c2r2", "c1r3"]}
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

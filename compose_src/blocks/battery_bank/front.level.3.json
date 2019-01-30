@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables", "blocks/battery_bank/_front_layers"],
+  "output": "blocks/battery_bank/front.level.3",
+  "variables": {
+    "gauge_color": {"$variable": "warn_color"}
+  },
+  "frames": [
+    {"layers": ["base", "gauge.1", "gauge.2", "gauge.3"]}
+  ]
+}

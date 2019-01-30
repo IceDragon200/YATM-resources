@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/wireless_receiver/top.on",
+  "layers": {
+    "base": { "texture": "blocks/common/textures/top_panel_base.png" },
+    "on.light": {
+      "texture": "blocks/common/masks/top_panel_base.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

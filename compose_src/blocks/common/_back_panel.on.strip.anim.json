@@ -4,35 +4,35 @@
       "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0000.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "anim_color" }
       }
     },
     "strip_anim.1": {
       "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0001.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "anim_color" }
       }
     },
     "strip_anim.2": {
       "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0002.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "anim_color" }
       }
     },
     "strip_anim.3": {
       "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0003.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "anim_color" }
       }
     },
     "strip_anim.4": {
       "texture": "blocks/common/anim-back_panel_base.on.anim.mask/frame_0004.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "detail_color" }
+        "value": { "$variable": "anim_color" }
       }
     }
   }

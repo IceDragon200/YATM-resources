@@ -1,0 +1,214 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/void_crate/side.on",
+  "layers": {
+    "base": { "texture": "blocks/void_crate/side.png" },
+    "light.0": {
+      "texture": "blocks/void_crate/side.mask/00.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.1": {
+      "texture": "blocks/void_crate/side.mask/01.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.2": {
+      "texture": "blocks/void_crate/side.mask/02.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.3": {
+      "texture": "blocks/void_crate/side.mask/03.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.4": {
+      "texture": "blocks/void_crate/side.mask/04.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.5": {
+      "texture": "blocks/void_crate/side.mask/05.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.6": {
+      "texture": "blocks/void_crate/side.mask/06.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.7": {
+      "texture": "blocks/void_crate/side.mask/07.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.8": {
+      "texture": "blocks/void_crate/side.mask/08.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.9": {
+      "texture": "blocks/void_crate/side.mask/09.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.10": {
+      "texture": "blocks/void_crate/side.mask/10.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.11": {
+      "texture": "blocks/void_crate/side.mask/11.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.12": {
+      "texture": "blocks/void_crate/side.mask/12.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "light.13": {
+      "texture": "blocks/void_crate/side.mask/13.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "light.0"]
+    },
+    {
+      "layers": ["base", "light.1"]
+    },
+    {
+      "layers": ["base", "light.2"]
+    },
+    {
+      "layers": ["base", "light.3"]
+    },
+    {
+      "layers": ["base", "light.4"]
+    },
+    {
+      "layers": ["base", "light.5"]
+    },
+    {
+      "layers": ["base", "light.6"]
+    },
+    {
+      "layers": ["base", "light.7"]
+    },
+    {
+      "layers": ["base", "light.0"]
+    },
+    {
+      "layers": ["base", "light.1"]
+    },
+    {
+      "layers": ["base", "light.2"]
+    },
+    {
+      "layers": ["base", "light.3"]
+    },
+    {
+      "layers": ["base", "light.4"]
+    },
+    {
+      "layers": ["base", "light.5"]
+    },
+    {
+      "layers": ["base", "light.6"]
+    },
+    {
+      "layers": ["base", "light.7"]
+    },
+    {
+      "layers": ["base", "light.8"]
+    },
+    {
+      "layers": ["base", "light.8"]
+    },
+    {
+      "layers": ["base", "light.8"]
+    },
+    {
+      "layers": ["base", "light.9"]
+    },
+    {
+      "layers": ["base", "light.10"]
+    },
+    {
+      "layers": ["base", "light.11"]
+    },
+    {
+      "layers": ["base", "light.12"]
+    },
+    {
+      "layers": ["base", "light.13"]
+    },
+    {
+      "comment": "Hold frame, pads the animation time",
+      "layers": ["base"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    }
+  }
+}

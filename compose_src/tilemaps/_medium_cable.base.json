@@ -1,0 +1,43 @@
+{
+  "$includes": ["_variables"],
+  "layers": {
+    "base": {
+      "texture": "tilemaps/medium_cable.t4x4.png"
+    },
+    "highlight.on": {
+      "texture": "tilemaps/medium_cable.mask.t4x4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "highlight.off": {
+      "texture": "tilemaps/medium_cable.mask.t4x4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "off_color" }
+      }
+    },
+    "highlight.signal": {
+      "texture": "tilemaps/medium_cable.mask.t4x4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    },
+    "highlight.idle": {
+      "texture": "tilemaps/medium_cable.mask.t4x4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "highlight.error": {
+      "texture": "tilemaps/medium_cable.mask.t4x4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  }
+}

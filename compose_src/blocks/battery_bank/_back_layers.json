@@ -1,0 +1,33 @@
+{
+  "layers": {
+    "base": {"texture": "blocks/battery_bank/back.base.png"},
+    "gauge.1": {
+      "texture": "blocks/battery_bank/back.mask.1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "gauge_color" }
+      }
+    },
+    "gauge.2": {
+      "texture": "blocks/battery_bank/back.mask.2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "gauge_color" }
+      }
+    },
+    "gauge.3": {
+      "texture": "blocks/battery_bank/back.mask.3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "gauge_color" }
+      }
+    },
+    "gauge.4": {
+      "texture": "blocks/battery_bank/back.mask.4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "gauge_color" }
+      }
+    }
+  }
+}

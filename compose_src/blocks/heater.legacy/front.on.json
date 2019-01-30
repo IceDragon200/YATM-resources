@@ -1,0 +1,95 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/heater.legacy/front.on",
+  "layers": {
+    "anim.0": { "texture": "blocks/heater.legacy/anim-front.on/frame_0000.png" },
+    "anim.1": { "texture": "blocks/heater.legacy/anim-front.on/frame_0001.png" },
+    "anim.2": { "texture": "blocks/heater.legacy/anim-front.on/frame_0002.png" },
+    "anim.3": { "texture": "blocks/heater.legacy/anim-front.on/frame_0003.png" },
+    "anim.4": { "texture": "blocks/heater.legacy/anim-front.on/frame_0004.png" },
+    "anim.5": { "texture": "blocks/heater.legacy/anim-front.on/frame_0005.png" },
+    "anim.6": { "texture": "blocks/heater.legacy/anim-front.on/frame_0006.png" },
+    "anim.7": { "texture": "blocks/heater.legacy/anim-front.on/frame_0007.png" },
+    "anim.8": { "texture": "blocks/heater.legacy/anim-front.on/frame_0008.png" },
+    "anim.9": { "texture": "blocks/heater.legacy/anim-front.on/frame_0009.png" },
+    "anim.10": { "texture": "blocks/heater.legacy/anim-front.on/frame_0010.png" },
+    "anim.11": { "texture": "blocks/heater.legacy/anim-front.on/frame_0011.png" },
+    "anim.12": { "texture": "blocks/heater.legacy/anim-front.on/frame_0012.png" },
+    "anim.13": { "texture": "blocks/heater.legacy/anim-front.on/frame_0013.png" },
+    "anim.14": { "texture": "blocks/heater.legacy/anim-front.on/frame_0014.png" },
+    "anim.15": { "texture": "blocks/heater.legacy/anim-front.on/frame_0015.png" }
+  },
+  "frames": [
+    {
+      "layers": ["anim.0"]
+    },
+    {
+      "layers": ["anim.1"]
+    },
+    {
+      "layers": ["anim.2"]
+    },
+    {
+      "layers": ["anim.3"]
+    },
+    {
+      "layers": ["anim.4"]
+    },
+    {
+      "layers": ["anim.5"]
+    },
+    {
+      "layers": ["anim.6"]
+    },
+    {
+      "layers": ["anim.7"]
+    },
+    {
+      "layers": ["anim.8"]
+    },
+    {
+      "layers": ["anim.9"]
+    },
+    {
+      "layers": ["anim.10"]
+    },
+    {
+      "layers": ["anim.11"]
+    },
+    {
+      "layers": ["anim.12"]
+    },
+    {
+      "layers": ["anim.13"]
+    },
+    {
+      "layers": ["anim.14"]
+    },
+    {
+      "layers": ["anim.15"]
+    }
+  ],
+  "meta": {
+    "animation": {
+     "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  }
+}

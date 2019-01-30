@@ -1,0 +1,96 @@
+{
+  "layers": {
+    "base": {"texture": "blocks/battery_bank/top.base.png"},
+    "inner.1": {
+      "texture": "blocks/battery_bank/top.mask.inner.1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "inner_color" }
+      }
+    },
+    "inner.2": {
+      "texture": "blocks/battery_bank/top.mask.inner.2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "inner_color" }
+      }
+    },
+    "inner.3": {
+      "texture": "blocks/battery_bank/top.mask.inner.3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "inner_color" }
+      }
+    },
+    "inner.4": {
+      "texture": "blocks/battery_bank/top.mask.inner.4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "inner_color" }
+      }
+    },
+    "inner.5": {
+      "texture": "blocks/battery_bank/top.mask.inner.5.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "inner_color" }
+      }
+    },
+    "outer.1": {
+      "texture": "blocks/battery_bank/top.mask.outer.1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.2": {
+      "texture": "blocks/battery_bank/top.mask.outer.2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.3": {
+      "texture": "blocks/battery_bank/top.mask.outer.3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.4": {
+      "texture": "blocks/battery_bank/top.mask.outer.4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.5": {
+      "texture": "blocks/battery_bank/top.mask.outer.5.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.6": {
+      "texture": "blocks/battery_bank/top.mask.outer.6.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.7": {
+      "texture": "blocks/battery_bank/top.mask.outer.7.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    },
+    "outer.8": {
+      "texture": "blocks/battery_bank/top.mask.outer.8.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "outer_color" }
+      }
+    }
+  }
+}

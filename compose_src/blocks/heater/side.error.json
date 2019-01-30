@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/heater/side.error",
+  "layers": {
+    "base": {
+      "texture": "blocks/heater/side.off.png"
+    },
+    "lights": {
+      "texture": "blocks/heater/side.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$includes": ["tilemaps/_medium_cable.base"],
+  "output": "tilemaps/medium_cable.signal.t4x4",
+  "frames": [
+    {
+      "layers": ["base", "highlight.signal"]
+    }
+  ]
+}

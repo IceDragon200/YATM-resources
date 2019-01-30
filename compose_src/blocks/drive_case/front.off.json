@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/drive_case/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/drive_case/front.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

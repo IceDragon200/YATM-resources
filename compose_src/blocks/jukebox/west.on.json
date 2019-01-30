@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/jukebox/west.on",
+  "layers": {
+    "base": { "texture": "blocks/jukebox/west.png" },
+    "on.light": {
+      "texture": "blocks/jukebox/west.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

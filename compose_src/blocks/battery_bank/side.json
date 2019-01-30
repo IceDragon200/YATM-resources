@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/battery_bank/side",
+  "layers": {
+    "base": {"texture": "blocks/battery_bank/side.base.png"}
+  },
+  "frames": [
+    {"layers": ["base"]}
+  ]
+}

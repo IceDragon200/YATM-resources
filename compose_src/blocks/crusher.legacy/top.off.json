@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/crusher.legacy/top.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/crusher.legacy/top.off.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

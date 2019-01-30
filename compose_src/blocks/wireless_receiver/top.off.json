@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/wireless_receiver/top.off",
+  "layers": {
+    "base": { "texture": "blocks/common/textures/top_panel_base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

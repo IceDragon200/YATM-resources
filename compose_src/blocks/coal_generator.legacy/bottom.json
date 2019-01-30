@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/coal_generator.legacy/bottom",
+  "layers": {
+    "base": { "texture": "blocks/coal_generator.legacy/bottom.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

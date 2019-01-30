@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/monitor/back",
+  "layers": {
+    "base": { "texture": "blocks/common/textures/back_panel.4pin.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

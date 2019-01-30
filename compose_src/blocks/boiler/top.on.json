@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/boiler/top.on",
+  "layers": {
+    "base": { "texture": "blocks/boiler/top.on.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

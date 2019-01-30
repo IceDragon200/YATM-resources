@@ -1,0 +1,7 @@
+{
+  "$includes": ["_variables", "blocks/pylon/_top.base"],
+  "variables": {
+    "highlight_color": { "$variable": "error_color" }
+  },
+  "output": "blocks/pylon/bottom.error"
+}

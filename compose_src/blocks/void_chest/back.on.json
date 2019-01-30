@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/void_chest/back.on",
+  "layers": {
+    "base": { "texture": "blocks/void_chest/back.png" },
+    "lights": {
+      "texture": "blocks/void_chest/back.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

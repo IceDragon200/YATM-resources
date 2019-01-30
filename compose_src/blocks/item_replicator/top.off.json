@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/item_replicator/top.off",
+  "layers": {
+    "base": { "texture": "blocks/common/textures/side_panel.sml.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

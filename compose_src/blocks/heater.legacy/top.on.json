@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/heater.legacy/top.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/heater.legacy/top.on.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

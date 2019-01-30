@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/crusher/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/crusher/front.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/crusher/anim-blades/frame0000.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    }
+  ]
+}

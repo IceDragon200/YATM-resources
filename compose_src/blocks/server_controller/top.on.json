@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/server_controller/top.on",
+  "layers": {
+    "base": { "texture": "blocks/server_controller/top.png" },
+    "on.light": {
+      "texture": "blocks/server_controller/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

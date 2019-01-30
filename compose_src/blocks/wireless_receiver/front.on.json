@@ -3,24 +3,24 @@
   "output": "blocks/wireless_receiver/front.on",
   "layers": {
     "base": {
-      "texture": "blocks/common/textures/wireless_receiver_base.png"
+      "texture": "blocks/wireless_receiver/front.base.png"
     },
     "anim.0": {
-      "texture": "blocks/common/anim-wireless_receiver.on.anim.mask/frame_0000.png",
+      "texture": "blocks/wireless_receiver/anim-front.on.anim.mask/frame_0000.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.1": {
-      "texture": "blocks/common/anim-wireless_receiver.on.anim.mask/frame_0001.png",
+      "texture": "blocks/wireless_receiver/anim-front.on.anim.mask/frame_0001.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
       }
     },
     "anim.2": {
-      "texture": "blocks/common/anim-wireless_receiver.on.anim.mask/frame_0002.png",
+      "texture": "blocks/wireless_receiver/anim-front.on.anim.mask/frame_0002.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "signal_color" }
@@ -40,5 +40,16 @@
     {
       "layers": ["base"]
     }
-  ]
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 6,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
 }

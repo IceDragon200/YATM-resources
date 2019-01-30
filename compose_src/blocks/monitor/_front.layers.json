@@ -1,0 +1,40 @@
+{
+  "base": {
+    "texture": "blocks/monitor/front.png"
+  },
+  "highlight.console.0": {
+    "texture": "blocks/monitor/front.console.mask/0.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "highlight_color" }
+    }
+  },
+  "highlight.console.1": {
+    "texture": "blocks/monitor/front.console.mask/1.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "highlight_color" }
+    }
+  },
+  "highlight.crafting": {
+    "texture": "blocks/monitor/front.crafting.mask.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "highlight_color" }
+    }
+  },
+  "highlight.ele": {
+    "texture": "blocks/monitor/front.ele.mask.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "highlight_color" }
+    }
+  },
+  "highlight.inventory": {
+    "texture": "blocks/monitor/front.inventory.mask.png",
+    "blend": {
+      "type": "multiply_color",
+      "value": { "$variable": "highlight_color" }
+    }
+  }
+}

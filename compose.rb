@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
-require 'active_support/core_ext/hash'
+require 'bundler'
+Bundler.require
 require 'dragontk/thread_pool'
 require 'dragontk/thread_safe'
-require 'moon-logfmt/logger'
-require 'minil'
+require 'active_support/core_ext/hash'
 require 'minil/image'
 require 'minil/color'
+require 'moon-logfmt/logger'
 require 'oj'
 require 'pathname'
 require 'fileutils'
@@ -30,13 +31,40 @@ class Minil::Image
       end
     end
   end
+
+  private def blend_colorf(r, g, b, a, r2, g2, b2, a2, &blend)
+    return (blend.call(r / 255.0, r2 / 255.0) * 255).to_i,
+      (blend.call(g / 255.0, g2 / 255.0) * 255).to_i,
+      (blend.call(b / 255.0, b2 / 255.0) * 255).to_i,
+      a * a2 / 255
+  end
+
+  def blend_overlay_fill_rect(x, y, w, h, color)
+    cr, cg, cb, ca = Minil::Color.cast_to_channels(color)
+    h.times do |row|
+      w.times do |col|
+        dx, dy = x + col, y + row
+        pixel = get_pixel(dx, dy)
+        r, g, b, a = Minil::Color.decode(pixel)
+        next if a == 0
+        c = Minil::Color.encode(*blend_colorf(r, g, b, a, cr, cg, cb, ca) do |n, n2|
+          if n < 0.5
+            2 * (n * n2)
+          else
+            1 - 2 * (1 - n) * (1 - n2)
+          end
+        end)
+        set_pixel(dx, dy, c)
+      end
+    end
+  end
 end
 
 module Compose
 end
 
 class Compose::Transform
-  class Tuple < Struct.new(:x, :y)
+  class Vec2 < Struct.new(:x, :y)
   end
 
   attr_reader :translate
@@ -48,8 +76,8 @@ class Compose::Transform
     @scale = [1.0, 1.0]
     @rotation = 0.0
     if data
-      @translate = Tuple.new(*data.fetch('translate', @translate))
-      @scale = Tuple.new(*data.fetch('scale', @scale))
+      @translate = Vec2.new(*data.fetch('translate', @translate))
+      @scale = Vec2.new(*data.fetch('scale', @scale))
       @rotation = data.fetch('rotation', @rotation)
     end
   end
@@ -85,6 +113,9 @@ class Compose::FrameCompositor
       when 'multiply_color'
         blit_frame.blit_r(texture, 0, 0, texture.rect)
         blit_frame.blend_multiply_fill_rect(0, 0, blit_frame.width, blit_frame.height, blend.fetch('value'))
+      when 'overlay_color'
+        blit_frame.blit_r(texture, 0, 0, texture.rect)
+        blit_frame.blend_overlay_fill_rect(0, 0, blit_frame.width, blit_frame.height, blend.fetch('value'))
       else
         raise ArgumentError, "unsupported blend mode #{type}"
       end
@@ -228,7 +259,12 @@ class Compose::Application
   end
 
   def load_json(filename)
-    Oj.load(File.read(filename))
+    begin
+      Oj.load(File.read(filename))
+    rescue Oj::ParseError => ex
+      @logger.error filename: filename
+      raise ex
+    end
   end
 
   private def replace_with_variables(vt, data)
@@ -297,11 +333,14 @@ class Compose::Application
   end
 
   def load_composer_file(filename, **options)
-    preprocess_data(load_json(filename), options)
+    case File.extname(filename).downcase
+    when ".json"
+      preprocess_data(load_json(filename), options)
+    end
   end
 
   def compose_file(filename)
-    log = @logger.new thread: Thread.current.to_s, filename: filename
+    log = @logger.new thread: Thread.current.__id__, filename: filename
     log.info filename: filename, msg: "Loading Compose file"
     data = load_composer_file(filename)
     unless data.has_key?('output')
@@ -316,6 +355,9 @@ class Compose::Application
     project.perform
     log.info target_filename: target_filename.to_s + '.png', msg: "Saving File"
     project.result.save_file target_filename.to_s + '.png'
+    if data.key?('meta')
+      File.write(target_filename.to_s + '.png.mcmeta', Oj.dump(data.fetch('meta')))
+    end
     GC.start
   end
 
@@ -329,7 +371,7 @@ class Compose::Application
     files = optparse.parse(argv)
     thread_limit = [thread_limit, 1].max
 
-    tp = ThreadPool.new thread_limit: thread_limit
+    tp = DragonTK::ThreadPool.new thread_limit: thread_limit
 
     begin
       if files.empty?

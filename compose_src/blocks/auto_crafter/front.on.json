@@ -1,0 +1,84 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_crafter/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/auto_crafter/front.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/auto_crafter/anim-front.mask/frame0000.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.1": {
+      "texture": "blocks/auto_crafter/anim-front.mask/frame0001.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.2": {
+      "texture": "blocks/auto_crafter/anim-front.mask/frame0002.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.3": {
+      "texture": "blocks/auto_crafter/anim-front.mask/frame0003.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.4": {
+      "texture": "blocks/auto_crafter/anim-front.mask/frame0004.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.5": {
+      "texture": "blocks/auto_crafter/anim-front.mask/frame0005.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.3"]
+    },
+    {
+      "layers": ["base", "anim.4"]
+    },
+    {
+      "layers": ["base", "anim.5"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  }
+}

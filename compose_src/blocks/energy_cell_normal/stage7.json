@@ -1,0 +1,20 @@
+{
+  "$includes": [
+    "blocks/_energy_cell_common/animation"
+  ],
+  "output": "blocks/energy_cell_normal/stage7",
+  "layers": {
+    "anim.0": {
+      "texture": "blocks/energy_cell_normal/anim-Stage7/frame_0000.png"
+    },
+    "anim.1": {
+      "texture": "blocks/energy_cell_normal/anim-Stage7/frame_0001.png"
+    },
+    "anim.2": {
+      "texture": "blocks/energy_cell_normal/anim-Stage7/frame_0002.png"
+    },
+    "anim.3": {
+      "texture": "blocks/energy_cell_normal/anim-Stage7/frame_0003.png"
+    }
+  }
+}

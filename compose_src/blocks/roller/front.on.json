@@ -1,0 +1,46 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/roller/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/roller/front.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/roller/anim-blades/frame0000.png"
+    },
+    "anim.1": {
+      "texture": "blocks/roller/anim-blades/frame0001.png"
+    },
+    "anim.2": {
+      "texture": "blocks/roller/anim-blades/frame0002.png"
+    },
+    "anim.3": {
+      "texture": "blocks/roller/anim-blades/frame0003.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.3"]
+    }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

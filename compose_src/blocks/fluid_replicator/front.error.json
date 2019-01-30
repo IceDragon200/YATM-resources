@@ -3,10 +3,10 @@
   "output": "blocks/fluid_replicator/front.error",
   "layers": {
     "base": {
-      "texture": "blocks/common/textures/fluid_replicator_base.png"
+      "texture": "blocks/fluid_replicator/front.base.png"
     },
     "lights": {
-      "texture": "blocks/common/masks/fluid_replicator.on.mask.png",
+      "texture": "blocks/fluid_replicator/front.on.mask.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "error_color" }

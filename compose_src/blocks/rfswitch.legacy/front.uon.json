@@ -1,0 +1,28 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/rfswitch.legacy/front.uon",
+  "layers": {
+    "base": {
+      "texture": "blocks/rfswitch.legacy/front_base.png"
+    },
+    "switch": {
+      "texture": "blocks/rfswitch.legacy/rfswitch.switch.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "status": {
+      "texture": "blocks/rfswitch.legacy/rfswitch.powered.off.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "off_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "switch", "status"]
+    }
+  ]
+}

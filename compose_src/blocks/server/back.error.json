@@ -1,0 +1,13 @@
+{
+  "$includes": ["_variables"],
+  "variables": {
+    "halo_color": { "$variable": "error_color" }
+  },
+  "output": "blocks/server/back.error",
+  "layers": {
+    "$includes": ["blocks/server/_back.layers"]
+  },
+  "frames": [
+    {"layers": ["base", "halo.0", "halo.1", "halo.2", "halo.3"]}
+  ]
+}

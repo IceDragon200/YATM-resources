@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/jukebox/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/jukebox/front.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

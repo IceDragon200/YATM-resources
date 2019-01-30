@@ -1,0 +1,9 @@
+{
+  "$includes": ["tilemaps/_riveted_panel.base"],
+  "output": "tilemaps/riveted_panel.idle.t4x3",
+  "frames": [
+    {
+      "layers": ["base", "highlight.idle"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/crusher.legacy/back",
+  "layers": {
+    "base": {
+      "texture": "blocks/crusher.legacy/back.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

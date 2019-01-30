@@ -1,0 +1,26 @@
+{
+  "$includes": ["_variables"],
+  "variables": {
+    "halo_color": { "$variable": "on_color" }
+  },
+  "output": "blocks/server/back.on",
+  "layers": {
+    "$includes": ["blocks/server/_back.layers"]
+  },
+  "frames": [
+    {"layers": ["base"]},
+    {"layers": ["base", "halo.0"]},
+    {"layers": ["base", "halo.0", "halo.1"]},
+    {"layers": ["base", "halo.0", "halo.1", "halo.2"]},
+    {"layers": ["base", "halo.0", "halo.1", "halo.2", "halo.3"]},
+    {"layers": ["base", "halo.1", "halo.2", "halo.3"]},
+    {"layers": ["base", "halo.2", "halo.3"]},
+    {"layers": ["base", "halo.3"]}
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [0,1,2,3,4,0,4,0,4,5,6,7]
+    }
+  }
+}

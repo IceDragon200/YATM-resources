@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_grinder/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/auto_grinder/front.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/auto_grinder/anim-teeth/frame0000.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    }
+  ]
+}

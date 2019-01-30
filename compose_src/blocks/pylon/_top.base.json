@@ -1,0 +1,146 @@
+{
+  "layers": {
+    "base": { "texture": "blocks/pylon/top.png" },
+    "light.0": {
+      "texture": "blocks/pylon/top.mask/00.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.1": {
+      "texture": "blocks/pylon/top.mask/01.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.2": {
+      "texture": "blocks/pylon/top.mask/02.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.3": {
+      "texture": "blocks/pylon/top.mask/03.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.4": {
+      "texture": "blocks/pylon/top.mask/04.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.5": {
+      "texture": "blocks/pylon/top.mask/05.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.6": {
+      "texture": "blocks/pylon/top.mask/06.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.7": {
+      "texture": "blocks/pylon/top.mask/07.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.8": {
+      "texture": "blocks/pylon/top.mask/08.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.9": {
+      "texture": "blocks/pylon/top.mask/09.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.10": {
+      "texture": "blocks/pylon/top.mask/10.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    },
+    "light.11": {
+      "texture": "blocks/pylon/top.mask/11.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "highlight_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "light.0"]
+    },
+    {
+      "layers": ["base", "light.1"]
+    },
+    {
+      "layers": ["base", "light.2"]
+    },
+    {
+      "layers": ["base", "light.3"]
+    },
+    {
+      "layers": ["base", "light.4"]
+    },
+    {
+      "layers": ["base", "light.5"]
+    },
+    {
+      "layers": ["base", "light.6"]
+    },
+    {
+      "layers": ["base", "light.7"]
+    },
+    {
+      "layers": ["base", "light.8"]
+    },
+    {
+      "layers": ["base", "light.9"]
+    },
+    {
+      "layers": ["base", "light.10"]
+    },
+    {
+      "layers": ["base", "light.11"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/server_rack/front.on",
+  "layers": {
+    "base": { "texture": "blocks/server_rack/front.base.png" },
+    "on.light": {
+      "texture": "blocks/server_rack/front.mask.on.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.0": {
+      "texture": "blocks/server_rack/front.mask.cut0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.1": {
+      "texture": "blocks/server_rack/front.mask.cut1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.2": {
+      "texture": "blocks/server_rack/front.mask.cut2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    },
+    {
+      "layers": ["base", "on.light", "anim.0"]
+    },
+    {
+      "layers": ["base", "on.light", "anim.1"]
+    },
+    {
+      "layers": ["base", "on.light", "anim.2"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0,
+        0
+      ]
+    }
+  }
+}
