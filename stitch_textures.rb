@@ -8,6 +8,7 @@ require 'fileutils'
 require 'set'
 require 'dragontk/thread_pool'
 require 'scrapyard/file_formats/png'
+require_relative 'compose_context'
 
 def get_png_dimensions(filename)
   File.open(filename, 'rb') do |file|
@@ -62,10 +63,10 @@ source_groups =
   requested_stitching.reduce([]) do |acc, name|
     case name
     when ":all"
-      acc.push([:all, Dir.glob("build/blocks/**/*.png") + Dir.glob("build/tiles/**/*.png")])
+      acc.push(["all", Dir.glob("build/blocks/**/*.png") + Dir.glob("build/tiles/**/*.png")])
       acc
     when ":blocks"
-      acc.push([:blocks, Dir.glob("build/blocks/**/*.png")])
+      acc.push(["blocks", Dir.glob("build/blocks/**/*.png")])
       acc
     when ":each_block"
       parent_dir = {}
@@ -76,16 +77,31 @@ source_groups =
       end
       acc.concat(parent_dir.to_a)
     when ":tiles"
-      acc.push([:tiles, Dir.glob("build/tiles/**/*.png")])
+      acc.push(["tiles", Dir.glob("build/tiles/**/*.png")])
       acc
     else
-      acc.push([name, Dir.glob("build/blocks/#{name}/*.png") + Dir.glob("build/tiles/#{name}/*.png")])
-      acc
+      files = Dir.glob("build/blocks/#{name}/*.png") + Dir.glob("build/tiles/#{name}/*.png")
+      unless files.empty?
+        acc.push([name, files])
+        acc
+      end
     end
   end.map do |(name, sources)|
     [name, sources.reject do |filename|
       filename.include?(".legacy/") or filename.include?("/common/")
     end.sort]
+  end.filter do |(group_name, sources)|
+    ctx = Compose::Context.new("build/#{group_name}")
+    ctx.add_reference(nil, __FILE__)
+    sources.each do |source_filename|
+      if ctx.is_reference?(source_filename)
+        #
+      else
+        ctx.add_reference(nil, source_filename)
+      end
+    end
+    ctx.save_file()
+    ctx.modified
   end
 
 puts "Found #{source_groups.size} groups"
@@ -240,6 +256,16 @@ source_groups.each do |(source_group_name, sources)|
   end
   cols = frame_w / cell_w
   frame_files = {}
+
+  begin
+    frame_index_table = {}
+    sources.each_with_index do |source, index|
+      frame_index_key = File.join(File.basename(File.dirname(source)), File.basename(source))
+      frame_index_table[frame_index_key] = index
+    end
+    File.write(File.join(animation_texture_dirname, 'frame.index.json'), JSON.dump(frame_index_table))
+  end
+
   begin
     lcm.times do |frame_index|
       thread_pool.spawn do |index:,**_opts|
@@ -292,10 +318,11 @@ source_groups.each do |(source_group_name, sources)|
   frame_files = frame_files.values.sort
 
   begin
+    frame_size_limit = 256
     [1, 2, 4, 8].each do |scale|
-      if frame_h > 512
-        if scale > 2 then
-          puts "Frame exceeds 512 pixels, skipping scale #{scale}"
+      if frame_h > frame_size_limit
+        if scale > 1 then
+          puts "Frame exceeds #{frame_size_limit} pixels, skipping scale #{scale}"
           next
         end
       end
