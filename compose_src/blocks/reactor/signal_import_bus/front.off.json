@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/signal_import_bus_front.off",
+  "layers": {
+    "base": { "texture": "blocks/reactor/import_bus.signal.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

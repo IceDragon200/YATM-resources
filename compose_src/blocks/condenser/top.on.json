@@ -1,0 +1,27 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/condenser/top.on",
+  "layers": {
+    "base.0": { "texture": "blocks/condenser/top.on.anim/0.png" },
+    "base.1": { "texture": "blocks/condenser/top.on.anim/1.png" },
+    "base.2": { "texture": "blocks/condenser/top.on.anim/2.png" },
+    "base.3": { "texture": "blocks/condenser/top.on.anim/3.png" }
+  },
+  "frames": [
+    { "layers": ["base.0"] },
+    { "layers": ["base.1"] },
+    { "layers": ["base.2"] },
+    { "layers": ["base.3"] }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

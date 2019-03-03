@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/panel.plain",
+  "layers": {
+    "base": { "texture": "blocks/reactor/panel.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

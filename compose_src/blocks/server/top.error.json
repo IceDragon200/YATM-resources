@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/server/top.error",
+  "layers": {
+    "base": { "texture": "blocks/server/top.base.png" },
+    "mask": {
+      "texture": "blocks/server/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

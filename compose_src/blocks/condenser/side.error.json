@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/condenser/side.error",
+  "layers": {
+    "base": { "texture": "blocks/condenser/side.base.png" },
+    "mask": {
+      "texture": "blocks/condenser/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_crafter/side.error",
+  "layers": {
+    "base": { "texture": "blocks/auto_crafter/side.base.png" },
+    "on.light": {
+      "texture": "blocks/auto_crafter/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

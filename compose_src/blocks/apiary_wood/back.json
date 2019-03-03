@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/apiary_wood/back",
+  "layers": {
+    "base": { "texture": "blocks/apiary_wood/back.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

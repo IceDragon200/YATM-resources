@@ -1,0 +1,60 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/compactor/side.on",
+  "layers": {
+    "base": { "texture": "blocks/compactor/side.base.png" },
+    "anim.0": {
+      "texture": "blocks/compactor/side.anim.mask/0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.1": {
+      "texture": "blocks/compactor/side.anim.mask/1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.2": {
+      "texture": "blocks/compactor/side.anim.mask/2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "anim.3": {
+      "texture": "blocks/compactor/side.anim.mask/3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.3"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 6,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "$includes": ["_variables"],
   "output": "blocks/compactor/back.off",
   "layers": {
-    "base": { "texture": "blocks/compactor/back.png" }
+    "base": { "texture": "blocks/compactor/back.base.png" }
   },
   "frames": [
     {

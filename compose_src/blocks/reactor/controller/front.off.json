@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/controller_front.off",
+  "layers": {
+    "base": { "texture": "blocks/reactor/controller.front.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

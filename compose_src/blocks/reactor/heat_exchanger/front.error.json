@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/heat_exchanger_front.error",
+  "layers": {
+    "base": { "texture": "blocks/reactor/heat_exchanger.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

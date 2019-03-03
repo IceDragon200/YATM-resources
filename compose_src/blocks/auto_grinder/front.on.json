@@ -5,6 +5,13 @@
     "base": {
       "texture": "blocks/auto_grinder/front.base.png"
     },
+    "on.light": {
+      "texture": "blocks/auto_grinder/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
     "anim.0": {
       "texture": "blocks/auto_grinder/anim-teeth/frame0000.png"
     },
@@ -20,16 +27,16 @@
   },
   "frames": [
     {
-      "layers": ["base", "anim.0"]
+      "layers": ["base", "on.light", "anim.0"]
     },
     {
-      "layers": ["base", "anim.1"]
+      "layers": ["base", "on.light", "anim.1"]
     },
     {
-      "layers": ["base", "anim.2"]
+      "layers": ["base", "on.light", "anim.2"]
     },
     {
-      "layers": ["base", "anim.3"]
+      "layers": ["base", "on.light", "anim.3"]
     }
   ],
   "meta": {

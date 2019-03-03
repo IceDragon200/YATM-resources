@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/steam_turbine/side.off",
+  "layers": {
+    "base": { "texture": "blocks/steam_turbine/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

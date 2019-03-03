@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/panel.rb.stripes",
+  "layers": {
+    "base": { "texture": "blocks/reactor/panel.rb.stripes.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

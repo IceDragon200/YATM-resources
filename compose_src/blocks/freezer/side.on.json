@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/freezer/side.on",
+  "layers": {
+    "base": { "texture": "blocks/freezer/side.on.png" },
+    "mask": {
+      "texture": "blocks/freezer/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

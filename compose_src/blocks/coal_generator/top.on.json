@@ -9,11 +9,39 @@
         "type": "multiply_color",
         "value": { "$variable": "on_color" }
       }
+    },
+    "anim.0": {
+      "texture": "blocks/coal_generator/top.heat.anim/0.png"
+    },
+    "anim.1": {
+      "texture": "blocks/coal_generator/top.heat.anim/1.png"
+    },
+    "anim.2": {
+      "texture": "blocks/coal_generator/top.heat.anim/2.png"
+    },
+    "anim.3": {
+      "texture": "blocks/coal_generator/top.heat.anim/3.png"
     }
   },
   "frames": [
-    {
-      "layers": ["base", "on.light"]
+    {"layers": ["base", "on.light", "anim.0"]},
+    {"layers": ["base", "on.light", "anim.1"]},
+    {"layers": ["base", "on.light", "anim.2"]},
+    {"layers": ["base", "on.light", "anim.3"]},
+    {"layers": ["base", "on.light", "anim.2"]},
+    {"layers": ["base", "on.light", "anim.1"]}
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 4,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     }
-  ]
+  }
 }

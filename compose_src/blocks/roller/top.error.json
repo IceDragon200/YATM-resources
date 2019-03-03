@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/roller/top.error",
+  "layers": {
+    "base": { "texture": "blocks/roller/top.base.png" },
+    "on.light": {
+      "texture": "blocks/roller/top.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

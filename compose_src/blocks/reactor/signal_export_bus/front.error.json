@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/signal_export_bus_front.error",
+  "layers": {
+    "base": { "texture": "blocks/reactor/export_bus.signal.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

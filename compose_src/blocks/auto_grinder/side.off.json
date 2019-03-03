@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_grinder/side.off",
+  "layers": {
+    "base": { "texture": "blocks/auto_grinder/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

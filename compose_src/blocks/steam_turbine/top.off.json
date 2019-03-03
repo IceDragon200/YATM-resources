@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/steam_turbine/top.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/steam_turbine/top.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/steam_turbine/top.anim.frames/0.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    }
+  ]
+}

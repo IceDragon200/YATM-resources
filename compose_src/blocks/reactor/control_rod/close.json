@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/control_rod.close",
+  "layers": {
+    "base": { "texture": "blocks/reactor/control_rod.cover.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

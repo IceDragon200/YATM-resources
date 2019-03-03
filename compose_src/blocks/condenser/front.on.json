@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/condenser/front.on",
+  "layers": {
+    "base": { "texture": "blocks/condenser/front.on.png" },
+    "mask": {
+      "texture": "blocks/condenser/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

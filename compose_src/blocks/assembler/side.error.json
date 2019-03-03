@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/assembler/side.error",
+  "layers": {
+    "base": { "texture": "blocks/assembler/side.base.png" },
+    "mask": {
+      "texture": "blocks/assembler/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

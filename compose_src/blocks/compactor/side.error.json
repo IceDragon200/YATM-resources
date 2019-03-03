@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/compactor/side.error",
+  "layers": {
+    "base": { "texture": "blocks/compactor/side.base.png" },
+    "on.light": {
+      "texture": "blocks/compactor/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}
