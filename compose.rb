@@ -4,61 +4,13 @@ Bundler.require
 require 'dragontk/thread_pool'
 require 'dragontk/thread_safe'
 require 'active_support/core_ext/hash'
-require 'minil/image'
-require 'minil/color'
 require 'moon-logfmt/logger'
 require 'json'
 require 'pathname'
 require 'fileutils'
 require 'optparse'
-
-class Minil::Image
-  def blend_multiply_fill_rect(x, y, w, h, color)
-    cr, cg, cb, ca = Minil::Color.cast_to_channels(color)
-    h.times do |row|
-      w.times do |col|
-        dx, dy = x + col, y + row
-        pixel = get_pixel(dx, dy)
-        r, g, b, a = Minil::Color.decode(pixel)
-        next if a == 0
-        c = Minil::Color.encode(
-          r * cr / 255,
-          g * cg / 255,
-          b * cb / 255,
-          a * ca / 255
-        )
-        set_pixel(dx, dy, c)
-      end
-    end
-  end
-
-  private def blend_colorf(r, g, b, a, r2, g2, b2, a2, &blend)
-    return (blend.call(r / 255.0, r2 / 255.0) * 255).to_i,
-      (blend.call(g / 255.0, g2 / 255.0) * 255).to_i,
-      (blend.call(b / 255.0, b2 / 255.0) * 255).to_i,
-      a * a2 / 255
-  end
-
-  def blend_overlay_fill_rect(x, y, w, h, color)
-    cr, cg, cb, ca = Minil::Color.cast_to_channels(color)
-    h.times do |row|
-      w.times do |col|
-        dx, dy = x + col, y + row
-        pixel = get_pixel(dx, dy)
-        r, g, b, a = Minil::Color.decode(pixel)
-        next if a == 0
-        c = Minil::Color.encode(*blend_colorf(r, g, b, a, cr, cg, cb, ca) do |n, n2|
-          if n < 0.5
-            2 * (n * n2)
-          else
-            1 - 2 * (1 - n) * (1 - n2)
-          end
-        end)
-        set_pixel(dx, dy, c)
-      end
-    end
-  end
-end
+require_relative 'compose_context'
+require_relative 'lib/minil'
 
 module Compose
 end
@@ -95,8 +47,9 @@ class Compose::FrameCompositor
   attr_reader :project
   attr_reader :result
 
-  def initialize(project, data, logger:)
+  def initialize(project, data, context:, logger:)
     @logger = logger
+    @context = context
     @project = project
     @data = data
     @frame_layers = @data.fetch('layers')
@@ -188,7 +141,8 @@ class Compose::Project
   attr_reader :w
   attr_reader :h
 
-  def initialize(env, data, logger:)
+  def initialize(env, data, context:, logger:)
+    @context = context
     @logger = logger
     @env = env
     @data = data
@@ -200,7 +154,8 @@ class Compose::Project
     @layers = {}
     @source_layers.each_pair do |layer_name, layer|
       texture_filename = @env.texture_dir.join(layer.fetch('texture')).to_s
-      @env.texture_cache[texture_filename] ||= Minil::Image.load_file texture_filename
+      @env.texture_cache[texture_filename] ||= Minil::Image.load_file(texture_filename)
+      @context.add_reference(nil, texture_filename)
       @layers[layer_name] = layer.merge({
         'texture' => @env.texture_cache[texture_filename]
       })
@@ -224,7 +179,9 @@ class Compose::Project
     @logger.info msg: "Composing Frames"
     index = 0
     @frames = @source_frames.map do |frame|
-      compositor = Compose::FrameCompositor.new(self, frame, logger: @logger.new(frame: index))
+      compositor = Compose::FrameCompositor.new(self, frame,
+        context: @context, logger: @logger.new(frame: index)
+      )
       index += 1
       compositor.perform
       compositor.result
@@ -267,7 +224,7 @@ class Compose::Application
     end
   end
 
-  private def replace_with_variables(vt, data)
+  private def replace_with_variables(vt, data, **options)
     case data
     when Hash
       if data.has_key?('$variable')
@@ -275,27 +232,28 @@ class Compose::Application
       end
       result = {}
       data.each_pair do |key, value|
-        result[key] = replace_with_variables(vt, value)
+        result[key] = replace_with_variables(vt, value, **options)
       end
       return result
     when Array
-      return data.map { |value| replace_with_variables(vt, value) }
+      return data.map { |value| replace_with_variables(vt, value, **options) }
     end
     data
   end
 
-  def proprocess_includes(data)
+  def proprocess_includes(data, **options)
     case data
     when Hash
       result = {}
       data.each_pair do |key, value|
         if key == '$includes'
           value.each do |file|
-            partial = load_composer_file(@src_dir.join(file + '.json').to_s, options: { load_variables: false })
+            filename = @src_dir.join(file + '.json').to_s
+            partial = load_composer_file(filename, options)
             result = result.deep_merge(partial)
           end
         else
-          proprocessed_result = proprocess_includes(value)
+          proprocessed_result = proprocess_includes(value, **options)
           target = result[key]
           result[key] = case target
           when Array
@@ -311,7 +269,7 @@ class Compose::Application
       result
     when Array
       data.map do |value|
-        proprocess_includes(value)
+        proprocess_includes(value, **options)
       end
     else
       data
@@ -319,49 +277,68 @@ class Compose::Application
   end
 
   def preprocess_data(data, **options)
-    result = proprocess_includes(data)
+    result = proprocess_includes(data, **options)
     if options.fetch(:load_variables, true)
       if result.has_key?('variables')
         vt = result['variables']
         # evaluate variables
-        vt = replace_with_variables(vt, vt)
+        vt = replace_with_variables(vt, vt, **options)
         # and then evaluate the rest of the data
-        return replace_with_variables(vt, result)
+        return replace_with_variables(vt, result, **options)
       end
     end
     result
   end
 
-  def load_composer_file(filename, **options)
-    case File.extname(filename).downcase
+  def load_composer_file(filename, context:, **options)
+    case File.extname(filename)
     when ".json"
-      preprocess_data(load_json(filename), options)
+      context.add_reference(options[:active_filename], filename)
+      preprocess_data(load_json(filename), options.merge(context: context, active_filename: filename))
     end
   end
 
   def compose_file(filename)
     log = @logger.new thread: Thread.current.__id__, filename: filename
-    log.info filename: filename, msg: "Loading Compose file"
-    data = load_composer_file(filename)
-    unless data.has_key?('output')
-      log.info filename: filename, msg: "Compose file has not output, skipping"
-      return
+    context = Compose::Context.new(filename.to_s.gsub(@root_dir.to_s, ""))
+    if context.modified
+      log.info filename: filename, msg: "Loading Compose file"
+      data = load_composer_file(filename, context: context)
+      unless data.has_key?('output')
+        log.info filename: filename, msg: "Compose file has no output, skipping"
+        return :error
+      end
+      log.info filename: filename, msg: "Loaded Compose file"
+      output_basename = data.fetch('output')
+      target_filename = @output_dir.join(output_basename)
+      FileUtils.mkdir_p File.dirname(target_filename)
+
+      project = Compose::Project.new(self, data, context: context, logger: log.new(project: @project_counter += 1))
+      project.perform
+
+      image_filename = target_filename.to_s + '.png'
+      log.info target_filename: image_filename, msg: "Saving File"
+
+      project.result.save_file image_filename
+      context.add_reference(nil, image_filename)
+
+      if data.key?('meta')
+        meta_filename = image_filename + '.mcmeta'
+        File.write(meta_filename, JSON.dump(data.fetch('meta')))
+        context.add_reference(nil, meta_filename)
+      end
+
+      context.save_file()
+      GC.start
+      :modified
+    else
+      log.warn msg: "Sources haven't been modified"
+      :unmodified
     end
-    log.info filename: filename, msg: "Loaded Compose file"
-    output_basename = data.fetch('output')
-    target_filename = @output_dir.join(output_basename)
-    FileUtils.mkdir_p File.dirname(target_filename)
-    project = Compose::Project.new(self, data, logger: log.new(project: @project_counter += 1))
-    project.perform
-    log.info target_filename: target_filename.to_s + '.png', msg: "Saving File"
-    project.result.save_file target_filename.to_s + '.png'
-    if data.key?('meta')
-      File.write(target_filename.to_s + '.png.mcmeta', JSON.dump(data.fetch('meta')))
-    end
-    GC.start
   end
 
   def run(argv)
+    time_started = Time.now
     thread_limit = 1
     optparse = OptionParser.new do |opts|
       opts.on '-j', '--jobs NUM', Integer, 'Number of worker threads to use' do |v|
@@ -373,6 +350,11 @@ class Compose::Application
 
     tp = DragonTK::ThreadPool.new thread_limit: thread_limit
 
+    project_count = 0
+    project_modified = 0
+    project_unmodified = 0
+    project_error = 0
+
     begin
       if files.empty?
         files = Dir.glob(@src_dir.join("**/*.json").to_s)
@@ -380,11 +362,27 @@ class Compose::Application
 
       files.each do |filename|
         tp.spawn do
-          compose_file filename
+          project_count += 1
+          case compose_file(filename)
+          when :error
+            project_error += 1
+          when :modified
+            project_modified += 1
+          when :unmodified
+            project_unmodified += 1
+          end
         end
       end
     ensure
       tp.await
+      time_ended = Time.now
+      @logger.io.puts [
+        "",
+        "Composed in #{time_ended - time_started} seconds",
+        "",
+        "Projects #{project_modified} modified / #{project_unmodified} unmodified / #{project_error} errors / #{project_count} total",
+        "",
+      ]
     end
   end
 end
