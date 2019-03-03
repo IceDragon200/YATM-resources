@@ -8,9 +8,13 @@ all: stitch
 #	apngasm -F -d 100 -o "build/atlas_texture.apng" $$(ls build/atlas_texture/frame*.png | sort)
 #	apng2gif "build/atlas_texture.apng"
 
+.PHONY : clean
+clean:
+	rm -rvf build
+
 .PHONY : stitch
 stitch: slice
-	bundle exec ruby stitch_textures.rb
+	bundle exec ruby stitch_textures.rb :all :blocks :each_block
 
 .PHONY : slice
 slice: compose
