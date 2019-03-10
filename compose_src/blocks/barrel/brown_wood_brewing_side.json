@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/barrel_wood/brewing_brown_side",
+  "layers": {
+    "base": { "texture": "blocks/barrel_wood/side.metal.bands.png" },
+    "banner": {
+      "texture": "blocks/barrel_wood/side.band.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.brown" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", {"source": "banner", "blend": "overlay"}] }
+  ]
+}

@@ -6,7 +6,7 @@
       "texture": "blocks/crusher/front.base.png"
     },
     "anim.0": {
-      "texture": "blocks/crusher/anim-blades/frame0000.png"
+      "texture": "blocks/crusher/front.blades.anim/0.png"
     }
   },
   "frames": [

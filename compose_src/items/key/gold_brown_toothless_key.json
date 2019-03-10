@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "items/key/gold_brown_toothless",
+  "layers": {
+    "base": { "texture": "items/keys/toothless_gold.png" },
+    "banner": {
+      "texture": "items/keys/band.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.brown" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "banner"] }
+  ]
+}

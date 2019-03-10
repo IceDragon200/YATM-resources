@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/stonecutters_table_wood/side",
+  "layers": {
+    "base": { "texture": "blocks/stonecutters_table_wood/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mini_blast_furnace/bottom.off",
+  "layers": {
+    "base": { "texture": "blocks/mini_blast_furnace/bottom.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

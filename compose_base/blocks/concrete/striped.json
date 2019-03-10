@@ -1,0 +1,18 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/concrete/striped_$color$_side",
+  "layers": {
+    "base": {
+      "texture": "blocks/concrete/top.striped.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

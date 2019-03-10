@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mailbox_wood/black_side",
+  "layers": {
+    "base": { "texture": "blocks/mailbox_wood/side.base.png" },
+    "banner": {
+      "texture": "blocks/mailbox_wood/banner.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.black" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", {"source": "banner", "blend": "overlay"}] }
+  ]
+}

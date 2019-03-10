@@ -1,0 +1,38 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/thermal_plate/top.heating.on",
+  "layers": {
+    "base.0": { "texture": "blocks/thermal_plate/front.heating.anim/0.png" },
+    "base.1": { "texture": "blocks/thermal_plate/front.heating.anim/1.png" },
+    "base.2": { "texture": "blocks/thermal_plate/front.heating.anim/2.png" },
+    "base.3": { "texture": "blocks/thermal_plate/front.heating.anim/3.png" },
+    "mask": {
+      "texture": "blocks/thermal_plate/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base.0", "mask"] },
+    { "layers": ["base.1", "mask"] },
+    { "layers": ["base.2", "mask"] },
+    { "layers": ["base.3", "mask"] },
+    { "layers": ["base.2", "mask"] },
+    { "layers": ["base.1", "mask"] }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 2,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  }
+}

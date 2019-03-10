@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "items/key/gold_grey_blank",
+  "layers": {
+    "base": { "texture": "items/keys/blank_gold.png" },
+    "banner": {
+      "texture": "items/keys/band.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.grey" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "banner"] }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mailbox_$material$/$color$_bottom",
+  "layers": {
+    "base": { "texture": "blocks/mailbox_$material$/top.base.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

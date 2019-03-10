@@ -121,11 +121,23 @@ class Compose::FrameCompositor
       src_rect = calculate_frame_src_rect(layer, frame_layer)
       transform = calculate_frame_transform(layer, frame_layer)
       opacity = calculate_frame_opacity(layer, frame_layer)
-      @buffer_frame.alpha_blit_r(src_frame,
-        transform.translate.x,
-        transform.translate.y,
-        src_rect,
-        opacity)
+      blend_mode = frame_layer.fetch('blend', 'normal')
+      case blend_mode
+      when 'normal'
+        @buffer_frame.alpha_blit_r(src_frame,
+          transform.translate.x,
+          transform.translate.y,
+          src_rect,
+          opacity)
+      when 'overlay'
+        @buffer_frame.blend_blit_r(:overlay, src_frame,
+          transform.translate.x,
+          transform.translate.y,
+          src_rect,
+          opacity)
+      else
+        raise "unexpected blend mode requested for layer #{blend_mode}"
+      end
     end
     @logger.info msg: "Frame Rendered"
     @result = @buffer_frame
@@ -360,6 +372,13 @@ class Compose::Application
         files = Dir.glob(@src_dir.join("**/*.json").to_s)
       end
 
+      files = files.map do |filename|
+        if File.directory?(filename)
+          Dir.glob(File.join(filename, "**/*.json"))
+        else
+          filename
+        end
+      end.flatten
       files.each do |filename|
         tp.spawn do
           project_count += 1

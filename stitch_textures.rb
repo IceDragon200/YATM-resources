@@ -318,7 +318,7 @@ source_groups.each do |(source_group_name, sources)|
   frame_files = frame_files.values.sort
 
   begin
-    frame_size_limit = 256
+    frame_size_limit = 320
     [1, 2, 4, 8].each do |scale|
       if frame_h > frame_size_limit
         if scale > 1 then

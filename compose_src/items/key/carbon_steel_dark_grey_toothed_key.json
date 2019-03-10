@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "items/key/carbon_steel_dark_grey_toothed",
+  "layers": {
+    "base": { "texture": "items/keys/toothed_carbon_steel.png" },
+    "banner": {
+      "texture": "items/keys/band.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.dark_grey" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "banner"] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/glass.ob.stripes",
+  "layers": {
+    "base": { "texture": "blocks/reactor/glass.ob.stripes.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

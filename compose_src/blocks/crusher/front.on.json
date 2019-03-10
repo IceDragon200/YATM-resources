@@ -6,30 +6,37 @@
       "texture": "blocks/crusher/front.base.png"
     },
     "anim.0": {
-      "texture": "blocks/crusher/anim-blades/frame0000.png"
+      "texture": "blocks/crusher/front.blades.anim/0.png"
     },
     "anim.1": {
-      "texture": "blocks/crusher/anim-blades/frame0001.png"
+      "texture": "blocks/crusher/front.blades.anim/1.png"
     },
     "anim.2": {
-      "texture": "blocks/crusher/anim-blades/frame0002.png"
+      "texture": "blocks/crusher/front.blades.anim/2.png"
     },
     "anim.3": {
-      "texture": "blocks/crusher/anim-blades/frame0003.png"
+      "texture": "blocks/crusher/front.blades.anim/3.png"
+    },
+    "mask": {
+      "texture": "blocks/crusher/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
     }
   },
   "frames": [
     {
-      "layers": ["base", "anim.0"]
+      "layers": ["base", "anim.0", "mask"]
     },
     {
-      "layers": ["base", "anim.1"]
+      "layers": ["base", "anim.1", "mask"]
     },
     {
-      "layers": ["base", "anim.2"]
+      "layers": ["base", "anim.2", "mask"]
     },
     {
-      "layers": ["base", "anim.3"]
+      "layers": ["base", "anim.3", "mask"]
     }
   ],
   "meta":{

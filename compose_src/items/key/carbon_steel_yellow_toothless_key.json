@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "items/key/carbon_steel_yellow_toothless",
+  "layers": {
+    "base": { "texture": "items/keys/toothless_carbon_steel.png" },
+    "banner": {
+      "texture": "items/keys/band.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.yellow" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "banner"] }
+  ]
+}

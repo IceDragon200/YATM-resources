@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/barrel_wood/brewing_red_bottom",
+  "layers": {
+    "base": { "texture": "blocks/barrel_wood/bottom.brewing.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

@@ -48,4 +48,37 @@ class Minil::Image
       end
     end
   end
+
+  def blend_blit_r(blend_mode, src_image, x, y, src_rect, opacity)
+    w = src_rect.w
+    h = src_rect.h
+    h.times do |row|
+      w.times do |col|
+        color = src_image.get_pixel(src_rect.x + col, src_rect.y + row)
+        cr, cg, cb, cca = Minil::Color.decode(color)
+        #cca = cca * opacity / 255
+        # premultiplied alpha
+        ca = 255
+        dx, dy = x + col, y + row
+        old_pixel = self.get_pixel(dx, dy)
+        r, g, b, a = Minil::Color.decode(old_pixel)
+        next if a == 0
+        c = if cca > 0 then
+          case blend_mode
+          when :overlay
+            Minil::Color.encode(*blend_colorf(r, g, b, a, cr, cg, cb, ca) do |n, n2|
+              if n < 0.5
+                2 * (n * n2)
+              else
+                1 - 2 * (1 - n) * (1 - n2)
+              end
+            end)
+          end
+        else
+          c = old_pixel
+        end
+        self.set_pixel(dx, dy, c)
+      end
+    end
+  end
 end

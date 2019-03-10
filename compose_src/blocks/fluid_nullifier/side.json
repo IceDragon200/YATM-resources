@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/fluid_nullifier/side.on",
+  "layers": {
+    "base": { "texture": "blocks/fluid_nullifier/side.base.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

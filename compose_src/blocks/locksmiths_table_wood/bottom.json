@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/locksmiths_table_wood/bottom",
+  "layers": {
+    "base": { "texture": "blocks/locksmiths_table_wood/bottom.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

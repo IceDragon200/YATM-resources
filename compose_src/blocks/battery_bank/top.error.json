@@ -1,0 +1,11 @@
+{
+  "$includes": ["_variables", "blocks/battery_bank/_top_layers"],
+  "output": "blocks/battery_bank/top.error",
+  "variables": {
+    "outer_color": {"$variable": "error_color"},
+    "inner_color": {"$variable": "error_color"}
+  },
+  "frames": [
+    {"layers": ["base", "inner.2", "outer.1", "outer.2", "outer.3", "outer.4", "outer.5", "outer.6", "outer.7", "outer.8"]}
+  ]
+}
