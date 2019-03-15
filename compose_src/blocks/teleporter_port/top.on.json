@@ -1,0 +1,63 @@
+{
+  "$includes": ["_variables"],
+  "variables": {
+    "primary_color": { "$variable": "c.pop.magenta" }
+  },
+  "output": "blocks/teleporter_port/top.on",
+  "layers": {
+    "base": { "texture": "blocks/teleporter_port/top.base.png" },
+    "on.light.0": {
+      "texture": "blocks/teleporter_port/top.anim.masks/0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "on.light.1": {
+      "texture": "blocks/teleporter_port/top.anim.masks/1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "on.light.2": {
+      "texture": "blocks/teleporter_port/top.anim.masks/2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "on.light.3": {
+      "texture": "blocks/teleporter_port/top.anim.masks/3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light.0"]
+    },
+    {
+      "layers": ["base", "on.light.1"]
+    },
+    {
+      "layers": ["base", "on.light.2"]
+    },
+    {
+      "layers": ["base", "on.light.3"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 4,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

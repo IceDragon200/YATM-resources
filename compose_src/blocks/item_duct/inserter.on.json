@@ -1,0 +1,38 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/item_duct/inserter.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/item_duct/inserter.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/item_duct/anim/0.png"
+    },
+    "anim.1": {
+      "texture": "blocks/item_duct/anim/1.png"
+    },
+    "anim.2": {
+      "texture": "blocks/item_duct/anim/2.png"
+    },
+    "anim.3": {
+      "texture": "blocks/item_duct/anim/3.png"
+    }
+  },
+  "frames": [
+    { "layers": ["base", "anim.0"] },
+    { "layers": ["base", "anim.1"] },
+    { "layers": ["base", "anim.2"] },
+    { "layers": ["base", "anim.3"] }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

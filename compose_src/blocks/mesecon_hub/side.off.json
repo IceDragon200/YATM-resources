@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_hub/side.off",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_hub/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

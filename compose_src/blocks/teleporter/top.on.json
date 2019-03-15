@@ -10,28 +10,28 @@
       "texture": "blocks/teleporter/top.mask/0.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "primary_color" }
+        "value": { "$variable": "on_color" }
       }
     },
     "on.light.1": {
       "texture": "blocks/teleporter/top.mask/1.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "primary_color" }
+        "value": { "$variable": "on_color" }
       }
     },
     "on.light.2": {
       "texture": "blocks/teleporter/top.mask/2.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "primary_color" }
+        "value": { "$variable": "on_color" }
       }
     },
     "on.light.3": {
       "texture": "blocks/teleporter/top.mask/3.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "primary_color" }
+        "value": { "$variable": "on_color" }
       }
     }
   },

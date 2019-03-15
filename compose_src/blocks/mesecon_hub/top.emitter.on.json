@@ -1,0 +1,45 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_hub/top.emitter.on",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_hub/top.emitter.base.png" },
+    "mask.anim.0": {
+      "texture": "blocks/mesecon_hub/top.emitter.mask.anim/0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    },
+    "mask.anim.1": {
+      "texture": "blocks/mesecon_hub/top.emitter.mask.anim/1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    },
+    "mask.anim.2": {
+      "texture": "blocks/mesecon_hub/top.emitter.mask.anim/2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {"layers": ["base", "mask.anim.0"]},
+    {"layers": ["base", "mask.anim.1"]},
+    {"layers": ["base", "mask.anim.2"]},
+    {"layers": ["base"]}
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 6,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

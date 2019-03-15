@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_hub/top.emitter.error",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_hub/top.emitter.base.png" },
+    "on.light": {
+      "texture": "blocks/mesecon_hub/top.emitter.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

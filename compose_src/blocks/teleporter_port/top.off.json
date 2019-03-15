@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/teleporter_port/top.off",
+  "layers": {
+    "base": { "texture": "blocks/teleporter_port/top.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

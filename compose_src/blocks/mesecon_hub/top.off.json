@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_hub/top.bus.off",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_hub/top.bus.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/fluid_pipe/magenta_pipe.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/fluid_pipe/pipe.base.png"
+    },
+    "mask": {
+      "texture": "blocks/fluid_pipe/pipe.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.magenta" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}

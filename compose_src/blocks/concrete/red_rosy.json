@@ -1,0 +1,18 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/concrete/rosy_red_side",
+  "layers": {
+    "base": {
+      "texture": "blocks/concrete/top.rosy.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.red" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

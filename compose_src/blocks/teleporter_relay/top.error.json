@@ -1,0 +1,40 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/teleporter_relay/top.error",
+  "layers": {
+    "base": { "texture": "blocks/teleporter_relay/top.base.png" },
+    "on.light.0": {
+      "texture": "blocks/teleporter_relay/top.mask.anim/0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    },
+    "on.light.1": {
+      "texture": "blocks/teleporter_relay/top.mask.anim/1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    },
+    "on.light.2": {
+      "texture": "blocks/teleporter_relay/top.mask.anim/2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    },
+    "on.light.3": {
+      "texture": "blocks/teleporter_relay/top.mask.anim/3.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light.0", "on.light.1", "on.light.2", "on.light.3"]
+    }
+  ]
+}

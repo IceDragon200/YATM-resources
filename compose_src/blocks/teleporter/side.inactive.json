@@ -1,6 +1,6 @@
 {
   "$includes": ["_variables"],
-  "output": "blocks/teleporter/side",
+  "output": "blocks/teleporter/side.inactive",
   "layers": {
     "base": { "texture": "blocks/teleporter/side.png" }
   },

@@ -7,7 +7,7 @@
       "texture": "blocks/hub/top.mask.png",
       "blend": {
         "type": "multiply_color",
-        "value": { "$variable": "signal_color" }
+        "value": { "$variable": "on_color" }
       }
     }
   },
