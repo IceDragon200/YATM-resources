@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/distillation_unit/side.off",
+  "layers": {
+    "base": { "texture": "blocks/distillation_unit/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

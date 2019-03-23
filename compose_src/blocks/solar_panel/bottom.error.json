@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/solar_panel/bottom.error",
+  "layers": {
+    "base": { "texture": "blocks/solar_panel/bottom.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

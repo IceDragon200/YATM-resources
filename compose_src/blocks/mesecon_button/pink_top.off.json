@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_button/pink_top.off",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_button/top.base.png" },
+    "glass": {
+      "texture": "blocks/mesecon_button/top.off.button.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.pink" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "glass"]
+    }
+  ]
+}

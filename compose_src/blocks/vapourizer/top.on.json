@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/vapourizer/top.on",
+  "layers": {
+    "base": { "texture": "blocks/vapourizer/top.on.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

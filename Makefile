@@ -21,8 +21,16 @@ slice: compose
 	bash slice_tilemaps.sh
 
 .PHONY : compose
-compose: generate_lamps generate_mailboxes generate_thermal_plates generate_concrete generate_barrels generate_keys generate_item_ducts generate_fluid_pipes
+compose: generate_mesecon_buttons generate_mesecon_locks generate_lamps generate_mailboxes generate_thermal_plates generate_concrete generate_barrels generate_keys generate_item_ducts generate_fluid_pipes
 	bundle exec ruby compose.rb -j 8
+
+.PHONY : generate_mesecon_locks
+generate_mesecon_locks:
+	bundle exec ruby compose_base/blocks/gen_mesecon_locks.rb
+
+.PHONY : generate_mesecon_buttons
+generate_mesecon_buttons:
+	bundle exec ruby compose_base/blocks/gen_mesecon_buttons.rb
 
 .PHONY : generate_lamps
 generate_lamps:

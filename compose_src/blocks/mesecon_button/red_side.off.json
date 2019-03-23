@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_button/red_side.off",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_button/side.base.png" },
+    "glass": {
+      "texture": "blocks/mesecon_button/side.off.button.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.red" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "glass"]
+    }
+  ]
+}

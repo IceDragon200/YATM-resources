@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_button/$color$_bottom.on",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_button/bottom.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

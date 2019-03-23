@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/item_teleporter/top.receiver.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/item_teleporter/top.receiver.png"
+    },
+    "mask": {
+      "texture": "blocks/item_teleporter/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}

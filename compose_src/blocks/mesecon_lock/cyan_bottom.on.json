@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_lock/cyan_bottom.on",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_lock/bottom.base.png" },
+    "mask": {
+      "texture": "blocks/mesecon_lock/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.cyan" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/fluid_teleporter/top.teleporter.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/fluid_teleporter/top.teleporter.png"
+    },
+    "mask": {
+      "texture": "blocks/fluid_teleporter/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}

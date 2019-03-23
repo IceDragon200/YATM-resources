@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_lock/dark_green_side.on",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_lock/side.base.png" },
+    "mask": {
+      "texture": "blocks/mesecon_lock/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.dark_green" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

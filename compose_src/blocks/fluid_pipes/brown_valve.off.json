@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/fluid_pipe_valve/brown_valve.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/fluid_pipe/valve.closed.png"
+    },
+    "mask": {
+      "texture": "blocks/fluid_pipe/valve.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.brown" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}
