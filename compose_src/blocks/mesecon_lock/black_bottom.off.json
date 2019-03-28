@@ -4,7 +4,7 @@
   "layers": {
     "base": { "texture": "blocks/mesecon_lock/bottom.base.png" },
     "mask": {
-      "texture": "blocks/mesecon_lock/side.mask.png",
+      "texture": "blocks/mesecon_lock/bottom.mask.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "dye.black" }

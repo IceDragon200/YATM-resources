@@ -1,0 +1,33 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/inventory_controller/side.idle",
+  "layers": {
+    "base": { "texture": "blocks/inventory_controller/side.base.png" },
+    "mask": {
+      "texture": "blocks/inventory_controller/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "mask.anim.0": {
+      "texture": "blocks/inventory_controller/side.mask.anim/0.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "idle_color" } }
+    },
+    "mask.anim.1": {
+      "texture": "blocks/inventory_controller/side.mask.anim/1.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "idle_color" } }
+    },
+    "mask.anim.2": {
+      "texture": "blocks/inventory_controller/side.mask.anim/2.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "idle_color" } }
+    },
+    "mask.anim.3": {
+      "texture": "blocks/inventory_controller/side.mask.anim/3.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "idle_color" } }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask", "mask.anim.0", "mask.anim.1", "mask.anim.2", "mask.anim.3"] }
+  ]
+}

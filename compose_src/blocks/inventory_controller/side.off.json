@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/inventory_controller/side.off",
+  "layers": {
+    "base": { "texture": "blocks/inventory_controller/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -28,6 +28,9 @@
       "layers": ["base", "anim.0"]
     },
     {
+      "layers": ["base"]
+    },
+    {
       "layers": ["base", "anim.1"]
     }
   ],
@@ -37,8 +40,8 @@
       "frames": [
         0,
         1,
-        0,
-        2
+        2,
+        3
       ]
     }
   }

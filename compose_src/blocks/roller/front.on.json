@@ -5,6 +5,13 @@
     "base": {
       "texture": "blocks/roller/front.base.png"
     },
+    "mask": {
+      "texture": "blocks/roller/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
     "anim.0": {
       "texture": "blocks/roller/anim-blades/frame0000.png"
     },
@@ -20,16 +27,16 @@
   },
   "frames": [
     {
-      "layers": ["base", "anim.0"]
+      "layers": ["base", "mask", "anim.0"]
     },
     {
-      "layers": ["base", "anim.1"]
+      "layers": ["base", "mask", "anim.1"]
     },
     {
-      "layers": ["base", "anim.2"]
+      "layers": ["base", "mask", "anim.2"]
     },
     {
-      "layers": ["base", "anim.3"]
+      "layers": ["base", "mask", "anim.3"]
     }
   ],
   "meta":{

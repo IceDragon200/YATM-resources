@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/roller/back.on",
+  "layers": {
+    "base": { "texture": "blocks/roller/back.base.png" },
+    "mask": {
+      "texture": "blocks/roller/back.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}
