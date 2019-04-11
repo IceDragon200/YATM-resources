@@ -13,8 +13,12 @@ clean:
 	rm -rvf build
 
 .PHONY : stitch
-stitch: slice
+stitch: slice paintings
 	bundle exec ruby stitch_textures.rb :all :blocks :each_block
+
+.PHONY : paintings
+paintings: compose
+	bundle exec ruby build_paintings.rb
 
 .PHONY : slice
 slice: compose

@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/electric_furnace/side.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/electric_furnace/side.base.png"
+    },
+    "lights": {
+      "texture": "blocks/electric_furnace/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "lights"]
+    }
+  ]
+}

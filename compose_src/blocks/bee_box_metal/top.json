@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/bee_box_metal/top",
+  "layers": {
+    "base": { "texture": "blocks/bee_box_metal/top.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

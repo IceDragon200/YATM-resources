@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/electric_furnace/front.off",
+  "layers": {
+    "base": {
+      "texture": "blocks/electric_furnace/front.off.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/solid_fuel_heater/bottom.on",
+  "layers": {
+    "base": { "texture": "blocks/solid_fuel_heater/bottom.on.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

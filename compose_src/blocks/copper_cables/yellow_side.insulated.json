@@ -1,6 +1,6 @@
 {
   "$includes": ["_variables"],
-  "output": "blocks/copper_cable/yellow_pipe.on",
+  "output": "blocks/copper_cable/yellow.on",
   "layers": {
     "base": {
       "texture": "blocks/copper_cable/side.insulated.png"
