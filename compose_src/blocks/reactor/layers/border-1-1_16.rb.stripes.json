@@ -1,0 +1,15 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/layers/border-1-1_16.rb.stripes",
+  "layers": {
+    "base": {
+      "texture": "blocks/reactor/layers/stripes.rb.png",
+      "mask": "blocks/reactor/layers/1-1_16.mask.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

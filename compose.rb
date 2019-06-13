@@ -57,6 +57,14 @@ class Compose::FrameCompositor
 
   protected def render_layer(layer)
     texture = layer.fetch('texture')
+    src_frame = if layer.has_key?('mask')
+      mask_texture = layer['mask']
+      blit_frame = Minil::Image.create(@buffer_frame.width, @buffer_frame.height)
+      blit_frame.mask_blit(texture, mask_texture, 0, 0, 0, 0, mask_texture.width, mask_texture.height)
+      blit_frame
+    else
+      texture
+    end
     src_frame = if layer.has_key?('blend')
       # frame layers are composed on before being drawn to the buffer
       blit_frame = Minil::Image.create(@buffer_frame.width, @buffer_frame.height)
@@ -64,17 +72,17 @@ class Compose::FrameCompositor
       type = blend.fetch('type')
       case type
       when 'multiply_color'
-        blit_frame.blit_r(texture, 0, 0, texture.rect)
+        blit_frame.blit_r(src_frame, 0, 0, src_frame.rect)
         blit_frame.blend_multiply_fill_rect(0, 0, blit_frame.width, blit_frame.height, blend.fetch('value'))
       when 'overlay_color'
-        blit_frame.blit_r(texture, 0, 0, texture.rect)
+        blit_frame.blit_r(src_frame, 0, 0, src_frame.rect)
         blit_frame.blend_overlay_fill_rect(0, 0, blit_frame.width, blit_frame.height, blend.fetch('value'))
       else
         raise ArgumentError, "unsupported blend mode #{type}"
       end
       blit_frame
     else
-      texture
+      src_frame
     end
     src_frame
   end
@@ -116,7 +124,6 @@ class Compose::FrameCompositor
         frame_layer = { 'source' => frame_layer }
       end
       layer = @project.layers.fetch(frame_layer.fetch('source'))
-      texture = layer.fetch('texture')
       src_frame = render_layer(layer)
       src_rect = calculate_frame_src_rect(layer, frame_layer)
       transform = calculate_frame_transform(layer, frame_layer)
@@ -162,15 +169,23 @@ class Compose::Project
     @source_frames = data.fetch('frames')
   end
 
+  def preload_texture(texture_basename)
+    texture_filename = @env.texture_dir.join(texture_basename).to_s
+    @env.texture_cache[texture_filename] ||= Minil::Image.load_file(texture_filename)
+    @context.add_reference(nil, texture_filename)
+    return @env.texture_cache[texture_filename]
+  end
+
   protected def preload_layers
     @layers = {}
     @source_layers.each_pair do |layer_name, layer|
-      texture_filename = @env.texture_dir.join(layer.fetch('texture')).to_s
-      @env.texture_cache[texture_filename] ||= Minil::Image.load_file(texture_filename)
-      @context.add_reference(nil, texture_filename)
-      @layers[layer_name] = layer.merge({
-        'texture' => @env.texture_cache[texture_filename]
+      new_layer = layer.merge({
+        'texture' => preload_texture(layer.fetch('texture'))
       })
+      if new_layer['mask'] then
+        new_layer['mask'] = preload_texture(new_layer.fetch('mask'))
+      end
+      @layers[layer_name] = new_layer
     end
     @logger.debug msg: "Preloaded Layers"
   end

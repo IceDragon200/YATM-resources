@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/ammo_can/side",
+  "layers": {
+    "base": { "texture": "blocks/ammo_can/side.base.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

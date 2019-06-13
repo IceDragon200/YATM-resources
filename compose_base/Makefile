@@ -1,6 +1,6 @@
 .DEFAULT_GOAL : all
 .PHONY : all
-all: generate_mesecon_locks generate_mesecon_buttons generate_lamps generate_mailboxes generate_thermal_plates generate_concrete generate_barrels generate_fluid_pipes generate_item_ducts generate_keys generate_copper_cable
+all: generate_mesecon_locks generate_mesecon_buttons generate_lamps generate_mailboxes generate_thermal_plates generate_concrete generate_barrels generate_fluid_pipes generate_item_ducts generate_keys generate_copper_cable generate_data_cable
 
 .PHONY : generate_mesecon_locks
 generate_mesecon_locks:
@@ -45,3 +45,7 @@ generate_keys:
 .PHONY : generate_copper_cable
 generate_copper_cable:
 	bundle exec ruby blocks/gen_copper_cable.rb
+
+.PHONY : generate_data_cable
+generate_data_cable:
+	bundle exec ruby blocks/gen_data_cable.rb

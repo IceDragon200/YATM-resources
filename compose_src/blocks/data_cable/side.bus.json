@@ -1,0 +1,15 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/data_cable/multi.bus.side",
+  "layers": {
+    "base": {
+      "texture": "blocks/data_cable/multi.side.png"
+    },
+    "cap": {
+      "texture": "blocks/data_cable/bus.side.png"
+    }
+  },
+  "frames": [
+    { "layers": ["base", "cap"] }
+  ]
+}

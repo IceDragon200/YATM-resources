@@ -1,0 +1,16 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/data_cable/yellow.top",
+  "layers": {
+    "cable_base": {
+      "texture": "blocks/data_cable/plain.top.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.yellow" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["cable_base"] }
+  ]
+}

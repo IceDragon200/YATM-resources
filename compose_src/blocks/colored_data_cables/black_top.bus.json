@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/data_cable/black.bus.top",
+  "layers": {
+    "cap": {
+      "texture": "blocks/data_cable/bus.top.png"
+    },
+    "cable_base": {
+      "texture": "blocks/data_cable/plain.top.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.black" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["cable_base", "cap"] }
+  ]
+}
