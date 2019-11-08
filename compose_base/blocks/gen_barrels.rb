@@ -32,7 +32,7 @@ end
 if ctx.modified
   ctx.save_file()
   puts "Barrels have changed"
-  target_dirname = File.join(__dir__, "../../compose_src/blocks/barrel")
+  target_dirname = File.join(__dir__, "../../compose_src/generated_blocks/barrel")
 
   FileUtils.rm_rf target_dirname
   FileUtils.mkdir_p target_dirname

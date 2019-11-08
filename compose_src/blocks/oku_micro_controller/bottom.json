@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/oku_micro_controller/bottom",
+  "layers": {
+    "base": { "texture": "blocks/oku_micro_controller/bottom.base.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/vapourizer/side.idle",
+  "layers": {
+    "base": { "texture": "blocks/vapourizer/side.off.png" },
+    "on.light": {
+      "texture": "blocks/vapourizer/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

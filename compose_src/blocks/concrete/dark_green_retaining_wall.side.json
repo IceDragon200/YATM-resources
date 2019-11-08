@@ -1,0 +1,22 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/retaining_wall/dark_green_side",
+  "layers": {
+    "base": {
+      "texture": "blocks/retaining_wall/side.base.png"
+    },
+    "concrete": {
+      "texture": "blocks/retaining_wall/side.base.png",
+      "mask": "blocks/retaining_wall/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.dark_green" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "concrete"]
+    }
+  ]
+}

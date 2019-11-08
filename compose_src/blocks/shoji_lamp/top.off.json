@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/shoji_lamp/top.off",
+  "layers": {
+    "base": { "texture": "blocks/shoji_lamp/top.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

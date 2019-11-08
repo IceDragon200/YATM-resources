@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/casing.yb.stripes",
+  "layers": {
+    "base": { "texture": "blocks/reactor/casing_panel.yb.stripes.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

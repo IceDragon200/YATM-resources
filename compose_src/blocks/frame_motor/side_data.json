@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/frame_motor/side_data",
+  "layers": {
+    "base": { "texture": "blocks/frame_motor/side_data.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

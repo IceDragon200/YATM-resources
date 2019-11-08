@@ -1,6 +1,6 @@
 .DEFAULT_GOAL : all
 .PHONY : all
-all: stitch
+all: sources
 
 #.PHONY : animation
 #animation: stitch
@@ -13,7 +13,7 @@ clean:
 	rm -rvf build
 
 .PHONY : stitch
-stitch: slice paintings
+stitch: sources
 	bundle exec ruby stitch_textures.rb :all :blocks :each_block
 
 .PHONY : paintings
@@ -31,3 +31,6 @@ compose: generate_compose_files
 .PHONY : generate_compose_files
 generate_compose_files:
 	cd compose_base && make -j 8
+
+.PHONY : sources
+sources: slice paintings

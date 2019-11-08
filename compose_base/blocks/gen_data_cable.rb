@@ -30,7 +30,7 @@ end
 if ctx.modified
   ctx.save_file()
   puts "Data Cables have changed"
-  target_dirname = File.join(__dir__, "../../compose_src/blocks/colored_data_cables")
+  target_dirname = File.join(__dir__, "../../compose_src/generated_blocks/colored_data_cables")
 
   FileUtils.rm_rf target_dirname
   FileUtils.mkdir_p target_dirname

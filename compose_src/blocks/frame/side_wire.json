@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/frame/side_wire",
+  "layers": {
+    "base": { "texture": "blocks/frames/wire_frame.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

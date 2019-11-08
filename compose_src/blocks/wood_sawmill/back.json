@@ -1,0 +1,46 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/wood_sawmill/back.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/wood_sawmill/back.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/wood_sawmill/chain.anim/0.png"
+    },
+    "anim.1": {
+      "texture": "blocks/wood_sawmill/chain.anim/1.png"
+    },
+    "anim.2": {
+      "texture": "blocks/wood_sawmill/chain.anim/2.png"
+    },
+    "anim.3": {
+      "texture": "blocks/wood_sawmill/chain.anim/3.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.3"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.0"]
+    }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

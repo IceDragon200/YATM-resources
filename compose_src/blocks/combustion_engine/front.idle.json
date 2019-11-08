@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/combustion_engine/front.idle",
+  "layers": {
+    "base": { "texture": "blocks/combustion_engine/front.png" },
+    "on.light": {
+      "texture": "blocks/combustion_engine/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

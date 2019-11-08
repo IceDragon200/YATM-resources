@@ -2,7 +2,7 @@
   "$includes": ["_variables"],
   "output": "blocks/drive_case/bottom",
   "layers": {
-    "base": { "texture": "blocks/common/textures/bottom.png" }
+    "base": { "texture": "blocks/drive_case/bottom.base.png" }
   },
   "frames": [
     {

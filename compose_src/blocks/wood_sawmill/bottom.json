@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/wood_sawmill/bottom.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/wood_sawmill/bottom.base.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -29,7 +29,7 @@ end
 if ctx.modified
   ctx.save_file()
   puts "Mesecon Buttons have changed"
-  target_dirname = File.join(__dir__, "../../compose_src/blocks/mesecon_lock")
+  target_dirname = File.join(__dir__, "../../compose_src/generated_blocks/mesecon_lock")
 
   FileUtils.rm_rf target_dirname
   FileUtils.mkdir_p target_dirname

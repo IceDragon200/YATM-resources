@@ -32,7 +32,7 @@ end
 if ctx.modified
   ctx.save_file()
   puts "Mailboxes have changed"
-  target_dirname = File.join(__dir__, "../../compose_src/blocks/mailbox")
+  target_dirname = File.join(__dir__, "../../compose_src/generated_blocks/mailbox")
 
   FileUtils.rm_rf target_dirname
   FileUtils.mkdir_p target_dirname

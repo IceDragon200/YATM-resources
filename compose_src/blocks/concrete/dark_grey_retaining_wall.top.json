@@ -1,0 +1,22 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/retaining_wall/dark_grey_top",
+  "layers": {
+    "base": {
+      "texture": "blocks/retaining_wall/top.base.png"
+    },
+    "concrete": {
+      "texture": "blocks/retaining_wall/top.base.png",
+      "mask": "blocks/retaining_wall/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.dark_grey" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "concrete"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/fuel_rod_case.closed.plutonium",
+  "layers": {
+    "base": { "texture": "blocks/reactor/fuel_rod_case.cover.plutonium.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

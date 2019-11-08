@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/kettle/bottom",
+  "layers": {
+    "base": { "texture": "blocks/kettle/bottom.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

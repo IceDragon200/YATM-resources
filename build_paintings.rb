@@ -19,6 +19,7 @@ Dir.children(@paintings_dir).each do |child|
   cols = image.width / @cell_size
   rows = image.height / @cell_size
 
+  puts "#{filename} #{cols}x#{rows}"
   extname = File.extname(filename)
   basename = File.basename(filename, extname)
   rows.times do |row|

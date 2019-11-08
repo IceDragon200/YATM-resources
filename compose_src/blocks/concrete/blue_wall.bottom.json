@@ -1,0 +1,18 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/concrete_wall/blue_bottom",
+  "layers": {
+    "base": {
+      "texture": "blocks/retaining_wall/wall_bottom.base.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.blue" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

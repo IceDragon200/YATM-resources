@@ -1,0 +1,22 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/retaining_wall/corner_$color$_top",
+  "layers": {
+    "base": {
+      "texture": "blocks/retaining_wall/top_corner.base.png"
+    },
+    "concrete": {
+      "texture": "blocks/retaining_wall/top_corner.base.png",
+      "mask": "blocks/retaining_wall/top_corner.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "concrete"]
+    }
+  ]
+}

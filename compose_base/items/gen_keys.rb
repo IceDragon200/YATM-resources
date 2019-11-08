@@ -32,7 +32,7 @@ end
 if ctx.modified
   ctx.save_file()
   puts "Keys have changed"
-  target_dirname = File.join(__dir__, "../../compose_src/items/key")
+  target_dirname = File.join(__dir__, "../../compose_src/generated_items/key")
 
   FileUtils.rm_rf target_dirname
   FileUtils.mkdir_p target_dirname

@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/thermal_duct/side.heating",
+  "layers": {
+    "base": {
+      "texture": "blocks/thermal_duct/base.heating.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

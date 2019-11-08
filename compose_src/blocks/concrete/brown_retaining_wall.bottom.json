@@ -1,0 +1,22 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/retaining_wall/brown_bottom",
+  "layers": {
+    "base": {
+      "texture": "blocks/retaining_wall/bottom.base.png"
+    },
+    "concrete": {
+      "texture": "blocks/retaining_wall/bottom.base.png",
+      "mask": "blocks/retaining_wall/bottom.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.brown" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "concrete"]
+    }
+  ]
+}

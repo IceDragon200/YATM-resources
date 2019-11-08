@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/card_reader/reader.side",
+  "layers": {
+    "base": { "texture": "blocks/card_reader/reader.side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/kiln/bottom.off",
+  "layers": {
+    "base": { "texture": "blocks/kiln/bottom.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

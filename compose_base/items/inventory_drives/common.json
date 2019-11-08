@@ -1,0 +1,24 @@
+{
+  "$includes": ["_variables"],
+  "output": "items/inventory_drives/$type$_$tier$",
+  "layers": {
+    "base": { "texture": "items/inventory_drives/base.png" },
+    "tier": {
+      "texture": "items/inventory_drives/base.tier.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "tier.$tier$" }
+      }
+    },
+    "type": {
+      "texture": "items/inventory_drives/base.type.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "drive_type.$type$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "tier", "type"] }
+  ]
+}

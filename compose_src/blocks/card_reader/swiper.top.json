@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/card_reader/swiper.top",
+  "layers": {
+    "base": { "texture": "blocks/card_reader/swiper.top.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

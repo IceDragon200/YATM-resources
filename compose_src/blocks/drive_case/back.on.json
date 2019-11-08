@@ -2,7 +2,7 @@
   "$includes": ["_variables"],
   "output": "blocks/drive_case/back.on",
   "layers": {
-    "base": { "texture": "blocks/drive_case/back.png" },
+    "base": { "texture": "blocks/drive_case/back.base.png" },
     "on.light": {
       "texture": "blocks/drive_case/back.mask.png",
       "blend": {

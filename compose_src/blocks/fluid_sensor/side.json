@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/fluid_sensor/side",
+  "layers": {
+    "base": { "texture": "blocks/fluid_sensor/side.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

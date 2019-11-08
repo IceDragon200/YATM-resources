@@ -1,0 +1,22 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/retaining_wall/white_front",
+  "layers": {
+    "base": {
+      "texture": "blocks/retaining_wall/front.base.png"
+    },
+    "concrete": {
+      "texture": "blocks/retaining_wall/front.base.png",
+      "mask": "blocks/retaining_wall/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.white" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "concrete"]
+    }
+  ]
+}

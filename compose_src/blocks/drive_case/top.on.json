@@ -2,11 +2,18 @@
   "$includes": ["_variables"],
   "output": "blocks/drive_case/top.on",
   "layers": {
-    "base": { "texture": "blocks/drive_case/top.png" }
+    "base": { "texture": "blocks/drive_case/top.base.png" },
+    "on.light": {
+      "texture": "blocks/drive_case/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
   },
   "frames": [
     {
-      "layers": ["base"]
+      "layers": ["base", "on.light"]
     }
   ]
 }

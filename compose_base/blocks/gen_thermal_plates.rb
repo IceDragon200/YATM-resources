@@ -17,7 +17,7 @@ end
 if ctx.modified
   ctx.save_file()
   puts "Thermal Plates have changed"
-  target_dirname = File.join(__dir__, "../../compose_src/blocks/thermal_plates")
+  target_dirname = File.join(__dir__, "../../compose_src/generated_blocks/thermal_plates")
 
   FileUtils.rm_rf target_dirname
   FileUtils.mkdir_p target_dirname

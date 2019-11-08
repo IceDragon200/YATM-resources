@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/control_rod_top.error",
+  "layers": {
+    "base": { "texture": "blocks/reactor/control_rod.base.png" },
+    "mask": {
+      "texture": "blocks/reactor/common_border.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

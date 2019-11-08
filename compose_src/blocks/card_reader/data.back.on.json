@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/card_reader/data.back.on",
+  "layers": {
+    "base": { "texture": "blocks/card_reader/back.data.base.png" },
+    "on.light": {
+      "texture": "blocks/card_reader/back.data.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

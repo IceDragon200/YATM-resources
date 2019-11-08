@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/energy_bus_front.off",
+  "layers": {
+    "base": { "texture": "blocks/reactor/energy_bus.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

@@ -5,11 +5,13 @@ module Compose
   class Context
     attr_reader :modified
 
-    def initialize(name)
+    def initialize(name, root_dir: nil)
       @name = name
       @loaded = {}
       @references = {}
-      @root_dir = Pathname.new(__dir__)
+      @loaded_tags = {}
+      @tags = {}
+      @root_dir = Pathname.new(root_dir || __dir__)
       @tmp_dir = @root_dir.join('build/tmp/graphs')
 
       @modified = false
@@ -37,23 +39,72 @@ module Compose
         end
       end
 
+      if data["tags"] then
+        data["tags"].each do |(key, value)|
+          @loaded_tags[key] = value
+        end
+      end
     end
 
     def save_file()
-      puts "Saving context: #{@filename}"
-      FileUtils.mkdir_p(File.dirname(@filename))
-
-      File.write(@filename, JSON.dump({
-        loaded: @loaded,
-      }))
+      if is_modified?
+        puts "Saving context: #{@filename}"
+        FileUtils.mkdir_p(File.dirname(@filename))
+        File.write(@filename, JSON.dump({
+          "tags" => @tags,
+          "loaded" => @loaded,
+        }))
+      else
+        puts "Not Modified: #{@filename}"
+      end
     end
 
     def is_reference?(child)
       !!@loaded[child]
     end
 
+
+    # Determines if all the loaded files are also referenced
+    def all_loaded_references?
+      @loaded.all? do |name|
+        !!@references[name]
+      end
+    end
+
+    def all_tags_referenced?
+      keys = @tags.keys | @loaded_tags.keys
+
+      keys.all? do |key|
+        @tags[key] == @loaded_tags[key]
+      end
+    end
+
+    def is_modified?
+      @modified or
+      #not all_loaded_references? or
+      not all_tags_referenced?
+    end
+
+    def tag(key, value)
+      case value
+      when String
+        if @loaded_tags[key] == value then
+          @tags[key] = @loaded_tags[key]
+        else
+          @tags[key] = value
+          @modified = true
+        end
+      else
+        raise "tag value MUST be a string got #{value.inspect}"
+      end
+      self
+    end
+
     def add_reference(parent, child)
-      if child
+      case child
+      when nil
+        :ok
+      when String
         if parent
           (@references[parent] ||={})[child] = true
         end
@@ -62,6 +113,8 @@ module Compose
           @modified = true
           File.stat(child).mtime.to_i
         end
+      else
+        raise "unexpected child #{child.inspect}"
       end
       self
     end

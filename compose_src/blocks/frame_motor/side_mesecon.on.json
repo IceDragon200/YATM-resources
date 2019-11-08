@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/frame_motor/side_mesecon.on",
+  "layers": {
+    "base": { "texture": "blocks/frame_motor/side_mesecon.base.png" },
+    "on.light": {
+      "texture": "blocks/frame_motor/side_mesecon.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

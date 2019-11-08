@@ -3,7 +3,7 @@
   "output": "blocks/drive_case/front.on",
   "layers": {
     "base": {
-      "texture": "blocks/drive_case/front.png"
+      "texture": "blocks/drive_case/front.base.png"
     },
     "on.light": {
       "texture": "blocks/drive_case/front.mask.png",
