@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/package/$color$_bottom.ribbon",
+  "layers": {
+    "base": { "texture": "blocks/package/bottom.base.png" },
+    "ribbon": {
+      "texture": "blocks/package/bottom.ribbon.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "ribbon"]
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "$includes": ["_variables"],
-  "output": "blocks/monitor/back",
+  "output": "blocks/quarry/bottom",
   "layers": {
-    "base": { "texture": "blocks/monitor/back.base.png" }
+    "base": { "texture": "blocks/quarry/bottom.base.png" }
   },
   "frames": [
     {

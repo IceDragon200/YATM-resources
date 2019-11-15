@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/quarry/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/quarry/front.base.png"
+    },
+    "on.light": {
+      "texture": "blocks/quarry/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

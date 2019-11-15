@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/package/plain_side",
+  "layers": {
+    "base": {
+      "texture": "blocks/package/side.base.png"
+    }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

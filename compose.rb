@@ -322,6 +322,8 @@ class Compose::Application
     when ".json"
       context.add_reference(options[:active_filename], filename)
       preprocess_data(load_json(filename), options.merge(context: context, active_filename: filename))
+    else
+      raise "unexpected compose file #{filename}"
     end
   end
 

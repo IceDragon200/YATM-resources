@@ -2,11 +2,11 @@
 .PHONY : all
 all: sources
 
-#.PHONY : animation
-#animation: stitch
-#	echo $$(pwd)
-#	apngasm -F -d 100 -o "build/atlas_texture.apng" $$(ls build/atlas_texture/frame*.png | sort)
-#	apng2gif "build/atlas_texture.apng"
+.PHONY : animation
+animation: stitch
+	echo $$(pwd)
+	apngasm -F -d 100 -o "build/atlas_texture.apng" $$(ls build/atlas_texture/frame*.png | sort)
+	apng2gif "build/atlas_texture.apng"
 
 .PHONY : clean
 clean:
@@ -33,4 +33,4 @@ generate_compose_files:
 	cd compose_base && make -j 8
 
 .PHONY : sources
-sources: slice paintings
+sources: slice paintings animation
