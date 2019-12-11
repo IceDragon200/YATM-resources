@@ -84,6 +84,16 @@
     "off_color": { "$variable": "signal_color" },
     "error_color": { "$variable": "c.red" },
     "idle_color": [0, 157, 255, 255],
-    "warn_color": [255, 223, 0, 255]
+    "warn_color": [255, 223, 0, 255],
+
+    "en.cell.0": "#0060ff",
+    "en.cell.1": "#009dff",
+    "en.cell.2": "#45aa00",
+    "en.cell.3": "#5ee700",
+    "en.cell.4": "#ff8100",
+    "en.cell.5": "#ffdf00",
+    "en.cell.6": "#d20000",
+    "en.cell.7": "#ff3636",
+    "en.cell.creative": "#846fd0"
   }
 }

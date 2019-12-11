@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/thermal_node/side.off",
+  "layers": {
+    "base": { "texture": "blocks/thermal_node/off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

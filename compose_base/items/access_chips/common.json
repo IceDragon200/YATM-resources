@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "items/access_chips/$color$_common",
+  "layers": {
+    "base": { "texture": "items/access_chips/base.png" },
+    "mask": {
+      "texture": "items/access_chips/mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}

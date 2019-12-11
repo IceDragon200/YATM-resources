@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/creative_engine/bottom.off",
+  "layers": {
+    "base": { "texture": "blocks/creative_engine/bottom.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

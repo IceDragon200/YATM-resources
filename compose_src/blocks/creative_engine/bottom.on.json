@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/creative_engine/bottom.on",
+  "layers": {
+    "base": { "texture": "blocks/creative_engine/bottom.base.png" },
+    "on.light": {
+      "texture": "blocks/creative_engine/bottom.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

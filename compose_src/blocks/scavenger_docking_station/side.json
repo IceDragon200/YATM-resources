@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/scavenger_docking_station/side",
+  "layers": {
+    "base": { "texture": "blocks/scavenger_docking_station/side.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

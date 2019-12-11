@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/array_energy_controller/side.on",
+  "layers": {
+    "base": { "texture": "blocks/array_energy_controller/base.png" },
+    "mask": {
+      "texture": "blocks/array_energy_controller/mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}

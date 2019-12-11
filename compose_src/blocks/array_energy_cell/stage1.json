@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/array_energy_cell/side.1",
+  "layers": {
+    "base": { "texture": "blocks/array_energy_cell/base.png" },
+    "mask": {
+      "texture": "blocks/array_energy_cell/mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "en.cell.1" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

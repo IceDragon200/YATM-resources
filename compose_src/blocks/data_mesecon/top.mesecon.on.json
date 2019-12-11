@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/data_mesecon/top.mesecon.on",
+  "layers": {
+    "base": { "texture": "blocks/data_mesecon/top.mesecon.base.png" },
+    "light": {
+      "texture": "blocks/data_mesecon/top.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "light"]
+    }
+  ]
+}

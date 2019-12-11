@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/creative_engine/front.error",
+  "layers": {
+    "base": { "texture": "blocks/creative_engine/front.base.png" },
+    "on.light": {
+      "texture": "blocks/creative_engine/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

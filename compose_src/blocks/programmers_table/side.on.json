@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/programmers_table/side.on",
+  "layers": {
+    "base": { "texture": "blocks/programmers_table/side.base.png" },
+    "on.light": {
+      "texture": "blocks/programmers_table/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

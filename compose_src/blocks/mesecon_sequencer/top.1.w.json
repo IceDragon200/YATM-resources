@@ -1,0 +1,22 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mesecon_sequencer/top.1.w",
+  "layers": {
+    "base": { "texture": "blocks/mesecon_sequencer/top.base.png" },
+    "seq": {
+      "texture": "blocks/mesecon_sequencer/top.seq.1.png"
+    },
+    "on.light": {
+      "texture": "blocks/mesecon_sequencer/top.w.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "signal_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "seq", "on.light"]
+    }
+  ]
+}

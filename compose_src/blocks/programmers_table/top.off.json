@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/programmers_table/top.off",
+  "layers": {
+    "base": { "texture": "blocks/programmers_table/top.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

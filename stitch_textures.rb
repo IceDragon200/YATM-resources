@@ -349,8 +349,12 @@ source_groups.each do |(source_group_name, sources)|
 
       puts ["apngasm", scaled_frame_files]
       system("sync")
-      system("apngasm", "-F", "-d", "100", "-o", apng_atlas, *scaled_frame_files) || raise
-      system("apng2gif", apng_atlas) || raise
+      unless system("apngasm", "-F", "-d", "100", "-o", apng_atlas, *scaled_frame_files)
+        raise "apngasm failed to execute correctly"
+      end
+      unless system("apng2gif", apng_atlas)
+        raise "apng2gif failed to execute correctly"
+      end
     end
   end
 end

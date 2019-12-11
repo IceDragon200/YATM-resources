@@ -1,0 +1,26 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/thermal_node/side.on.cooling",
+  "layers": {
+    "f0": {
+      "texture": "blocks/thermal_node/on.cooling/0.png"
+    },
+    "f1": {
+      "texture": "blocks/thermal_node/on.cooling/1.png"
+    },
+    "f2": {
+      "texture": "blocks/thermal_node/on.cooling/2.png"
+    },
+    "f3": {
+      "texture": "blocks/thermal_node/on.cooling/3.png"
+    }
+  },
+  "frames": [
+    { "layers": ["f0"] },
+    { "layers": ["f1"] },
+    { "layers": ["f2"] },
+    { "layers": ["f3"] },
+    { "layers": ["f2"] },
+    { "layers": ["f1"] }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/array_energy_controller/side.off",
+  "layers": {
+    "base": { "texture": "blocks/array_energy_controller/base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}
