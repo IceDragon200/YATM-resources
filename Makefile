@@ -5,12 +5,16 @@ all: sources
 .PHONY : animation
 animation: stitch
 	echo $$(pwd)
-	apngasm -F -d 100 -o "build/atlas_texture.apng" $$(ls build/atlas_texture/frame*.png | sort)
+	apngasm -F -d 100 -o "build/atlas_texture.apng" $$(ls build/animations/all/x1/frame*.png | sort)
 	apng2gif "build/atlas_texture.apng"
 
 .PHONY : clean
 clean:
 	rm -rvf build
+
+.PHONY : gui
+gui:
+	bundle exec ruby build_large_gui.rb
 
 .PHONY : stitch
 stitch: sources
@@ -26,11 +30,11 @@ slice: compose
 
 .PHONY : compose
 compose: generate_compose_files
-	bundle exec ruby compose.rb -j 8
+	bundle exec ruby compose.rb -j $$(nproc)
 
 .PHONY : generate_compose_files
 generate_compose_files:
-	cd compose_base && make -j 8
+	cd compose_base && make -j $$(nproc)
 
 .PHONY : sources
-sources: slice paintings animation
+sources: slice paintings animation gui
