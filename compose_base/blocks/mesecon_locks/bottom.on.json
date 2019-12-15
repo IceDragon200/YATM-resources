@@ -2,7 +2,7 @@
   "$includes": ["_variables"],
   "output": "blocks/mesecon_lock/$color$_bottom.on",
   "layers": {
-    "base": { "texture": "blocks/mesecon_lock/bottom.base.png" },
+    "base": { "texture": "blocks/mesecon_lock/bottom.on.png" },
     "mask": {
       "texture": "blocks/mesecon_lock/bottom.mask.png",
       "blend": {

@@ -389,13 +389,15 @@ class Compose::Application
         files = Dir.glob(@src_dir.join("**/*.json").to_s)
       end
 
-      files = files.map do |filename|
-        if File.directory?(filename)
-          Dir.glob(File.join(filename, "**/*.json"))
-        else
-          filename
-        end
-      end.flatten
+      files =
+        files.map do |filename|
+          if File.directory?(filename)
+            Dir.glob(File.join(filename, "**/*.json"))
+          else
+            filename
+          end
+        end.flatten
+
       files.each do |filename|
         tp.spawn do
           project_count += 1
