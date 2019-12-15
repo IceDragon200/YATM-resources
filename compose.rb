@@ -377,7 +377,7 @@ class Compose::Application
     files = optparse.parse(argv)
     thread_limit = [thread_limit, 1].max
 
-    tp = DragonTK::ThreadPool.new thread_limit: thread_limit
+    tp = DragonTK::ThreadPool.new thread_limit: thread_limit, abort_on_exception: true
 
     project_count = 0
     project_modified = 0

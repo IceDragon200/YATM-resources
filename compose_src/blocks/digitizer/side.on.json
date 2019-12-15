@@ -1,0 +1,95 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/digitizer/side.on",
+  "layers": {
+    "base": { "texture": "blocks/digitizer/side.base.png" },
+    "mask": {
+      "texture": "blocks/digitizer/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "mask.anim.0": {
+      "texture": "blocks/digitizer/side.mask.anim/0.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.anim.1": {
+      "texture": "blocks/digitizer/side.mask.anim/1.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.glow.anim.0": {
+      "texture": "blocks/digitizer/side.mask.glow.anim/0.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.glow.anim.1": {
+      "texture": "blocks/digitizer/side.mask.glow.anim/1.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.glow.anim.2": {
+      "texture": "blocks/digitizer/side.mask.glow.anim/2.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.glow.anim.3": {
+      "texture": "blocks/digitizer/side.mask.glow.anim/3.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask", "mask.anim.0", "mask.glow.anim.3"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.0", "mask.glow.anim.2"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.0", "mask.glow.anim.1"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.0", "mask.glow.anim.0"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.0", "mask.glow.anim.1"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.0", "mask.glow.anim.2"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1", "mask.glow.anim.3"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1", "mask.glow.anim.2"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1", "mask.glow.anim.1"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1", "mask.glow.anim.0"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1", "mask.glow.anim.1"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1", "mask.glow.anim.2"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    }
+  }
+}

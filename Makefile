@@ -38,3 +38,7 @@ generate_compose_files:
 
 .PHONY : sources
 sources: slice paintings animation gui
+
+.PHONY : install
+install:
+	bundle exec ruby install_textures.rb

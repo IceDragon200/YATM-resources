@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/digitizer/side.error",
+  "layers": {
+    "base": { "texture": "blocks/digitizer/side.base.png" },
+    "mask": {
+      "texture": "blocks/digitizer/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "error_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

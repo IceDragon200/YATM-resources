@@ -1,0 +1,55 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/materializer/side.on",
+  "layers": {
+    "base": { "texture": "blocks/materializer/side.base.png" },
+    "mask": {
+      "texture": "blocks/materializer/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "mask.anim.0": {
+      "texture": "blocks/materializer/side.mask.anim/0.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.anim.1": {
+      "texture": "blocks/materializer/side.mask.anim/1.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.anim.2": {
+      "texture": "blocks/materializer/side.mask.anim/2.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    },
+    "mask.anim.3": {
+      "texture": "blocks/materializer/side.mask.anim/3.png",
+      "blend": { "type": "multiply_color", "value": { "$variable": "on_color" } }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask", "mask.anim.3"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.0"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.1"]
+    },
+    {
+      "layers": ["base", "mask", "mask.anim.2"]
+    }
+  ],
+  "meta": {
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}
