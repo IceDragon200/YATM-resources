@@ -199,6 +199,15 @@ def install_yatm_core
   install_built_gui("gui_formbg_*.png", target_directory)
 end
 
+def install_yatm_codex
+  target_directory = File.expand_path('yatm/yatm_codex/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_items("codex.png",   target_directory)
+end
+
 def install_yatm_data_display
   target_directory = File.expand_path('yatm/yatm_data_display/textures', @mods_root)
 
@@ -525,8 +534,6 @@ def install_yatm_machines
 
   install_built_blocks("thermal_plate/*.png", target_directory)
 
-  install_built_blocks("surface_drill/*.png", target_directory)
-
   install_built_blocks("item_replicator/*.png", target_directory)
 
   install_built_blocks("hub/*.png", target_directory)
@@ -607,6 +614,8 @@ def install_yatm_mining
   FileUtils.mkdir target_directory
 
   install_built_blocks("quarry/*.png", target_directory)
+  install_built_blocks("surface_drill/*.png", target_directory)
+
   install_blocks("quarry_wall/*.png", target_directory)
 end
 
@@ -747,6 +756,7 @@ install_yatm_bees
 install_yatm_brewery
 install_yatm_cables
 install_yatm_cluster_thermal
+install_yatm_codex
 install_yatm_core
 install_yatm_culinary
 install_yatm_data_card_readers
