@@ -194,6 +194,7 @@ def install_yatm_core
   install_items("bucket/oil.png",   target_directory)
 
   install_blocks("face_debug/*.png", target_directory)
+  install_blocks("grid.png", target_directory)
 
   install_gui("gui_formbg_*.png", target_directory)
   install_built_gui("gui_formbg_*.png", target_directory)
@@ -206,6 +207,7 @@ def install_yatm_codex
   FileUtils.mkdir target_directory
 
   install_items("codex.png",   target_directory)
+  install_items("codex_deploy.png",   target_directory)
 end
 
 def install_yatm_data_display
