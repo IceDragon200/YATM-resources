@@ -81,6 +81,17 @@ def install_yatm_armoury
   install_items("firearms/*.png", target_directory)
 end
 
+def install_yatm_armoury_icbm
+  target_directory = File.expand_path('yatm/yatm_armoury_icbm/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("icbm/*.png", target_directory)
+
+  install_items("icbm/*.png", target_directory)
+end
+
 def install_yatm_bees
   target_directory = File.expand_path('yatm/yatm_bees/textures', @mods_root)
 
@@ -754,6 +765,7 @@ def install_yatm_woodcraft
 end
 
 install_yatm_armoury
+install_yatm_armoury_icbm
 install_yatm_bees
 install_yatm_brewery
 install_yatm_cables
