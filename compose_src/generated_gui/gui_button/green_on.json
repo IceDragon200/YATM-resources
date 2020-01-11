@@ -1,0 +1,20 @@
+{
+  "$includes": ["_variables"],
+  "output": "gui/colored_buttons/green.on",
+  "layers": {
+    "base": {
+      "texture": "gui/button.plate.base.colored.48px.png"
+    },
+    "mask": {
+      "texture": "gui/button.plate.base.colored.48px.png",
+      "mask": "gui/button.plate.base.colored.mask.48px.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.green" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}

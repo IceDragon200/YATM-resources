@@ -169,6 +169,18 @@ def install_yatm_data_card_readers
   install_built_blocks("card_reader/*.png", target_directory)
 end
 
+def install_yatm_data_control
+  target_directory = File.expand_path('yatm/yatm_data_control/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("data_control_plane/*.png", target_directory)
+
+  install_built_gui("colored_buttons/*.png", target_directory)
+  install_gui("button.*.png", target_directory)
+end
+
 def install_yatm_cluster_thermal
   target_directory = File.expand_path('yatm/yatm_cluster_thermal/textures', @mods_root)
 
@@ -774,6 +786,7 @@ install_yatm_codex
 install_yatm_core
 install_yatm_culinary
 install_yatm_data_card_readers
+install_yatm_data_control
 install_yatm_data_display
 install_yatm_data_fluid_sensor
 install_yatm_data_logic

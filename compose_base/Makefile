@@ -1,6 +1,25 @@
 .DEFAULT_GOAL : all
 .PHONY : all
-all: generate_mesecon_locks generate_mesecon_buttons generate_lamps generate_mailboxes generate_thermal_plates generate_concrete generate_packages generate_barrels generate_fluid_pipes generate_item_ducts generate_access_cards generate_inventory_drives generate_keys generate_copper_cable generate_data_cable
+all: generate_mesecon_locks \
+	 generate_mesecon_buttons \
+	 generate_lamps \
+	 generate_mailboxes \
+	 generate_thermal_plates \
+	 generate_concrete \
+	 generate_packages \
+	 generate_barrels \
+	 generate_fluid_pipes \
+	 generate_item_ducts \
+	 generate_access_cards \
+	 generate_inventory_drives \
+	 generate_keys \
+	 generate_copper_cable \
+	 generate_data_cable \
+	 generate_gui_buttons
+
+.PHONY : generate_gui_buttons
+generate_gui_buttons:
+	bundle exec ruby gui/gen_gui_buttons.rb
 
 .PHONY : generate_mesecon_locks
 generate_mesecon_locks:
