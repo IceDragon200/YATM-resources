@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "blocks/mailbox_$material$/$color$_bottom",
   "layers": {
     "base": { "texture": "blocks/mailbox_$material$/top.base.png" }

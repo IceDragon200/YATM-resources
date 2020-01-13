@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "items/key/$material$_$color$_toothed",
   "layers": {
     "base": { "texture": "items/keys/toothed_$material$.png" },

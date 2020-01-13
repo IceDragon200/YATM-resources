@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "blocks/thermal_plate/top.$color$.off",
   "layers": {
     "base": { "texture": "blocks/thermal_plate/front.base.png" }

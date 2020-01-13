@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "blocks/fluid_pipe_valve/$color$_valve.off",
   "layers": {
     "base": {

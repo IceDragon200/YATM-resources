@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "blocks/concrete/dotted_$color$_side",
   "layers": {
     "base": {

@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "blocks/retaining_wall/corner_$color$_bottom",
   "layers": {
     "base": {

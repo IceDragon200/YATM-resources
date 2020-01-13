@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "items/access_chips/$color$_common",
   "layers": {
     "base": { "texture": "items/access_chips/base.png" },

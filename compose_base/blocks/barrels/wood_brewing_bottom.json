@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables"],
+  "$includes": ["_variables", "_dye"],
   "output": "blocks/barrel_wood/brewing_$color$_bottom",
   "layers": {
     "base": { "texture": "blocks/barrel_wood/bottom.brewing.png" }
