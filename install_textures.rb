@@ -178,6 +178,7 @@ def install_yatm_data_control
   install_blocks("data_control_plane/*.png", target_directory)
 
   install_built_gui("colored_buttons/*.png", target_directory)
+  install_built_gui("colored_switches/*.png", target_directory)
   install_gui("button.*.png", target_directory)
 end
 
