@@ -1,11 +1,11 @@
 {
-  "$includes": ["_variables", "_dye"],
+  "$includes": ["_variables", "_concrete_variables", "_dye"],
   "output": "blocks/concrete_wall/$color$_front",
   "layers": {
     "base": {
       "texture": "blocks/retaining_wall/wall_front.base.png",
       "blend": {
-        "type": "multiply_color",
+        "type": { "$variable": "concrete_color_blend_mode" },
         "value": { "$variable": "dye.$color$" }
       }
     }

@@ -1,11 +1,11 @@
 {
-  "$includes": ["_variables", "_dye"],
+  "$includes": ["_variables", "_concrete_variables", "_dye"],
   "output": "blocks/concrete/meshed_$color$_side",
   "layers": {
     "base": {
       "texture": "blocks/concrete/top.meshed.png",
       "blend": {
-        "type": "multiply_color",
+        "type": { "$variable": "concrete_color_blend_mode" },
         "value": { "$variable": "dye.$color$" }
       }
     }

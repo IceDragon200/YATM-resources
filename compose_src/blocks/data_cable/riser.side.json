@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/data_cable/multi.riser.side",
+  "layers": {
+    "base": {
+      "texture": "blocks/data_cable/riser.multi.side.png"
+    }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

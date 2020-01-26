@@ -1,5 +1,5 @@
 {
-  "$includes": ["_variables", "_dye"],
+  "$includes": ["_variables", "_concrete_variables", "_dye"],
   "output": "blocks/retaining_wall/$color$_top",
   "layers": {
     "base": {
@@ -9,7 +9,7 @@
       "texture": "blocks/retaining_wall/top.base.png",
       "mask": "blocks/retaining_wall/top.mask.png",
       "blend": {
-        "type": "multiply_color",
+        "type": { "$variable": "concrete_color_blend_mode" },
         "value": { "$variable": "dye.$color$" }
       }
     }

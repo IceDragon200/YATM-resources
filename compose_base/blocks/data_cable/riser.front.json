@@ -1,0 +1,16 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "blocks/data_cable/$color$.riser.front",
+  "layers": {
+    "cable_base": {
+      "texture": "blocks/data_cable/riser.front.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["cable_base"] }
+  ]
+}

@@ -317,6 +317,10 @@ source_groups.each do |(source_group_name, sources)|
 
   frame_files = frame_files.values.sort
 
+  if ENV["SKIP_ANIMATIONS"]
+    next
+  end
+
   begin
     frame_size_limit = 320
     [1, 2, 4, 8].each do |scale|

@@ -273,6 +273,16 @@ def install_yatm_data_logic
   install_items("data_programmer.png", target_directory)
 end
 
+def install_yatm_data_network
+  target_directory = File.expand_path('yatm/yatm_data_network/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_built_blocks("data_cable/*.png", target_directory)
+  install_blocks("data_cable/bracket.*.png", target_directory)
+end
+
 def install_yatm_data_noteblock
   target_directory = File.expand_path('yatm/yatm_data_noteblock/textures', @mods_root)
 
@@ -653,7 +663,6 @@ def install_yatm_oku
 
   install_built_blocks("computer/*.png", target_directory)
   install_built_blocks("oku_micro_controller/*.png", target_directory)
-  install_built_blocks("data_cable/*.png", target_directory)
 end
 
 def install_yatm_papercraft
@@ -791,6 +800,7 @@ install_yatm_data_control
 install_yatm_data_display
 install_yatm_data_fluid_sensor
 install_yatm_data_logic
+install_yatm_data_network
 install_yatm_data_noteblock
 install_yatm_data_to_mesecon
 install_yatm_decor
