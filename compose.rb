@@ -77,6 +77,9 @@ class Compose::FrameCompositor
       when 'overlay_color'
         blit_frame.blit_r(src_frame, 0, 0, src_frame.rect)
         blit_frame.blend_overlay_fill_rect(0, 0, blit_frame.width, blit_frame.height, blend.fetch('value'))
+      when 'hard_light_color'
+        blit_frame.blit_r(src_frame, 0, 0, src_frame.rect)
+        blit_frame.blend_hard_light_fill_rect(0, 0, blit_frame.width, blit_frame.height, blend.fetch('value'))
       else
         raise ArgumentError, "unsupported blend mode #{type}"
       end
@@ -136,8 +139,8 @@ class Compose::FrameCompositor
           transform.translate.y,
           src_rect,
           opacity)
-      when 'overlay'
-        @buffer_frame.blend_blit_r(:overlay, src_frame,
+      when 'overlay', 'multiply', 'hard_light'
+        @buffer_frame.blend_blit_r(blend_mode.to_sym, src_frame,
           transform.translate.x,
           transform.translate.y,
           src_rect,
