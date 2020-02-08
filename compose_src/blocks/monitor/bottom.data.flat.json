@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/monitor/bottom.data.flat",
+  "layers": {
+    "base": { "texture": "blocks/monitor/bottom.data.flat.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

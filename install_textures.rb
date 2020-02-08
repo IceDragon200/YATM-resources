@@ -728,6 +728,7 @@ def install_yatm_refinery
   FileUtils.mkdir target_directory
 
   install_built_blocks("boiler/*.png", target_directory)
+  install_blocks("thermal_boiler/*.png", target_directory)
   install_built_blocks("vapourizer/*.png", target_directory)
   install_built_blocks("distillation_unit/*.png", target_directory)
   install_built_blocks("pump/*.png", target_directory)
