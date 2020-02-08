@@ -169,6 +169,24 @@ def install_yatm_data_card_readers
   install_built_blocks("card_reader/*.png", target_directory)
 end
 
+def install_yatm_data_console_monitor
+  target_directory = File.expand_path('yatm/yatm_data_console_monitor/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'yatm_console'
+
+  install_built_blocks("monitor/back.data.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/bottom.data.flat.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/bottom.data.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/front.console.*.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/side.flat.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/side.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/top.flat.png", target_directory, prefix: prefix)
+  install_built_blocks("monitor/top.png", target_directory, prefix: prefix)
+end
+
 def install_yatm_data_control
   target_directory = File.expand_path('yatm/yatm_data_control/textures', @mods_root)
 
@@ -359,7 +377,16 @@ def install_yatm_dscs
   install_built_blocks("compute_module/*.png", target_directory)
   install_built_blocks("inventory_controller/*.png", target_directory)
 
-  install_built_blocks("monitor/*.png", target_directory)
+  install_built_blocks("monitor/front.crafting.*.png", target_directory)
+  install_built_blocks("monitor/front.ele.*.png", target_directory)
+  install_built_blocks("monitor/front.inventory.*.png", target_directory)
+  install_built_blocks("monitor/bottom.flat.png", target_directory)
+  install_built_blocks("monitor/bottom.png", target_directory)
+  install_built_blocks("monitor/back.png", target_directory)
+  install_built_blocks("monitor/side.*.png", target_directory)
+  install_built_blocks("monitor/side.png", target_directory)
+  install_built_blocks("monitor/top.*.png", target_directory)
+  install_built_blocks("monitor/top.png", target_directory)
 
   install_built_blocks("void_chest/*.png", target_directory)
   install_built_blocks("void_crate/*.png", target_directory)
@@ -801,6 +828,7 @@ install_yatm_codex
 install_yatm_core
 install_yatm_culinary
 install_yatm_data_card_readers
+install_yatm_data_console_monitor
 install_yatm_data_control
 install_yatm_data_display
 install_yatm_data_fluid_sensor
