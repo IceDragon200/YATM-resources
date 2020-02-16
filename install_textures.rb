@@ -68,6 +68,16 @@ def install_gui(pattern, target_directory, **options)
   install_from(@gui_root, pattern, target_directory, **options)
 end
 
+def install_harmonia_crystals
+  target_directory = File.expand_path('harmonia/harmonia_crystals/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("crystal/*.png", target_directory, prefix: 'harmonia')
+  install_items("element_crystal.*.png", target_directory, prefix: 'harmonia')
+end
+
 def install_yatm_armoury
   target_directory = File.expand_path('yatm/yatm_armoury/textures', @mods_root)
 
@@ -216,7 +226,6 @@ def install_yatm_core
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
 
-  install_items("element_crystal.*.png", target_directory)
   install_items("hammer.*.png", target_directory)
   install_items("keycard.*.png", target_directory)
 
@@ -818,6 +827,7 @@ def install_yatm_woodcraft
   install_items("sawdust.png", target_directory)
 end
 
+install_harmonia_crystals
 install_yatm_armoury
 install_yatm_armoury_icbm
 install_yatm_bees
