@@ -16,6 +16,7 @@ all: generate_mesecon_locks \
 	 generate_copper_cable \
 	 generate_data_cable \
 	 generate_gui_buttons
+	sync
 
 .PHONY : generate_gui_buttons
 generate_gui_buttons:

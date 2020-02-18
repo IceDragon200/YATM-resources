@@ -701,8 +701,11 @@ def install_yatm_oku
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
 
+  install_built_blocks("floppy_disk_drive/*.png", target_directory)
   install_built_blocks("computer/*.png", target_directory)
   install_built_blocks("oku_micro_controller/*.png", target_directory)
+
+  install_built_items("floppy_disks/*.png", target_directory)
 end
 
 def install_yatm_papercraft

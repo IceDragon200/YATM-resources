@@ -387,6 +387,8 @@ class Compose::Application
     project_unmodified = 0
     project_error = 0
 
+    projects_with_errors = []
+
     begin
       if files.empty?
         files = Dir.glob(@src_dir.join("**/*.json").to_s)
@@ -407,6 +409,7 @@ class Compose::Application
           case compose_file(filename)
           when :error
             project_error += 1
+            projects_with_errors.push(filename)
           when :modified
             project_modified += 1
           when :unmodified
@@ -417,13 +420,21 @@ class Compose::Application
     ensure
       tp.await
       time_ended = Time.now
-      @logger.io.puts [
+      logs = [
         "",
         "Composed in #{time_ended - time_started} seconds",
         "",
         "Projects #{project_modified} modified / #{project_unmodified} unmodified / #{project_error} errors / #{project_count} total",
         "",
       ]
+
+      unless projects_with_errors.empty?
+        logs.push("Errors:")
+        projects_with_errors.each do |filename|
+          logs.push "\t#{filename}"
+        end
+      end
+      @logger.io.puts logs
     end
   end
 end

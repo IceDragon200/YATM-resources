@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/floppy_disk_drive/front.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/floppy_disk_drive/front.base.png"
+    },
+    "mask": {
+      "texture": "blocks/floppy_disk_drive/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

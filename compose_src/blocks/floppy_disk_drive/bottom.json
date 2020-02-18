@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/floppy_disk_drive/bottom",
+  "layers": {
+    "base": { "texture": "blocks/floppy_disk_drive/bottom.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}
