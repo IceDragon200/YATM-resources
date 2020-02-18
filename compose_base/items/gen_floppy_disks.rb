@@ -21,10 +21,10 @@ colors = [
 ]
 
 ['floppy_disks'].each do |item_basename|
-  ctx = Compose::Context.new("compose_base/items/gen_#{item_basename}s")
+  ctx = Compose::Context.new("compose_base/items/gen_#{item_basename}")
   ctx.add_reference(nil, __FILE__)
 
-  input_files = Dir.glob(File.join(__dir__, "#{item_basename}s", "*.json"))
+  input_files = Dir.glob(File.join(__dir__, "#{item_basename}", "*.json"))
 
   input_files.each do |filename|
     ctx.add_reference(nil, filename)

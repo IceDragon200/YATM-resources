@@ -11,6 +11,7 @@ all: generate_mesecon_locks \
 	 generate_fluid_pipes \
 	 generate_item_ducts \
 	 generate_access_cards \
+	 generate_floppy_disks \
 	 generate_inventory_drives \
 	 generate_keys \
 	 generate_copper_cable \
@@ -61,6 +62,10 @@ generate_fluid_pipes:
 .PHONY : generate_item_ducts
 generate_item_ducts:
 	bundle exec ruby blocks/gen_item_ducts.rb
+
+.PHONY : generate_floppy_disks
+generate_floppy_disks:
+	bundle exec ruby items/gen_floppy_disks.rb
 
 .PHONY : generate_access_cards
 generate_access_cards:
