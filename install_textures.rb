@@ -78,6 +78,15 @@ def install_harmonia_crystals
   install_items("element_crystal.*.png", target_directory, prefix: 'harmonia')
 end
 
+def install_harmonia_totems
+  target_directory = File.expand_path('harmonia/harmonia_totems/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("animal_pillars/*.png", target_directory, prefix: 'harmonia')
+end
+
 def install_yatm_armoury
   target_directory = File.expand_path('yatm/yatm_armoury/textures', @mods_root)
 
@@ -831,6 +840,7 @@ def install_yatm_woodcraft
 end
 
 install_harmonia_crystals
+install_harmonia_totems
 install_yatm_armoury
 install_yatm_armoury_icbm
 install_yatm_bees
