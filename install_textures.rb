@@ -74,8 +74,35 @@ def install_harmonia_crystals
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
 
-  install_blocks("crystal/*.png", target_directory, prefix: 'harmonia')
-  install_items("element_crystal.*.png", target_directory, prefix: 'harmonia')
+  prefix = 'harmonia'
+
+  install_blocks("crystal/*.png", target_directory, prefix: prefix)
+  install_items("element_crystal.*.png", target_directory, prefix: prefix)
+end
+
+def install_harmonia_exp
+  target_directory = File.expand_path('harmonia/harmonia_exp/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+
+  install_gui("hudbar_exp.png", target_directory, prefix: prefix)
+  install_gui("hudbar_exp_icon.png", target_directory, prefix: prefix)
+  install_gui("hudbar_exp_bgicon.png", target_directory, prefix: prefix)
+end
+
+def install_harmonia_mana
+  target_directory = File.expand_path('harmonia/harmonia_mana/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+  install_gui("hudbar_mana.png", target_directory, prefix: prefix)
+  install_gui("hudbar_mana_icon.png", target_directory, prefix: prefix)
+  install_gui("hudbar_mana_bgicon.png", target_directory, prefix: prefix)
 end
 
 def install_harmonia_totems
@@ -84,7 +111,9 @@ def install_harmonia_totems
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
 
-  install_blocks("animal_pillars/*.png", target_directory, prefix: 'harmonia')
+  prefix = 'harmonia'
+
+  install_blocks("animal_pillars/*.png", target_directory, prefix: prefix)
 end
 
 def install_yatm_armoury
@@ -840,6 +869,8 @@ def install_yatm_woodcraft
 end
 
 install_harmonia_crystals
+install_harmonia_exp
+install_harmonia_mana
 install_harmonia_totems
 install_yatm_armoury
 install_yatm_armoury_icbm

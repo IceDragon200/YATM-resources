@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'dragontk', '~> 1.14'
+gem 'dragontk', '~> 1.15'
 gem 'activesupport'
 gem 'minil', '~> 0.19'
-gem 'scrapyard'
+gem 'scrapyard', '~> 1.1'
 gem 'json'
