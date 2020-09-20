@@ -1,0 +1,18 @@
+{
+  "$includes": ["_variables", "_concrete_variables", "_dye"],
+  "output": "blocks/concrete/pillar_$color$_side",
+  "layers": {
+    "base": {
+      "texture": "blocks/concrete/top.pillar.png",
+      "blend": {
+        "type": { "$variable": "concrete_color_blend_mode" },
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}
