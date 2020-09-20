@@ -233,15 +233,11 @@ class Compose::Application
   attr_reader :output_dir
   attr_reader :logger
 
-  def initialize
+  def initialize()
     @logger = Moon::Logfmt.new
     @logger.io = STDOUT.thread_safe
     @logger.level = :info
     @texture_cache = {}
-    @root_dir = Pathname.new(__dir__)
-    @texture_dir = @root_dir.join('textures')
-    @src_dir  = @root_dir.join('compose_src')
-    @output_dir = @root_dir.join('build')
     @project_counter = 0
   end
 
@@ -370,14 +366,26 @@ class Compose::Application
   end
 
   def run(argv)
+    root = __dir__
+
     time_started = Time.now
     thread_limit = 1
     optparse = OptionParser.new do |opts|
       opts.on '-j', '--jobs NUM', Integer, 'Number of worker threads to use' do |v|
         thread_limit = v
       end
+
+      opts.on '-r', '--root DIRNAME', String, 'Set root' do |v|
+        root = File.expand_path(v)
+      end
     end
     files = optparse.parse(argv)
+
+    @root_dir = Pathname.new(root)
+    @texture_dir = @root_dir.join('textures')
+    @src_dir  = @root_dir.join('compose_src')
+    @output_dir = @root_dir.join('build')
+
     thread_limit = [thread_limit, 1].max
 
     tp = DragonTK::ThreadPool.new thread_limit: thread_limit, abort_on_exception: true
@@ -439,4 +447,4 @@ class Compose::Application
   end
 end
 
-Compose::Application.new.run(ARGV)
+Compose::Application.new().run(ARGV.dup)

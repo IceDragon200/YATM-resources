@@ -71,6 +71,30 @@ module Compose
       end
     end
 
+    def tags_diff
+      keys = @tags.keys | @loaded_tags.keys
+
+      result = {}
+
+      keys.each do |key|
+        unless @tags[key] == @loaded_tags[key]
+          if @tags.key?(key) and @loaded_tags.key?(key)
+            result[key] = {
+              reason: :tag_mismatch,
+              current: @tags[key],
+              loaded: @loaded_tags[key]
+            }
+          elsif not @tags.key?(key)
+            result[key] = :missing_from_current
+          elsif not @loaded_tags.key?(key)
+            result[key] = :missing_from_loaded
+          end
+        end
+      end
+
+      result
+    end
+
     def all_tags_referenced?
       keys = @tags.keys | @loaded_tags.keys
 

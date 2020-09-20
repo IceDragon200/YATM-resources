@@ -258,6 +258,15 @@ def install_yatm_cluster_thermal
   install_built_blocks("thermal_node/*.png", target_directory)
 end
 
+def install_yatm_clusters
+  target_directory = File.expand_path('yatm/yatm_clusters/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_items("cluster_tool.png", target_directory)
+end
+
 def install_yatm_core
   target_directory = File.expand_path('yatm/yatm_core/textures', @mods_root)
 
@@ -878,6 +887,7 @@ install_yatm_bees
 install_yatm_brewery
 install_yatm_cables
 install_yatm_cluster_thermal
+install_yatm_clusters
 install_yatm_codex
 install_yatm_core
 install_yatm_culinary
