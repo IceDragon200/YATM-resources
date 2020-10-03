@@ -8,6 +8,8 @@ all: generate_mesecon_locks \
 	 generate_concrete \
 	 generate_packages \
 	 generate_barrels \
+	 generate_carbon_steel_chests \
+	 generate_carbon_steel_lanterns \
 	 generate_fluid_pipes \
 	 generate_item_ducts \
 	 generate_access_cards \
@@ -50,6 +52,14 @@ generate_concrete:
 .PHONY : generate_packages
 generate_packages:
 	bundle exec ruby blocks/gen_packages.rb
+
+.PHONY : generate_carbon_steel_chests
+generate_carbon_steel_chests:
+	bundle exec ruby blocks/gen_carbon_steel_chest.rb
+
+.PHONY : generate_carbon_steel_lanterns
+generate_carbon_steel_lanterns:
+	bundle exec ruby blocks/gen_carbon_steel_lantern.rb
 
 .PHONY : generate_barrels
 generate_barrels:

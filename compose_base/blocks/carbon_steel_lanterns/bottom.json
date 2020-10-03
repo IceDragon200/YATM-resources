@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "blocks/carbon_steel_lanterns/$color$_bottom",
+  "layers": {
+    "base": { "texture": "blocks/carbon_steel_lantern/top.base.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "blocks/carbon_steel_lanterns/$color$_side",
+  "layers": {
+    "base": { "texture": "blocks/carbon_steel_lantern/side.base.png" },
+    "glass": {
+      "texture": "blocks/carbon_steel_lantern/side.mask.png",
+      "blend": {
+        "type": "overlay_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "glass"] }
+  ]
+}

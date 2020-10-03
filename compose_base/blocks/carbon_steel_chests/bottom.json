@@ -1,0 +1,10 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "blocks/carbon_steel_chests/$color$_bottom",
+  "layers": {
+    "base": { "texture": "blocks/carbon_steel_chest/bottom.base.png" }
+  },
+  "frames": [
+    { "layers": ["base"] }
+  ]
+}

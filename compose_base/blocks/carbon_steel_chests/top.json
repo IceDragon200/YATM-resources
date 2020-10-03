@@ -1,0 +1,17 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "blocks/carbon_steel_chests/$color$_top",
+  "layers": {
+    "base": { "texture": "blocks/carbon_steel_chest/top.base.png" },
+    "banner": {
+      "texture": "blocks/carbon_steel_chest/top.ribbon.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "banner"] }
+  ]
+}

@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+#
+# This is the texture installation script for YATM
+#
 require 'fileutils'
 
 @root = __dir__
@@ -563,6 +566,10 @@ def install_yatm_foundry
 
   install_blocks("carbon_steel_block/*.png", target_directory)
 
+  install_blocks("carbon_steel_chest/inside.png", target_directory)
+  install_built_blocks("carbon_steel_chests/*.png", target_directory)
+  install_built_blocks("carbon_steel_lanterns/*.png", target_directory)
+
   install_fluids("molten_iron/*.png", target_directory)
   install_fluids("molten_carbon_steel/*.png", target_directory)
   install_fluids("molten_copper/*.png", target_directory)
@@ -847,6 +854,7 @@ def install_yatm_solar_energy
   FileUtils.mkdir target_directory
 
   install_built_blocks("solar_panel/*.png", target_directory)
+  install_items("photovoltaic_cell.png", target_directory)
 end
 
 def install_yatm_spacetime
@@ -870,11 +878,28 @@ def install_yatm_woodcraft
 
   install_blocks("dust_bin/*.png", target_directory)
   install_blocks("sawdust/*.png", target_directory)
-  install_blocks("wood_core/*.png", target_directory)
   install_blocks("crafting_table/*.png", target_directory)
   install_built_blocks("wood_sawmill/*.png", target_directory)
 
   install_items("sawdust.png", target_directory)
+end
+
+def install_yatm_woodcraft_default
+  target_directory = File.expand_path('yatm/yatm_woodcraft_default/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("wood_core_default/*.png", target_directory)
+end
+
+def install_yatm_woodcraft_nokore
+  target_directory = File.expand_path('yatm/yatm_woodcraft_nokore/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("wood_core_nokore/*.png", target_directory)
 end
 
 install_harmonia_crystals
@@ -933,3 +958,5 @@ install_yatm_security
 install_yatm_solar_energy
 install_yatm_spacetime
 install_yatm_woodcraft
+install_yatm_woodcraft_default
+install_yatm_woodcraft_nokore
