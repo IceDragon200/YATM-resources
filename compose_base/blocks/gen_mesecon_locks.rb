@@ -1,23 +1,8 @@
 require 'fileutils'
 require_relative '../../compose_context'
+require_relative '../colors'
 
-colors = [
-  "white",
-  "grey",
-  "dark_grey",
-  "black",
-  "violet",
-  "blue",
-  "cyan",
-  "dark_green",
-  "green",
-  "yellow",
-  "brown",
-  "orange",
-  "red",
-  "magenta",
-  "pink",
-]
+colors = Gen.colors
 
 ctx = Compose::Context.new('compose_base/blocks/gen_mesecon_locks')
 ctx.add_reference(nil, __FILE__)

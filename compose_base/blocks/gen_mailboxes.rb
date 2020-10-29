@@ -1,24 +1,9 @@
 require 'fileutils'
 require_relative '../../compose_context'
+require_relative '../colors'
 
-colors = [
-  "default",
-  "white",
-  "grey",
-  "dark_grey",
-  "black",
-  "violet",
-  "blue",
-  "cyan",
-  "dark_green",
-  "green",
-  "yellow",
-  "brown",
-  "orange",
-  "red",
-  "magenta",
-  "pink",
-]
+colors = Gen.colors
+colors.push('default')
 
 materials = ["metal", "wood"]
 

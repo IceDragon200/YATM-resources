@@ -1,23 +1,9 @@
 require 'fileutils'
 require_relative '../../compose_context'
+require_relative '../colors'
 
-colors = [
-  "white",
-  "grey",
-  "dark_grey",
-  "black",
-  "violet",
-  "blue",
-  "cyan",
-  "dark_green",
-  "green",
-  "yellow",
-  "brown",
-  "orange",
-  "red",
-  "magenta",
-  "pink",
-]
+colors = Gen.colors
+colors.push('default')
 
 ctx = Compose::Context.new('compose_base/blocks/gen_mesecon_buttons')
 ctx.add_reference(nil, __FILE__)

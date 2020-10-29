@@ -347,11 +347,18 @@ def install_yatm_data_logic
   install_blocks("data_node_sensor/*.png", target_directory)
   install_blocks("data_proximity_sensor/*.png", target_directory)
   install_blocks("data_pulser/*.png", target_directory)
+  install_blocks("data_router/*.png", target_directory)
   install_blocks("data_sequencer/*.png", target_directory)
+  install_blocks("data_server/*.png", target_directory)
   install_blocks("data_thermal_sensor/*.png", target_directory)
   install_blocks("data_toggle_button/*.png", target_directory)
+  install_blocks("data_wave_generator/*.png", target_directory)
 
   install_items("data_programmer.png", target_directory)
+  install_built_items("tokens/*.png", target_directory)
+
+  install_gui("small_colored_button/*.png", target_directory)
+  install_gui("item_border/*.png", target_directory)
 end
 
 def install_yatm_data_network
@@ -762,6 +769,21 @@ def install_yatm_oku
   install_built_items("floppy_disks/*.png", target_directory)
 end
 
+def install_yatm_packs
+  target_directory = File.expand_path('yatm/yatm_packs/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("ammo_pack/*.png", target_directory)
+  install_blocks("health_pack/*.png", target_directory)
+  install_blocks("mana_pack/*.png", target_directory)
+
+  install_items("ammo_pack_pouch.png", target_directory)
+  install_items("health_pack_pouch.png", target_directory)
+  install_items("mana_pack_pouch.png", target_directory)
+end
+
 def install_yatm_papercraft
   target_directory = File.expand_path('yatm/yatm_papercraft/textures', @mods_root)
 
@@ -948,6 +970,7 @@ install_yatm_mesecon_sequencer
 install_yatm_mesecon_locks
 install_yatm_mining
 install_yatm_oku
+install_yatm_packs
 install_yatm_papercraft
 install_yatm_plastics
 install_yatm_rails
