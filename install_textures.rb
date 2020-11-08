@@ -80,6 +80,9 @@ def install_harmonia_crystals
   prefix = 'harmonia'
 
   install_blocks("crystal/*.png", target_directory, prefix: prefix)
+  install_blocks("crystal_holder/*.png", target_directory, prefix: prefix)
+
+  install_items("crystal_shards/*.png", target_directory, prefix: prefix)
   install_items("element_crystal.*.png", target_directory, prefix: prefix)
 end
 
@@ -106,6 +109,17 @@ def install_harmonia_mana
   install_gui("hudbar_mana.png", target_directory, prefix: prefix)
   install_gui("hudbar_mana_icon.png", target_directory, prefix: prefix)
   install_gui("hudbar_mana_bgicon.png", target_directory, prefix: prefix)
+  install_gui("mana_*.png", target_directory, prefix: prefix)
+end
+
+def install_harmonia_pottery
+  target_directory = File.expand_path('harmonia/harmonia_pottery/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+  install_blocks("clay_pot/*.png", target_directory, prefix: prefix)
 end
 
 def install_harmonia_totems
@@ -119,6 +133,16 @@ def install_harmonia_totems
   install_blocks("animal_pillars/*.png", target_directory, prefix: prefix)
 end
 
+def install_harmonia_treasure
+  target_directory = File.expand_path('harmonia/harmonia_treasure/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+  install_items("treasure_bags/*.png", target_directory, prefix: prefix)
+end
+
 def install_yatm_armoury
   target_directory = File.expand_path('yatm/yatm_armoury/textures', @mods_root)
 
@@ -130,6 +154,15 @@ def install_yatm_armoury
   install_items("ammo/*.png", target_directory)
   install_items("magazines/*.png", target_directory)
   install_items("firearms/*.png", target_directory)
+end
+
+def install_yatm_armoury_c4
+  target_directory = File.expand_path('yatm/yatm_armoury_c4/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("c4/*.png", target_directory)
 end
 
 def install_yatm_armoury_icbm
@@ -248,6 +281,7 @@ def install_yatm_data_control
 
   install_built_gui("colored_buttons/*.png", target_directory)
   install_built_gui("colored_switches/*.png", target_directory)
+  install_built_gui("colored_rotary_buttons/*.png", target_directory)
   install_gui("button.*.png", target_directory)
 end
 
@@ -927,8 +961,11 @@ end
 install_harmonia_crystals
 install_harmonia_exp
 install_harmonia_mana
+install_harmonia_pottery
 install_harmonia_totems
+install_harmonia_treasure
 install_yatm_armoury
+install_yatm_armoury_c4
 install_yatm_armoury_icbm
 install_yatm_bees
 install_yatm_brewery

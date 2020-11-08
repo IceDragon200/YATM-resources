@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "gui/colored_rotary_buttons/$color$.1",
+  "layers": {
+    "base": {
+      "texture": "gui/button.base.rotary.48px.png"
+    },
+    "mask": {
+      "texture": "gui/button.rotary.1.48px.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}
