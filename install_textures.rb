@@ -868,6 +868,7 @@ def install_yatm_reactors
   FileUtils.mkdir target_directory
 
   install_built_blocks("reactor/**/*.png", target_directory)
+  install_items("nuclear_pellets/*.png", target_directory)
 end
 
 def install_yatm_refinery
