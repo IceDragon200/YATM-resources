@@ -3,7 +3,7 @@
   "output": "items/tokens/$color$",
   "layers": {
     "base": {
-      "texture": "items/token_base.png",
+      "texture": "items/token_base2.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "dye.$color$" }

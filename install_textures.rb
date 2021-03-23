@@ -174,6 +174,8 @@ def install_yatm_armoury_icbm
   install_blocks("icbm/*.png", target_directory)
 
   install_items("icbm/*.png", target_directory)
+  install_items("icbm_warheads/*.png", target_directory)
+  install_items("icbm_shell.png", target_directory)
 end
 
 def install_yatm_bees
@@ -370,11 +372,14 @@ def install_yatm_data_logic
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
 
-  install_blocks("data_arith/*.png", target_directory)
+  # installs the arithmetic node textures along with the stamps
+  install_blocks("data_arith/**/*.png", target_directory)
+
   install_blocks("data_buffer/*.png", target_directory)
   install_blocks("data_clock/*.png", target_directory)
   install_blocks("data_comparator/*.png", target_directory)
   install_blocks("data_decoder/*.png", target_directory)
+  install_blocks("data_lamp/**/*.png", target_directory)
   install_blocks("data_light_sensor/*.png", target_directory)
   install_blocks("data_memory/*.png", target_directory)
   install_blocks("data_momentary_button/*.png", target_directory)
@@ -392,6 +397,8 @@ def install_yatm_data_logic
   install_built_items("tokens/*.png", target_directory)
 
   install_gui("small_colored_button/*.png", target_directory)
+  install_gui("small_switch/*.png", target_directory)
+  install_gui("wide_switch/*.png", target_directory)
   install_gui("item_border/*.png", target_directory)
 end
 
