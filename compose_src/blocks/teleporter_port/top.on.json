@@ -33,30 +33,58 @@
         "type": "multiply_color",
         "value": { "$variable": "on_color" }
       }
+    },
+    "on.light.4": {
+      "texture": "blocks/teleporter_port/top.anim.masks/4.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "on.light.5": {
+      "texture": "blocks/teleporter_port/top.anim.masks/5.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "on.light.6": {
+      "texture": "blocks/teleporter_port/top.anim.masks/6.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    },
+    "on.light.7": {
+      "texture": "blocks/teleporter_port/top.anim.masks/7.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
     }
   },
   "frames": [
-    {
-      "layers": ["base", "on.light.0"]
-    },
-    {
-      "layers": ["base", "on.light.1"]
-    },
-    {
-      "layers": ["base", "on.light.2"]
-    },
-    {
-      "layers": ["base", "on.light.3"]
-    }
+    {"layers": ["base", "on.light.0"]},
+    {"layers": ["base", "on.light.1"]},
+    {"layers": ["base", "on.light.2"]},
+    {"layers": ["base", "on.light.3"]},
+    {"layers": ["base", "on.light.4"]},
+    {"layers": ["base", "on.light.5"]},
+    {"layers": ["base", "on.light.6"]},
+    {"layers": ["base", "on.light.7"]}
   ],
   "meta": {
     "animation": {
-      "frametime": 4,
+      "frametime": 2,
       "frames": [
         0,
         1,
         2,
-        3
+        3,
+        4,
+        5,
+        6,
+        7
       ]
     }
   }

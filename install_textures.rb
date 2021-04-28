@@ -25,7 +25,7 @@ def install_tilemap(pattern, target_directory, prefix: 'yatm')
     newname = newname.gsub(/\A_/, '')
 
     target_filename = File.join(target_directory, newname)
-    FileUtils::Verbose.cp filename, target_filename
+    FileUtils::Verbose.cp filename, target_filename, preserve: true
   end
 end
 
@@ -35,7 +35,7 @@ def install_from(root, pattern, target_directory, prefix: 'yatm')
     newname = prefix + basename.gsub('/', '_')
     newname = newname.gsub(/\A_/, '')
     target_filename = File.join(target_directory, newname)
-    FileUtils::Verbose.cp filename, target_filename
+    FileUtils::Verbose.cp filename, target_filename, preserve: true
   end
 end
 
@@ -150,10 +150,13 @@ def install_yatm_armoury
   FileUtils.mkdir target_directory
 
   install_built_blocks("ammo_can/*.png", target_directory)
+  install_blocks("target.png", target_directory)
 
   install_items("ammo/*.png", target_directory)
   install_items("magazines/*.png", target_directory)
   install_items("firearms/*.png", target_directory)
+  install_items("grenades/*.png", target_directory)
+  install_items("grenades/{chemical,fire,frost,nuclear}/0.png", target_directory)
 end
 
 def install_yatm_armoury_c4
@@ -303,7 +306,6 @@ def install_yatm_clusters
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
 
-  install_items("cluster_tool.png", target_directory)
 end
 
 def install_yatm_core
@@ -392,6 +394,8 @@ def install_yatm_data_logic
   install_blocks("data_thermal_sensor/*.png", target_directory)
   install_blocks("data_toggle_button/*.png", target_directory)
   install_blocks("data_wave_generator/*.png", target_directory)
+  install_blocks("data_level_display/liquid/{cooling,heating,nuclear}.png", target_directory)
+  install_blocks("data_level_display/*.png", target_directory)
 
   install_items("data_programmer.png", target_directory)
   install_built_items("tokens/*.png", target_directory)
@@ -459,6 +463,16 @@ def install_yatm_decor
 
   install_blocks("meshes/*.png", target_directory)
   install_blocks("vents/*.png", target_directory)
+end
+
+def install_yatm_debug
+  target_directory = File.expand_path('yatm/yatm_debug/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_items("transport_network_debug_tool.png", target_directory)
+  install_items("cluster_tool.png", target_directory)
 end
 
 def install_yatm_drones
@@ -648,7 +662,6 @@ def install_yatm_item_ducts
   FileUtils.mkdir target_directory
 
   install_built_blocks("item_duct/*.png", target_directory)
-  install_items("transport_network_debug_tool.png", target_directory)
 end
 
 def install_yatm_item_shelves
@@ -808,6 +821,17 @@ def install_yatm_oku
   install_built_blocks("oku_micro_controller/*.png", target_directory)
 
   install_built_items("floppy_disks/*.png", target_directory)
+end
+
+def install_yatm_overhead_rails
+  target_directory = File.expand_path('yatm/yatm_overhead_rails/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("overhead_rails/*.png", target_directory)
+  install_blocks("overhead_docking_station/**/*.png", target_directory)
+  install_blocks("docking_crate/*.png", target_directory)
 end
 
 def install_yatm_packs
@@ -992,6 +1016,7 @@ install_yatm_data_logic
 install_yatm_data_network
 install_yatm_data_noteblock
 install_yatm_data_to_mesecon
+install_yatm_debug
 install_yatm_decor
 install_yatm_drones
 install_yatm_dscs
@@ -1015,6 +1040,7 @@ install_yatm_mesecon_sequencer
 install_yatm_mesecon_locks
 install_yatm_mining
 install_yatm_oku
+install_yatm_overhead_rails
 install_yatm_packs
 install_yatm_papercraft
 install_yatm_plastics

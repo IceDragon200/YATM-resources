@@ -275,7 +275,7 @@ class Compose::Application
         if key == '$includes'
           value.each do |file|
             filename = @src_dir.join(file + '.json').to_s
-            partial = load_composer_file(filename, options)
+            partial = load_composer_file(filename, **options)
             result = result.deep_merge(partial)
           end
         else
@@ -320,7 +320,7 @@ class Compose::Application
     case File.extname(filename)
     when ".json"
       context.add_reference(options[:active_filename], filename)
-      preprocess_data(load_json(filename), options.merge(context: context, active_filename: filename))
+      preprocess_data(load_json(filename), **options.merge(context: context, active_filename: filename))
     else
       raise "unexpected compose file #{filename}"
     end

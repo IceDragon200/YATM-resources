@@ -2,7 +2,7 @@
   "$includes": ["_variables"],
   "output": "blocks/teleporter/top.off",
   "layers": {
-    "base": { "texture": "blocks/teleporter/top.png" }
+    "base": { "texture": "blocks/teleporter/top.base.png" }
   },
   "frames": [
     {

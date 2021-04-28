@@ -5,30 +5,30 @@
   },
   "output": "blocks/teleporter/top.on",
   "layers": {
-    "base": { "texture": "blocks/teleporter/top.png" },
+    "base": { "texture": "blocks/teleporter/top.base.png" },
     "on.light.0": {
-      "texture": "blocks/teleporter/top.mask/0.png",
+      "texture": "blocks/teleporter/top.anim/0.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "on_color" }
       }
     },
     "on.light.1": {
-      "texture": "blocks/teleporter/top.mask/1.png",
+      "texture": "blocks/teleporter/top.anim/1.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "on_color" }
       }
     },
     "on.light.2": {
-      "texture": "blocks/teleporter/top.mask/2.png",
+      "texture": "blocks/teleporter/top.anim/2.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "on_color" }
       }
     },
     "on.light.3": {
-      "texture": "blocks/teleporter/top.mask/3.png",
+      "texture": "blocks/teleporter/top.anim/3.png",
       "blend": {
         "type": "multiply_color",
         "value": { "$variable": "on_color" }
@@ -51,7 +51,7 @@
   ],
   "meta": {
     "animation": {
-      "frametime": 4,
+      "frametime": 2,
       "frames": [
         0,
         1,

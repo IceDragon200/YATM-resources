@@ -26,23 +26,29 @@ module Compose
     protected def load_file()
       data = JSON.load(File.read(@filename))
 
-      data["loaded"].each do |(filename, mtime)|
-        if File.exist?(filename)
-          if File.stat(filename).mtime.to_i != mtime
-            puts "File: #{filename} was modified"
-            @modified = true
+      case data
+      when Hash
+        data["loaded"].each do |(filename, mtime)|
+          if File.exist?(filename)
+            if File.stat(filename).mtime.to_i != mtime
+              puts "File: #{filename} was modified"
+              @modified = true
+            else
+              @loaded[filename] = mtime
+            end
           else
-            @loaded[filename] = mtime
+            @modified = true
           end
-        else
-          @modified = true
         end
-      end
 
-      if data["tags"] then
-        data["tags"].each do |(key, value)|
-          @loaded_tags[key] = value
+        if data["tags"] then
+          data["tags"].each do |(key, value)|
+            @loaded_tags[key] = value
+          end
         end
+      else
+        warn "possibly bad compose-context file '#{@filename}'"
+        @modified = true
       end
     end
 

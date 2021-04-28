@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables", "_dye"],
+  "output": "blocks/fluid_pipe_valve/mesecon.$color$_valve.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/fluid_pipe/mesecon.valve.open.png"
+    },
+    "mask": {
+      "texture": "blocks/fluid_pipe/valve.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "dye.$color$" }
+      }
+    }
+  },
+  "frames": [
+    { "layers": ["base", "mask"] }
+  ]
+}
