@@ -1,0 +1,36 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/chemical_injector/top.on.chemical",
+  "layers": {
+    "base": { "texture": "blocks/chemical_injector/top.base.png" },
+    "on.0": {
+      "texture": "blocks/chemical_injector/top.chemical.anim/0.png"
+    },
+    "on.1": {
+      "texture": "blocks/chemical_injector/top.chemical.anim/1.png"
+    },
+    "on.2": {
+      "texture": "blocks/chemical_injector/top.chemical.anim/2.png"
+    },
+    "on.3": {
+      "texture": "blocks/chemical_injector/top.chemical.anim/3.png"
+    }
+  },
+  "frames": [
+    {"layers": ["base", "on.0"]},
+    {"layers": ["base", "on.1"]},
+    {"layers": ["base", "on.2"]},
+    {"layers": ["base", "on.3"]}
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

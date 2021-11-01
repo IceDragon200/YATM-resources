@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/chemical_injector/bottom.off",
+  "layers": {
+    "base": { "texture": "blocks/chemical_injector/bottom.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

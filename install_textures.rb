@@ -5,7 +5,8 @@
 require 'fileutils'
 
 @root = __dir__
-@mods_root = File.expand_path('../minetest-mods/', __dir__)
+#@mods_root = File.expand_path('../minetest-mods/', __dir__)
+@mods_root = File.expand_path('../minetest-games/HarmoniaScarredWorld/mods', __dir__)
 
 @gui_root = File.expand_path('textures/gui/', @root)
 @items_root = File.expand_path('textures/items/', @root)
@@ -150,6 +151,7 @@ def install_yatm_armoury
   FileUtils.mkdir target_directory
 
   install_built_blocks("ammo_can/*.png", target_directory)
+  install_built_blocks("chemical_injector/*.png", target_directory)
   install_blocks("target.png", target_directory)
 
   install_items("ammo/*.png", target_directory)
@@ -166,6 +168,7 @@ def install_yatm_armoury_c4
   FileUtils.mkdir target_directory
 
   install_blocks("c4/*.png", target_directory)
+  install_items("c4_detonator.png", target_directory)
 end
 
 def install_yatm_armoury_icbm
@@ -295,9 +298,6 @@ def install_yatm_cluster_thermal
 
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
-
-  install_built_blocks("thermal_duct/*.png", target_directory)
-  install_built_blocks("thermal_node/*.png", target_directory)
 end
 
 def install_yatm_clusters
@@ -332,6 +332,8 @@ def install_yatm_core
   install_items("bucket/crude_oil.png",   target_directory)
   install_items("bucket/oil.png",   target_directory)
 
+  install_items("wrench.png",   target_directory)
+
   install_blocks("face_debug/*.png", target_directory)
   install_blocks("grid.png", target_directory)
 
@@ -347,6 +349,16 @@ def install_yatm_codex
 
   install_items("codex.png",   target_directory)
   install_items("codex_deploy.png",   target_directory)
+end
+
+def install_yatm_data_cables
+  target_directory = File.expand_path('yatm/yatm_data_cables/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_built_blocks("data_cable/*.png", target_directory)
+  install_blocks("data_cable/bracket.*.png", target_directory)
 end
 
 def install_yatm_data_display
@@ -411,9 +423,6 @@ def install_yatm_data_network
 
   FileUtils.rm_rf target_directory
   FileUtils.mkdir target_directory
-
-  install_built_blocks("data_cable/*.png", target_directory)
-  install_blocks("data_cable/bracket.*.png", target_directory)
 end
 
 def install_yatm_data_noteblock
@@ -856,8 +865,8 @@ def install_yatm_papercraft
   FileUtils.mkdir target_directory
 
   install_blocks("painting_canvas/*.png", target_directory)
-  install_built_blocks("shoji_door/*.png", target_directory)
   install_built_blocks("shoji_lamp/*.png", target_directory)
+  install_blocks("shoji_door/*.png", target_directory)
   install_blocks("shoji_panel/*.png", target_directory)
 
   install_items("cardboard/*.png", target_directory)
@@ -933,6 +942,8 @@ def install_yatm_security
   install_built_items("key/*.png", target_directory)
   install_built_items("access_cards/*.png", target_directory)
   install_built_items("access_chips/*.png", target_directory)
+
+  install_gui("pattern_bits/*.png", target_directory)
 end
 
 def install_yatm_solar_energy
@@ -956,6 +967,17 @@ def install_yatm_spacetime
   install_built_blocks("teleporter/*.png", target_directory)
   install_built_blocks("teleporter_port/*.png", target_directory)
   install_built_blocks("teleporter_relay/*.png", target_directory)
+  install_blocks("teleporter_gate/part/*.png", target_directory)
+end
+
+def install_yatm_thermal_ducts
+  target_directory = File.expand_path('yatm/yatm_thermal_ducts/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_built_blocks("thermal_duct/*.png", target_directory)
+  install_built_blocks("thermal_node/*.png", target_directory)
 end
 
 def install_yatm_woodcraft
@@ -1007,6 +1029,7 @@ install_yatm_clusters
 install_yatm_codex
 install_yatm_core
 install_yatm_culinary
+install_yatm_data_cables
 install_yatm_data_card_readers
 install_yatm_data_console_monitor
 install_yatm_data_control
@@ -1051,6 +1074,7 @@ install_yatm_refinery
 install_yatm_security
 install_yatm_solar_energy
 install_yatm_spacetime
+install_yatm_thermal_ducts
 install_yatm_woodcraft
 install_yatm_woodcraft_default
 install_yatm_woodcraft_nokore
