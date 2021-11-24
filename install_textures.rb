@@ -144,6 +144,16 @@ def install_harmonia_treasure
   install_items("treasure_bags/*.png", target_directory, prefix: prefix)
 end
 
+def install_hsw_workbench
+  target_directory = File.expand_path('hsw_workbench/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'hsw'
+  install_blocks("workbench/**/*.png", target_directory, prefix: prefix)
+end
+
 def install_yatm_armoury
   target_directory = File.expand_path('yatm/yatm_armoury/textures', @mods_root)
 
@@ -474,6 +484,16 @@ def install_yatm_decor
   install_blocks("vents/*.png", target_directory)
 end
 
+def install_yatm_device_hubs
+  target_directory = File.expand_path('yatm/yatm_device_hubs/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_built_blocks("hub/*.png", target_directory)
+  install_blocks("card_hub/*.png", target_directory)
+end
+
 def install_yatm_debug
   target_directory = File.expand_path('yatm/yatm_debug/textures', @mods_root)
 
@@ -736,8 +756,6 @@ def install_yatm_machines
 
   install_built_blocks("item_replicator/*.png", target_directory)
 
-  install_built_blocks("hub/*.png", target_directory)
-
   install_built_blocks("freezer/*.png", target_directory)
   install_built_blocks("condenser/*.png", target_directory)
 
@@ -874,6 +892,7 @@ def install_yatm_papercraft
   install_items("paper/*.png", target_directory)
   install_items("waxed_cardboard/*.png", target_directory)
   install_items("painting_brush/*.png", target_directory)
+  install_items("fluid_box.png", target_directory)
 
   install_built_paintings("*.png", target_directory, prefix: "yatm_painting")
 end
@@ -1018,6 +1037,7 @@ install_harmonia_mana
 install_harmonia_pottery
 install_harmonia_totems
 install_harmonia_treasure
+install_hsw_workbench
 install_yatm_armoury
 install_yatm_armoury_c4
 install_yatm_armoury_icbm
@@ -1041,6 +1061,7 @@ install_yatm_data_noteblock
 install_yatm_data_to_mesecon
 install_yatm_debug
 install_yatm_decor
+install_yatm_device_hubs
 install_yatm_drones
 install_yatm_dscs
 install_yatm_energy_storage
