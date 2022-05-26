@@ -63,7 +63,7 @@ GEM
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     unicode-display_width (1.8.0)
-    yajl-ruby (1.4.1)
+    yajl-ruby (1.4.3)
     yard (0.9.26)
     zeitwerk (2.5.1)
 
