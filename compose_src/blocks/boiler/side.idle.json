@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/boiler/side.idle",
+  "layers": {
+    "base": { "texture": "blocks/boiler/side.off.png" },
+    "on.light": {
+      "texture": "blocks/boiler/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

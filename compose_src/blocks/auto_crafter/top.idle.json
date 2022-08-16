@@ -1,0 +1,82 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/auto_crafter/top.idle",
+  "layers": {
+    "base": { "texture": "blocks/auto_crafter/top.base.png" },
+    "on.light": {
+      "texture": "blocks/auto_crafter/top.mask.on.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c0r0": {
+      "texture": "blocks/auto_crafter/top.masks/c0r0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c0r1": {
+      "texture": "blocks/auto_crafter/top.masks/c0r1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c0r2": {
+      "texture": "blocks/auto_crafter/top.masks/c0r2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c1r0": {
+      "texture": "blocks/auto_crafter/top.masks/c1r0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c1r1": {
+      "texture": "blocks/auto_crafter/top.masks/c1r1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c1r2": {
+      "texture": "blocks/auto_crafter/top.masks/c1r2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c2r0": {
+      "texture": "blocks/auto_crafter/top.masks/c2r0.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c2r1": {
+      "texture": "blocks/auto_crafter/top.masks/c2r1.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "c2r2": {
+      "texture": "blocks/auto_crafter/top.masks/c2r2.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light", "c1r1", "c0r1", "c2r1", "c1r0", "c1r2", "c0r0", "c2r2", "c0r2", "c2r0"]
+    }
+  ]
+}

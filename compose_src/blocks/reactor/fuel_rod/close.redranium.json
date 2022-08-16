@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/reactor/fuel_rod_case.closed.redranium",
+  "layers": {
+    "base": { "texture": "blocks/reactor/fuel_rod_case.cover.redranium.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}
