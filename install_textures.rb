@@ -87,6 +87,18 @@ def install_harmonia_crystals
   install_items("element_crystal.*.png", target_directory, prefix: prefix)
 end
 
+def install_harmonia_element
+  target_directory = File.expand_path('harmonia/harmonia_element/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+
+  install_items("element_blueprint.png", target_directory, prefix: prefix)
+  install_items("element_blueprint.*.png", target_directory, prefix: prefix)
+end
+
 def install_harmonia_exp
   target_directory = File.expand_path('harmonia/harmonia_exp/textures', @mods_root)
 
@@ -142,6 +154,26 @@ def install_harmonia_treasure
 
   prefix = 'harmonia'
   install_items("treasure_bags/*.png", target_directory, prefix: prefix)
+end
+
+def install_hsw_hud
+  target_directory = File.expand_path('hsw_hud/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'hsw'
+  install_gui("hints/equipment.*.png", target_directory, prefix: prefix)
+end
+
+def install_hsw_tools
+  target_directory = File.expand_path('hsw_tools/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'hsw'
+  install_items("tools/**.png", target_directory, prefix: prefix)
 end
 
 def install_hsw_workbench
@@ -747,6 +779,7 @@ def install_yatm_machines
   install_built_blocks("auto_grinder/*.png", target_directory)
   install_built_blocks("compactor/*.png", target_directory)
   install_built_blocks("mixer/*.png", target_directory)
+  install_built_blocks("electrolyser/*.png", target_directory)
 
   install_built_blocks("pylon/*.png", target_directory)
 
@@ -1033,10 +1066,13 @@ end
 
 install_harmonia_crystals
 install_harmonia_exp
+install_harmonia_element
 install_harmonia_mana
 install_harmonia_pottery
 install_harmonia_totems
 install_harmonia_treasure
+install_hsw_hud
+install_hsw_tools
 install_hsw_workbench
 install_yatm_armoury
 install_yatm_armoury_c4
