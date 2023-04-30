@@ -1,0 +1,46 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/spirit_lantern/side.core.terra",
+  "layers": {
+    "base": {
+      "texture": "blocks/spirit_lantern/side.empty.png"
+    },
+    "anim.0": {
+      "texture": "blocks/spirit_lantern/side.core.terra/0.png"
+    },
+    "anim.1": {
+      "texture": "blocks/spirit_lantern/side.core.terra/1.png"
+    },
+    "anim.2": {
+      "texture": "blocks/spirit_lantern/side.core.terra/2.png"
+    },
+    "anim.3": {
+      "texture": "blocks/spirit_lantern/side.core.terra/3.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    },
+    {
+      "layers": ["base", "anim.3"]
+    }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/distillation_unit/top.idle",
+  "layers": {
+    "base": { "texture": "blocks/distillation_unit/top.base.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

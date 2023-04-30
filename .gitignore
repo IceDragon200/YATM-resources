@@ -7,3 +7,5 @@
 /bako_electron
 *.zip
 /tmp
+/models
+/sounds

@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/electric_smelter/side.idle",
+  "layers": {
+    "base": { "texture": "blocks/electric_smelter/side.base.png" },
+    "on.light": {
+      "texture": "blocks/electric_smelter/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

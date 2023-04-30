@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mana_heater/front.cooling",
+  "layers": {
+    "base": { "texture": "blocks/mana_heater/front.cooling.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

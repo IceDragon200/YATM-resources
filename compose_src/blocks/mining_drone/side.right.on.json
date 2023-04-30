@@ -1,0 +1,39 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mining_drone/side.right.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/mining_drone/side.base.png"
+    },
+    "anim.0": {
+      "texture": "blocks/mining_drone/side.right.blade/0.png"
+    },
+    "anim.1": {
+      "texture": "blocks/mining_drone/side.right.blade/1.png"
+    },
+    "anim.2": {
+      "texture": "blocks/mining_drone/side.right.blade/2.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "anim.0"]
+    },
+    {
+      "layers": ["base", "anim.1"]
+    },
+    {
+      "layers": ["base", "anim.2"]
+    }
+  ],
+  "meta":{
+    "animation": {
+      "frametime": 1,
+      "frames": [
+        0,
+        1,
+        2
+      ]
+    }
+  }
+}

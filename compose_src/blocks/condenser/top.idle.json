@@ -1,0 +1,12 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/condenser/top.idle",
+  "layers": {
+    "base": { "texture": "blocks/condenser/top.off.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

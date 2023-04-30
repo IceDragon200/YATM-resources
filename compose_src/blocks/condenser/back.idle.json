@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/condenser/back.idle",
+  "layers": {
+    "base": { "texture": "blocks/condenser/back.base.png" },
+    "mask": {
+      "texture": "blocks/condenser/back.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

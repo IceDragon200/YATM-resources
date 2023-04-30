@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/teleporter_gate_controller/side.on",
+  "layers": {
+    "base": { "texture": "blocks/teleporter_gate_controller/side.base.png" },
+    "on.light": {
+      "texture": "blocks/teleporter_gate_controller/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "on_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/crusher/side.idle",
+  "layers": {
+    "base": { "texture": "blocks/crusher/side.base.png" },
+    "mask": {
+      "texture": "blocks/crusher/side.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask"]
+    }
+  ]
+}

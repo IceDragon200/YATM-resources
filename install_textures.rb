@@ -125,6 +125,16 @@ def install_harmonia_mana
   install_gui("mana_*.png", target_directory, prefix: prefix)
 end
 
+def install_harmonia_mycology
+  target_directory = File.expand_path('harmonia/harmonia_mycology/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+  install_blocks("chubby_green_mushroom/*.png", target_directory, prefix: prefix)
+end
+
 def install_harmonia_pottery
   target_directory = File.expand_path('harmonia/harmonia_pottery/textures', @mods_root)
 
@@ -133,6 +143,19 @@ def install_harmonia_pottery
 
   prefix = 'harmonia'
   install_blocks("clay_pot/*.png", target_directory, prefix: prefix)
+end
+
+def install_harmonia_spirits
+  target_directory = File.expand_path('harmonia/harmonia_spirits/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'harmonia'
+  install_built_blocks("spirit_lantern/*.png", target_directory, prefix: prefix)
+  install_built_blocks("mana_heater/*.png", target_directory, prefix: prefix)
+  install_items("spirits/*.png", target_directory, prefix: prefix)
+  install_items("infused_coal_lump.*.png", target_directory, prefix: prefix)
 end
 
 def install_harmonia_totems
@@ -164,6 +187,16 @@ def install_hsw_hud
 
   prefix = 'hsw'
   install_gui("hints/equipment.*.png", target_directory, prefix: prefix)
+end
+
+def install_hsw_materials
+  target_directory = File.expand_path('hsw_materials/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  prefix = 'hsw'
+  install_items("wme_material.png", target_directory, prefix: prefix)
 end
 
 def install_hsw_tools
@@ -246,9 +279,6 @@ def install_yatm_bees
   install_items("honey_combs/*.png", target_directory)
   install_items("honey_drop.png", target_directory)
   install_items("bee_box_frame.png", target_directory)
-
-  install_items("bucket/honey.png",   target_directory)
-  install_items("bucket/synthetic_honey.png",   target_directory)
 end
 
 def install_yatm_brewery
@@ -369,10 +399,8 @@ def install_yatm_core
   install_items("materials/spool.*.png", target_directory)
   install_items("materials/transformer.*.png", target_directory)
   install_items("materials/vacuum_tube.*.png", target_directory)
-  install_items("bucket/heavy_oil.png",   target_directory)
-  install_items("bucket/light_oil.png",   target_directory)
-  install_items("bucket/crude_oil.png",   target_directory)
-  install_items("bucket/oil.png",   target_directory)
+  install_items("bucket/empty.png",   target_directory)
+  install_items("bucket/fluid.mask.png",   target_directory)
 
   install_items("wrench.png",   target_directory)
 
@@ -380,7 +408,12 @@ def install_yatm_core
   install_blocks("grid.png", target_directory)
 
   install_gui("gui_formbg_*.png", target_directory)
+  install_gui("item_border/*.png", target_directory)
   install_built_gui("gui_formbg_*.png", target_directory)
+
+  install_gui("small_colored_button/*.png", target_directory)
+  install_gui("small_switch/*.png", target_directory)
+  install_gui("wide_switch/*.png", target_directory)
 end
 
 def install_yatm_codex
@@ -453,11 +486,6 @@ def install_yatm_data_logic
 
   install_items("data_programmer.png", target_directory)
   install_built_items("tokens/*.png", target_directory)
-
-  install_gui("small_colored_button/*.png", target_directory)
-  install_gui("small_switch/*.png", target_directory)
-  install_gui("wide_switch/*.png", target_directory)
-  install_gui("item_border/*.png", target_directory)
 end
 
 def install_yatm_data_network
@@ -534,6 +562,7 @@ def install_yatm_debug
 
   install_items("transport_network_debug_tool.png", target_directory)
   install_items("cluster_tool.png", target_directory)
+  install_items("debug_tool.png", target_directory)
 end
 
 def install_yatm_drones
@@ -725,6 +754,15 @@ def install_yatm_item_ducts
   install_built_blocks("item_duct/*.png", target_directory)
 end
 
+def install_yatm_item_hoppers
+  target_directory = File.expand_path('yatm/yatm_item_hoppers/textures', @mods_root)
+
+  FileUtils.rm_rf target_directory
+  FileUtils.mkdir target_directory
+
+  install_blocks("hopper/*.png", target_directory)
+end
+
 def install_yatm_item_shelves
   target_directory = File.expand_path('yatm/yatm_item_shelves/textures', @mods_root)
 
@@ -743,6 +781,7 @@ def install_yatm_item_storage
 
   install_built_blocks("cardboard_box/*.png", target_directory)
   install_blocks("super_cardboard_box/*.png", target_directory)
+  install_blocks("filter_box/item.*.png", target_directory)
 end
 
 def install_yatm_item_teleporters
@@ -866,6 +905,7 @@ def install_yatm_mining
 
   install_built_blocks("quarry/*.png", target_directory)
   install_built_blocks("surface_drill/*.png", target_directory)
+  install_built_blocks("mining_drone/*.png", target_directory)
 
   install_blocks("quarry_wall/*.png", target_directory)
 end
@@ -1019,6 +1059,7 @@ def install_yatm_spacetime
   install_built_blocks("teleporter/*.png", target_directory)
   install_built_blocks("teleporter_port/*.png", target_directory)
   install_built_blocks("teleporter_relay/*.png", target_directory)
+  install_built_blocks("teleporter_gate_controller/*.png", target_directory)
   install_blocks("teleporter_gate/part/*.png", target_directory)
 end
 
@@ -1065,13 +1106,16 @@ def install_yatm_woodcraft_nokore
 end
 
 install_harmonia_crystals
-install_harmonia_exp
 install_harmonia_element
+install_harmonia_exp
 install_harmonia_mana
+install_harmonia_mycology
 install_harmonia_pottery
+install_harmonia_spirits
 install_harmonia_totems
 install_harmonia_treasure
 install_hsw_hud
+install_hsw_materials
 install_hsw_tools
 install_hsw_workbench
 install_yatm_armoury
@@ -1109,6 +1153,7 @@ install_yatm_fluids
 install_yatm_foundry
 install_yatm_frames
 install_yatm_item_ducts
+install_yatm_item_hoppers
 install_yatm_item_shelves
 install_yatm_item_storage
 install_yatm_item_teleporters

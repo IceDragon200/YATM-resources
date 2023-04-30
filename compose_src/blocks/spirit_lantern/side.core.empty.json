@@ -1,0 +1,13 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/spirit_lantern/side.core.empty",
+  "layers": {
+    "base": { "texture": "blocks/spirit_lantern/side.empty.png" },
+    "empty": { "texture": "blocks/spirit_lantern/side.core.empty.png" }
+  },
+  "frames": [
+    {
+      "layers": ["base", "empty"]
+    }
+  ]
+}

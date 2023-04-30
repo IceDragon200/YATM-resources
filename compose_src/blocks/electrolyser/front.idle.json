@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/electrolyser/front.idle",
+  "layers": {
+    "base": {
+      "texture": "blocks/electrolyser/front.base.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

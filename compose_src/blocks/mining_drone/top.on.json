@@ -1,0 +1,14 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/mining_drone/top.on",
+  "layers": {
+    "base": {
+      "texture": "blocks/mining_drone/top.base.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base"]
+    }
+  ]
+}

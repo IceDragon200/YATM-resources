@@ -1,0 +1,19 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/electrolyser/side.idle",
+  "layers": {
+    "base": { "texture": "blocks/electrolyser/side.base.png" },
+    "light": {
+      "texture": "blocks/electrolyser/side.on.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "light"]
+    }
+  ]
+}

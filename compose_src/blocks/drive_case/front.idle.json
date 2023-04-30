@@ -1,0 +1,21 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/drive_case/front.idle",
+  "layers": {
+    "base": {
+      "texture": "blocks/drive_case/front.base.png"
+    },
+    "on.light": {
+      "texture": "blocks/drive_case/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "on.light"]
+    }
+  ]
+}

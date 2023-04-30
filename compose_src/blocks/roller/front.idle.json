@@ -1,0 +1,24 @@
+{
+  "$includes": ["_variables"],
+  "output": "blocks/roller/front.idle",
+  "layers": {
+    "base": {
+      "texture": "blocks/roller/front.base.png"
+    },
+    "mask": {
+      "texture": "blocks/roller/front.mask.png",
+      "blend": {
+        "type": "multiply_color",
+        "value": { "$variable": "idle_color" }
+      }
+    },
+    "anim.0": {
+      "texture": "blocks/roller/anim-blades/frame0000.png"
+    }
+  },
+  "frames": [
+    {
+      "layers": ["base", "mask", "anim.0"]
+    }
+  ]
+}
